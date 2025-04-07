@@ -1,16 +1,40 @@
-## Hi there 👋
+# 👋 Привет! Меня зовут Алексей Орлов
 
-<!--
-**siberianbearofficial/siberianbearofficial** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Я **фулстек веб-разработчик** на Angular и FastAPI.
 
-Here are some ideas to get you started:
+- **Полтора года** работаю в **Т-Банке**
+- Учусь на **Программной инженерии (ИУ7)** в **МГТУ им. Н.Э. Баумана**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Стек
+
+### Фронт
+
+- **Angular**, **Ngrx**, **Taiga UI**
+- **HTML5**, **Sass**, **TypeScript**
+- **ESLint**, **Prettier**, **Jest**
+
+### Бэк
+
+- **FastAPI**, **Flask**
+- **gRPC**, **Kafka**, **S3**
+- **PostgreSQL**, **SQLAlchemy**
+- **Pydantic**, **Alembic**
+- **ruff**, **black**
+- **mypy**, **pytest**
+
+### Настраивал интеграции
+
+- **OAuth**: Google, Yandex, GitHub, корпоративные провайдеры
+- **Telegram Bot API**, **VK Bot API**
+
+### DevOps и инфра
+
+- **Docker**, **docker-compose**, **Kubernetes**
+- **Make**
+- **Prometheus / Grafana** для мониторинга
+- **Sentry**
+- **Git**
+
+---
+
+Если есть интересные задачки, pet-проекты, open source - пишите в мессенджерах или на почту [contact@aleksei-orlov.ru](mailto:contact@aleksei-orlov.ru) - обсудим.
