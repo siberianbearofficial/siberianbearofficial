@@ -1,19 +1,23 @@
-# 👋 Привет! Меня зовут Алексей Орлов
+# 👋 Привет! Это профиль фулстек веб-разработчика :)
 
-Я **фулстек веб-разработчик** на Angular и FastAPI.
+Я пишу в основном на Angular и FastAPI, но всегда готов к интересному опыту с любым стеком
 
 - **Полтора года** работаю в **Т-Банке**
 - Учусь на **Программной инженерии (ИУ7)** в **МГТУ им. Н.Э. Баумана**
 
-## Стек
+## Основной стек
 
-### Фронт
+<table border="0">
+<tr>
+<td valign="top" width="50%">
+
+### Фронт - Angular
 
 - **Angular**, **Ngrx**, **Taiga UI**
 - **HTML5**, **Sass**, **TypeScript**
 - **ESLint**, **Prettier**, **Jest**
 
-### Бэк
+### Бэк - FastAPI
 
 - **FastAPI**, **Flask**
 - **gRPC**, **Kafka**, **S3**
@@ -34,7 +38,19 @@
 - **Prometheus / Grafana** для мониторинга
 - **Sentry**
 - **Git**
+</td>
+<td valign="top" width="40%">
+
+<img src="https://github-readme-stats.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" />
+
+</td>
+</tr>
+</table>
 
 ---
 
-Если есть интересные задачки, pet-проекты, open source - пишите в мессенджерах или на почту [contact@aleksei-orlov.ru](mailto:contact@aleksei-orlov.ru) - обсудим.
+Если есть интересные задачки, pet-проекты или open source - пишите в мессенджерах или на почту [contact@aleksei-orlov.ru](mailto:contact@aleksei-orlov.ru) - обсудим!
