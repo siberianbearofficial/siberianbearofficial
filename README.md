@@ -11,13 +11,13 @@
 <tr>
 <td valign="top" width="50%">
 
-### Фронт - Angular
+**Фронт - Angular**
 
 - **Angular**, **Ngrx**, **Taiga UI**
 - **HTML5**, **Sass**, **TypeScript**
 - **ESLint**, **Prettier**, **Jest**
 
-### Бэк - FastAPI
+**Бэк - FastAPI**
 
 - **FastAPI**, **Flask**
 - **gRPC**, **Kafka**, **S3**
@@ -26,12 +26,12 @@
 - **ruff**, **black**
 - **mypy**, **pytest**
 
-### Настраивал интеграции
+**Настраивал интеграции**
 
 - **OAuth**: Google, Yandex, GitHub, корпоративные провайдеры
 - **Telegram Bot API**, **VK Bot API**
 
-### DevOps и инфра
+**DevOps и инфра**
 
 - **Docker**, **docker-compose**, **Kubernetes**
 - **Make**
@@ -39,18 +39,14 @@
 - **Sentry**
 - **Git**
 </td>
+
 <td valign="top" width="40%">
-
 <img src="https://github-readme-stats.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
-
 <br/>
-
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" />
-
 </td>
 </tr>
 </table>
 
----
 
 Если есть интересные задачки, pet-проекты или open source - пишите в мессенджерах или на почту [contact@aleksei-orlov.ru](mailto:contact@aleksei-orlov.ru) - обсудим!
