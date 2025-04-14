@@ -41,9 +41,9 @@
 </td>
 
 <td valign="top" width="40%">
-<img src="https://github-readme-stats.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default&hide=HLSL,TeX,ShaderLab" alt="GitHub stats" />
+<img src="https://github-readme-stats.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
 <br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff" alt="Top Langs" />
 </td>
 </tr>
 </table>
