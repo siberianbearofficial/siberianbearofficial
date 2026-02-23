@@ -2,8 +2,8 @@
 
 Я пишу в основном на Angular и FastAPI, но всегда готов к интересному опыту с любым стеком
 
-- **Полтора года** работаю в **Т-Банке**
-- Учусь на **Программной инженерии (ИУ7)** в **МГТУ им. Н.Э. Баумана**
+- **2 года** работаю в **Т-Банке**
+- Учусь в **МГТУ им. Н.Э. Баумана**
 
 ## Основной стек
 
@@ -41,9 +41,9 @@
 </td>
 
 <td valign="top" width="40%">
-<img src="https://github-readme-stats.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
+<img src="https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
 <br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff" alt="Top Langs" />
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff" alt="Top Langs" />
 </td>
 </tr>
 </table>
