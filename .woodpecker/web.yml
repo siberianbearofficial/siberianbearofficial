@@ -1,0 +1,14 @@
+when:
+  - event: push
+    branch: main
+
+steps:
+  - name: build and push
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      repo: ghcr.io/siberianbearofficial/siberianbearofficial
+      registry: ghcr.io
+      username: siberianbearofficial
+      password:
+        from_secret: GITHUB_TOKEN
+      tag: main

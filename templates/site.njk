@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}" />
+    <meta name="theme-color" content="#0d1727" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme = storedTheme || preferredTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css" />
+  </head>
+  <body data-page="site">
+    <div class="site-backdrop" aria-hidden="true">
+      <div class="site-orb site-orb--cobalt"></div>
+      <div class="site-orb site-orb--signal"></div>
+      <div class="site-grid"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="page-shell">
+        <div class="site-nav" data-reveal>
+          <a class="brand-mark" href="#top" aria-label="{{ identity.name }}">
+            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="{{ identity.name }}" loading="eager" decoding="async" />
+            <span class="brand-mark__copy">
+              <span class="brand-mark__name">{{ identity.name }}</span>
+              <span class="brand-mark__role">{{ identity.role }}</span>
+            </span>
+          </a>
+
+          <nav class="site-nav__links" aria-label="Section navigation">
+            <a href="#focus">Focus</a>
+            <a href="#experience">Experience</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="#public-work">Public Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="site-nav__actions">
+            <a class="mini-action" href="/Aleksei-Orlov-Resume.pdf">
+              <span class="mini-action__icon">{{ ui_icons.download }}</span>
+              <span>PDF Resume</span>
+            </a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+              <span class="theme-toggle__icon">
+                <span class="theme-toggle__icon-sun">{{ ui_icons.sun }}</span>
+                <span class="theme-toggle__icon-moon">{{ ui_icons.moon }}</span>
+              </span>
+              <span data-theme-label>Dark mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="site-main">
+      <section class="hero-section">
+        <div class="page-shell">
+          <div class="hero-grid" data-reveal>
+              <div class="hero-intro">
+                <div class="hero-kicker-row">
+                  <span class="section-kicker">worldwide remote</span>
+                </div>
+
+                <h1 class="hero-title">{{ identity.hero_title }}</h1>
+                <p class="hero-tagline">{{ identity.hero_tagline }}</p>
+
+                <div class="hero-actions">
+                  {% for link in cta.primary -%}
+                    {% if loop.index <= 2 -%}
+                      {% set ctaIcon = ui_icons.mail -%}
+                      {% if link.label == "Telegram" -%}
+                        {% set ctaIcon = ui_icons.send -%}
+                      {% elseif link.label == "GitHub" -%}
+                        {% set ctaIcon = ui_icons.github -%}
+                      {% endif -%}
+                      <a class="{% if loop.first %}site-button site-button--primary{% else %}site-button site-button--secondary{% endif %}" href="{{ link.href }}">
+                        <span class="site-button__icon">{{ ctaIcon }}</span>
+                        <span>{{ link.label }}</span>
+                      </a>
+                    {% endif -%}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="hero-stage">
+                <div class="portrait-stack">
+                  <div class="portrait-glow" aria-hidden="true"></div>
+                  <img
+                    class="portrait-image"
+                    src="{{ identity.avatar_url }}"
+                    alt="Public profile photo of {{ identity.name }}"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <span class="orbit-bubble orbit-bubble--1" aria-hidden="true">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy" />
+                  </span>
+                  <span class="orbit-bubble orbit-bubble--2" aria-hidden="true">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="" loading="lazy" />
+                  </span>
+                  <span class="orbit-bubble orbit-bubble--3" aria-hidden="true">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" />
+                  </span>
+                  <span class="orbit-bubble orbit-bubble--4" aria-hidden="true">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" loading="lazy" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-stats-grid">
+              <a href="#case-ai-assistant" class="hero-stat-card hero-stat-card--link hero-stat-card--assistant">
+                <div class="hero-stat-card__visual">
+                  <img src="/media/illustrations/chat-with-ai.svg" data-theme-src data-light-src="/media/illustrations/chat-with-ai.svg" data-dark-src="/media/illustrations/dark/chat-with-ai.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                </div>
+                <div class="hero-stat-card__content">
+                  <div class="hero-stat-card__value">LLM Assistant</div>
+                  <div class="hero-stat-card__label">Internal AI Product</div>
+                  <div class="hero-stat-card__meta">thousands of users, React migration</div>
+                </div>
+              </a>
+              <a href="#case-image-generation-ui" class="hero-stat-card hero-stat-card--link hero-stat-card--image">
+                <div class="hero-stat-card__visual">
+                  <img src="/media/illustrations/digital-artwork.svg" data-theme-src data-light-src="/media/illustrations/digital-artwork.svg" data-dark-src="/media/illustrations/dark/digital-artwork.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                </div>
+                <div class="hero-stat-card__content">
+                  <div class="hero-stat-card__value">Image Gen UI</div>
+                  <div class="hero-stat-card__label">Design Workflow Tool</div>
+                  <div class="hero-stat-card__meta">Angular frontend ownership</div>
+                </div>
+              </a>
+              <article class="hero-stat-card hero-stat-card--product">
+                <div class="hero-stat-card__visual">
+                  <img src="/media/illustrations/developer-activity.svg" data-theme-src data-light-src="/media/illustrations/developer-activity.svg" data-dark-src="/media/illustrations/dark/developer-activity.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                </div>
+                <div class="hero-stat-card__content">
+                  <div class="hero-stat-card__value">2+ yrs</div>
+                  <div class="hero-stat-card__label">T-Bank AI Product Work</div>
+                  <div class="hero-stat-card__meta">intern to middle-level scope</div>
+                </div>
+              </article>
+              <article class="hero-stat-card hero-stat-card--migration">
+                <div class="hero-stat-card__visual">
+                  <img src="/media/illustrations/version-control.svg" data-theme-src data-light-src="/media/illustrations/version-control.svg" data-dark-src="/media/illustrations/dark/version-control.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                </div>
+                <div class="hero-stat-card__content">
+                  <div class="hero-stat-card__value">Angular to React</div>
+                  <div class="hero-stat-card__label">Migration Profile</div>
+                  <div class="hero-stat-card__meta">without feature freeze</div>
+                </div>
+              </article>
+            </div>
+        </div>
+      </section>
+
+      <section id="focus" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Focus</div>
+            <h2 class="section-heading">Positioned for product teams that need range, not narrow specialization</h2>
+            <p class="section-lede">
+              The strongest signal in this profile is hands-on TypeScript fullstack range across React, Angular, Svelte, and FastAPI: AI-heavy internal tooling, backend support, and Angular-to-React migration work delivered without losing product speed
+            </p>
+          </div>
+
+          <aside class="focus-narrative" data-reveal>
+            <div class="focus-narrative__rail" aria-hidden="true">
+              <span class="focus-narrative__marker">{{ ui_icons.sparkles }}</span>
+            </div>
+            <div class="focus-narrative__content">
+              <div class="focus-narrative__label">Current Narrative</div>
+              <p class="focus-narrative__copy">{{ identity.current_focus }}</p>
+            </div>
+          </aside>
+
+          <div class="value-card-grid" data-reveal>
+            {% for item in value_props -%}
+            <article class="value-card" data-reveal>
+              <div class="value-card__head">
+                <span class="value-card__number">0{{ loop.index }}</span>
+                <div class="value-card__icon">{{ ui_icons[item.icon] }}</div>
+              </div>
+              <h3 class="value-card__title">{{ item.title }}</h3>
+              <p class="value-card__copy">{{ item.description }}</p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Experience</div>
+            <h2 class="section-heading">Recent roles and progression</h2>
+            <p class="section-lede">
+              Official dates come from current employment records. Public copy keeps the focus on shipped work, ownership, and NDA-safe scope
+            </p>
+          </div>
+
+          <div class="timeline-list">
+            {% for job in experience -%}
+            <article class="timeline-entry" data-reveal>
+              <div class="timeline-entry__rail">
+                <span class="timeline-entry__dot"></span>
+              </div>
+              <div class="timeline-entry__card">
+                <div class="timeline-entry__header">
+                  <div class="timeline-entry__head-left">
+                    {% if job.logo -%}
+                    <img class="timeline-entry__logo" src="{{ job.logo }}" alt="{{ job.company }}" loading="lazy" decoding="async" />
+                    {% endif -%}
+                    <div>
+                      <div class="timeline-entry__company">{{ job.company }}</div>
+                      <h3 class="timeline-entry__role">{{ job.role }}</h3>
+                    </div>
+                  </div>
+                  <div class="timeline-entry__range">{{ job.range }}</div>
+                </div>
+                <p class="timeline-entry__summary">{{ job.summary }}</p>
+                <div class="timeline-entry__highlights">
+                  {% for highlight in job.highlights -%}
+                  <div class="timeline-entry__highlight">{{ highlight }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="case-studies" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Case Studies</div>
+            <h2 class="section-heading">Internal product work, shown through ownership and systems thinking</h2>
+            <p class="section-lede">
+              The code for these products is not public. What I can show is the product surface, architecture, and execution scope behind them
+            </p>
+          </div>
+
+          <div class="case-study-grid">
+            {% for caseStudy in site_case_studies -%}
+            <article class="case-study-card" id="case-{{ caseStudy.key }}" data-reveal>
+              <div class="case-study-card__topline">
+                <span class="case-study-card__icon">{{ ui_icons[caseStudy.icon] }}</span>
+                <span class="section-kicker">{{ caseStudy.kind }}</span>
+                {% if caseStudy.impact -%}
+                <span class="impact-pill">{{ caseStudy.impact.value }} {{ caseStudy.impact.label }}</span>
+                {% endif -%}
+              </div>
+              <h3 class="case-study-card__title">{{ caseStudy.title }}</h3>
+              <p class="case-study-card__summary">{{ caseStudy.summary }}</p>
+
+              <div class="case-study-card__role-block">
+                <div class="case-study-card__role-label">My role</div>
+                <div class="case-study-card__role-copy">{{ caseStudy.role }}</div>
+              </div>
+
+              <div class="case-study-card__chips">
+                {% for item in caseStudy.stack -%}
+                <span class="site-chip">{{ item }}</span>
+                {% endfor %}
+              </div>
+
+              <div class="case-study-card__highlights">
+                {% for highlight in caseStudy.highlights -%}
+                <div class="case-study-card__highlight">{{ highlight }}</div>
+                {% endfor %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="public-work" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Public Work</div>
+            <h2 class="section-heading">Selected repos that show how I build</h2>
+            <p class="section-lede">
+              Public repos are not a mirror of my current internal stack. They are the evidence layer for how I structure projects, ship tooling, and think about APIs and product surfaces
+            </p>
+          </div>
+
+          <div class="repo-grid">
+            {% for repo in selected_public_repos -%}
+            <article class="repo-card" data-reveal>
+              {% if repo.visual -%}
+              <div class="repo-card__visual repo-card__visual--{{ repo.visual.kind }}">
+                <img
+                  src="{{ repo.visual.src }}"
+                  {% if "/media/illustrations/" in repo.visual.src -%}
+                  data-theme-src
+                  data-light-src="{{ repo.visual.src }}"
+                  data-dark-src="{{ repo.visual.src | replace('/media/illustrations/', '/media/illustrations/dark/') }}"
+                  {% endif -%}
+                  alt="{{ repo.visual.alt }}"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              {% endif -%}
+              <div class="repo-card__header">
+                <div class="repo-card__title-wrap">
+                  <span class="repo-card__icon">{{ ui_icons[repo.icon] }}</span>
+                  <div>
+                    <div class="section-kicker">GitHub Repo</div>
+                    <h3 class="repo-card__title">{{ repo.label }}</h3>
+                  </div>
+                </div>
+                <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label }} on GitHub">
+                  <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+              <p class="repo-card__summary">{{ repo.summary }}</p>
+              <div class="repo-card__chips">
+                {% for item in repo.stack -%}
+                <span class="site-chip site-chip--warm">{{ item }}</span>
+                {% endfor %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+
+          <div class="supporting-project" data-reveal>
+            <div class="supporting-project__content">
+              <div class="supporting-project__head">
+                <span class="supporting-project__icon">{{ ui_icons["book-open"] }}</span>
+                <div>
+                  <div class="section-kicker">Supporting Project</div>
+                  <h3 class="supporting-project__title">{{ supporting_repo.label }}</h3>
+                </div>
+              </div>
+              <p class="supporting-project__copy">{{ supporting_repo.summary }}</p>
+            </div>
+            <a class="repo-card__action repo-card__action--github" href="{{ supporting_repo.url }}" aria-label="{{ supporting_repo.label }} on GitHub">
+              <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Stack</div>
+            <h2 class="section-heading">Comfortable across product, platform, and delivery</h2>
+          </div>
+
+          <div class="stack-grid">
+            {% for group in stack_groups -%}
+            <article class="stack-card" data-reveal>
+              <div class="stack-card__bar"></div>
+              <h3 class="stack-card__title">{{ group.label }}</h3>
+              <div class="stack-card__chips">
+                {% for item in group.items -%}
+                {% if item.icon -%}
+                <span class="site-chip site-chip--with-logo">
+                  <img class="site-chip__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{{ item.icon }}/{{ item.icon }}-original.svg" alt="{{ item.name }}" loading="lazy" decoding="async" />
+                  {{ item.name }}
+                </span>
+                {% elseif item.name -%}
+                <span class="site-chip">{{ item.name }}</span>
+                {% else -%}
+                <span class="site-chip">{{ item }}</span>
+                {% endif -%}
+                {% endfor %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section">
+        <div class="page-shell">
+          <div class="knowledge-grid">
+            <div class="knowledge-column">
+              <div class="section-intro" data-reveal>
+                <div class="section-kicker">Education</div>
+                <h2 class="section-heading">Formal education and long-term signals</h2>
+              </div>
+              <div class="knowledge-list">
+                {% for entry in education -%}
+                <article class="knowledge-card" data-reveal>
+                  <div class="knowledge-card__meta">{{ entry.range }}</div>
+                  {% if entry.logo -%}
+                  <img class="knowledge-card__logo" src="{{ entry.logo }}" alt="{{ entry.school }}" loading="lazy" decoding="async" />
+                  {% endif -%}
+                  <h3 class="knowledge-card__title">{{ entry.school }}</h3>
+                  <p class="knowledge-card__copy">{{ entry.degree }}</p>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="knowledge-column">
+              <div class="section-intro" data-reveal>
+                <div class="section-kicker">Highlights</div>
+                <h2 class="section-heading">Signals beyond the day job</h2>
+              </div>
+              <div class="knowledge-list">
+                {% for item in achievements -%}
+                <article class="knowledge-card" data-reveal>
+                  <div class="knowledge-card__year">{{ item.year }}</div>
+                  <h3 class="knowledge-card__title">{{ item.title }}</h3>
+                  <p class="knowledge-card__copy">{{ item.description }}</p>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="site-section site-section--contact">
+        <div class="page-shell">
+          <div class="contact-panel" data-reveal>
+            <div class="contact-panel__copy">
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-heading">If you are hiring, start here</h2>
+              <p class="section-lede">
+                I’m most useful in TypeScript product teams that need someone who can move across React, Angular, migration work, and FastAPI-backed delivery without losing momentum
+              </p>
+              <div class="contact-panel__actions">
+                {% for link in cta.footer -%}
+                {% set footerIcon = ui_icons.mail -%}
+                {% if link.label == "Telegram" -%}
+                {% set footerIcon = ui_icons.send -%}
+                {% elseif link.label == "GitHub" -%}
+                {% set footerIcon = ui_icons.github -%}
+                {% elseif link.label == "VK" -%}
+                {% set footerIcon = ui_icons["messages-square"] -%}
+                {% endif -%}
+                <a class="{% if loop.first %}site-button site-button--primary{% else %}site-button site-button--secondary{% endif %}" href="{{ link.href }}">
+                  <span class="site-button__icon">{{ footerIcon }}</span>
+                  <span>{{ link.label }}</span>
+                  <span class="site-button__meta">{{ link.short }}</span>
+                </a>
+                {% endfor %}
+                <a class="site-button site-button--secondary" href="/Aleksei-Orlov-Resume.pdf">
+                  <span class="site-button__icon">{{ ui_icons.download }}</span>
+                  <span>Download PDF Resume</span>
+                </a>
+              </div>
+            </div>
+            <div class="contact-panel__visual">
+              <img src="/media/illustrations/web-developer.svg" data-theme-src data-light-src="/media/illustrations/web-developer.svg" data-dark-src="/media/illustrations/dark/web-developer.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="site-footer__inner">
+          <div class="site-footer__copy">
+            <span class="site-footer__name">{{ identity.name }}</span>
+            <span class="site-footer__separator">&middot;</span>
+            <span class="site-footer__role">{{ identity.role }}</span>
+          </div>
+          <div class="site-footer__links">
+            <a href="{{ identity.github }}" aria-label="GitHub">GitHub</a>
+            <a href="{{ identity.telegram }}" aria-label="Telegram">Telegram</a>
+            <a href="mailto:{{ identity.email }}" aria-label="Email">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const toggle = document.querySelector("[data-theme-toggle]");
+        const labelHost = document.querySelector("[data-theme-label]");
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const applyTheme = (theme) => {
+          const isDark = theme === "dark";
+
+          root.dataset.theme = theme;
+          toggle?.setAttribute("aria-pressed", String(isDark));
+
+          document.querySelectorAll("[data-theme-src]").forEach((image) => {
+            const nextSrc = image.dataset[isDark ? "darkSrc" : "lightSrc"];
+
+            if (nextSrc && image.getAttribute("src") !== nextSrc) {
+              image.setAttribute("src", nextSrc);
+            }
+          });
+
+          if (labelHost) {
+            labelHost.textContent = isDark ? "Light mode" : "Dark mode";
+          }
+        };
+
+        const preferredTheme = () => mediaQuery.matches ? "dark" : "light";
+        applyTheme(root.dataset.theme || preferredTheme());
+
+        toggle?.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+
+          window.localStorage.setItem("theme", nextTheme);
+          applyTheme(nextTheme);
+        });
+
+        const handleSystemThemeChange = (event) => {
+          if (window.localStorage.getItem("theme")) {
+            return;
+          }
+
+          applyTheme(event.matches ? "dark" : "light");
+        };
+
+        if (typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", handleSystemThemeChange);
+        } else if (typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(handleSystemThemeChange);
+        }
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealTargets = document.querySelectorAll("[data-reveal]");
+
+        if (reducedMotion) {
+          revealTargets.forEach((element) => element.classList.add("is-visible"));
+          return;
+        }
+
+        document.documentElement.classList.add("reveal-ready");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.18,
+            rootMargin: "0px 0px -7% 0px"
+          }
+        );
+
+        revealTargets.forEach((element, index) => {
+          element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 240)}ms`);
+          observer.observe(element);
+        });
+      })();
+    </script>
+  </body>
+</html>

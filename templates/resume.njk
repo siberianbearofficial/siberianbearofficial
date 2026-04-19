@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ identity.name }} — Resume</title>
+    <meta name="description" content="{{ resume.summary }}" />
+    <link rel="stylesheet" href="/assets/site.css" />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body data-page="resume" class="bg-slate-100">
+    <main class="resume-page px-[10mm] py-[9mm]">
+      <header class="border-b border-[#dbe3f8] pb-4">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="display-font text-[26px] font-extrabold tracking-tight text-[#0d1b33]">
+              {{ identity.name }}
+            </div>
+            <div class="mt-1 text-[14px] font-semibold text-cobalt">
+              {{ resume.title }}
+            </div>
+            <div class="mt-1 text-[11px] text-[#425169]">
+              {{ resume.subtitle }} · {{ identity.availability }}
+            </div>
+          </div>
+          <div class="max-w-[68mm] space-y-1 text-right text-[10.5px] leading-[1.35] text-[#304057]">
+            <div><a href="mailto:{{ identity.email }}">{{ identity.email }}</a></div>
+            <div><a href="{{ identity.telegram }}">{{ identity.telegram }}</a></div>
+            <div><a href="{{ identity.github }}">{{ identity.github }}</a></div>
+            <div><a href="{{ identity.website }}">{{ identity.website }}</a></div>
+          </div>
+        </div>
+        <p class="resume-paragraph mt-3 max-w-[185mm] text-[10.75px] leading-[1.38]">
+          {{ resume.summary }}
+        </p>
+      </header>
+
+      <section class="mt-4 grid grid-cols-[1.7fr_0.9fr] gap-5">
+        <div class="space-y-4">
+          <section>
+            <div class="resume-block-title">Experience</div>
+            <div class="mt-2.5 space-y-3">
+              {% for job in experience -%}
+              <article>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h2 class="text-[14px] font-bold text-[#101728]">{{ job.role }}</h2>
+                    <div class="text-[11px] font-medium text-cobalt">{{ job.company }}</div>
+                  </div>
+                  <div class="text-right text-[9.5px] font-medium uppercase tracking-[0.16em] text-[#5a6c86]">
+                    {{ job.range }}
+                  </div>
+                </div>
+                <p class="mt-1 text-[10.5px] leading-[1.36] text-[#223047]">
+                  {{ job.resume_highlights | joinList(" · ") }}
+                </p>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section>
+            <div class="resume-block-title">Selected Internal Product Work</div>
+            <div class="mt-2.5 space-y-2">
+              {% for caseStudy in site_case_studies -%}
+              <article>
+                <div class="text-[12px] font-semibold text-[#101728]">{{ caseStudy.title }}</div>
+                <p class="mt-0.5 text-[10.25px] leading-[1.34] text-[#223047]">
+                  {{ caseStudy.resume_highlight }}
+                </p>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+
+        <aside class="space-y-4">
+          <section>
+            <div class="resume-block-title">Core Strengths</div>
+            <div class="mt-2.5 flex flex-wrap gap-1.5">
+              {% for item in resume.strengths -%}
+              <span class="resume-chip">{{ item }}</span>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section>
+            <div class="resume-block-title">Selected Public Work</div>
+            <div class="mt-2.5 space-y-2">
+              {% for repo in selected_public_repos -%}
+              <article>
+                <div class="text-[12px] font-semibold text-[#101728]">{{ repo.label }}</div>
+                <div class="mt-0.5 text-[10px] leading-[1.34] text-[#223047]">{{ repo.stack | joinList(" · ") }}</div>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section>
+            <div class="resume-block-title">Education</div>
+            <div class="mt-2.5 space-y-2">
+              {% for entry in education -%}
+              <article>
+                <div class="text-[12px] font-semibold text-[#101728]">{{ entry.school }}</div>
+                <div class="mt-0.5 text-[10px] leading-[1.34] text-[#223047]">{{ entry.degree }}</div>
+                <div class="mt-0.5 text-[9.5px] font-medium uppercase tracking-[0.16em] text-[#5a6c86]">{{ entry.range }}</div>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section>
+            <div class="resume-block-title">Highlights</div>
+            <div class="mt-2.5 space-y-2">
+              {% for item in achievements -%}
+              <article>
+                <div class="text-[12px] font-semibold text-[#101728]">{{ item.title }}</div>
+                <div class="mt-0.5 text-[10px] leading-[1.34] text-[#223047]">{{ item.description }}</div>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+# {{ identity.name }}
+
+**{{ identity.headline }}**
+
+{{ identity.availability }}
+
+[Email](mailto:{{ identity.email }}) · [Telegram]({{ identity.telegram }}) · [GitHub]({{ identity.github }}) · [Website]({{ identity.website }})
+
+<table border="0">
+<tr>
+<td valign="top" width="50%">
+<img src="{{ identity.github_stats.stats_url }}" alt="GitHub stats" />
+</td>
+<td valign="top" width="50%">
+<img src="{{ identity.github_stats.langs_url }}" alt="Top languages" />
+</td>
+</tr>
+</table>
+
+## Why Me
+
+{% for item in value_props -%}
+- **{{ item.title }}**: {{ item.description }}
+{% endfor %}
+
+## Current Focus
+
+{{ identity.current_focus }}
+
+## Flagship Internal Work
+
+{% for caseStudy in featured_case_studies -%}
+### {{ caseStudy.title }}
+
+{{ caseStudy.summary }}
+
+{% if caseStudy.impact -%}
+**Reach:** {{ caseStudy.impact.value }} {{ caseStudy.impact.label }}{% if caseStudy.impact.as_of %} as of {{ caseStudy.impact.as_of }}{% endif %}.
+
+{% endif -%}
+{% for highlight in caseStudy.highlights -%}
+- {{ highlight }}
+{% endfor %}
+
+{% endfor -%}
+
+## Selected Public Work
+
+{% for repo in selected_public_repos -%}
+- **[{{ repo.label }}]({{ repo.url }})** — {{ repo.summary }}
+{% endfor %}
+
+## Contact
+
+If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:{{ identity.email }}) or [Telegram]({{ identity.telegram }}).
