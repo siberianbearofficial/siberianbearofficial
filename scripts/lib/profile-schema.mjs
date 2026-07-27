@@ -85,6 +85,7 @@ export const profileSchema = z.object({
     current_focus: z.string().min(1),
     hero_tagline: z.string().min(1),
     website: z.string().url(),
+    services_website: z.string().url(),
     email: z.string().email(),
     github: z.string().url(),
     avatar_url: z.string().min(1),

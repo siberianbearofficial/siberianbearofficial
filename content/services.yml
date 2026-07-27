@@ -1,9 +1,9 @@
 site:
-  # Where this page is served from. When a client-facing domain goes live,
-  # point `canonical_url` at it and set `cv_path` to /cv/ so the two pages
-  # keep pointing at each other correctly.
-  canonical_url: https://aleksei-orlov.ru/services/
-  cv_path: /
+  # Both domains are served from the same build, so links between the two
+  # sites have to be absolute: a relative "/" would resolve to whichever
+  # domain the visitor is already on.
+  canonical_url: https://aleksei-orlov.dev/
+  cv_url: https://aleksei-orlov.ru/
   cv_label: Hiring full-time instead?
 
 seo:

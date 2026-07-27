@@ -44,7 +44,7 @@ const caseStudySchema = z.object({
 export const servicesSchema = z.object({
   site: z.object({
     canonical_url: z.string().url(),
-    cv_path: z.string().min(1),
+    cv_url: z.string().url(),
     cv_label: z.string().min(1)
   }),
   seo: z.object({

@@ -51,9 +51,9 @@
           </nav>
 
           <div class="site-nav__actions">
-            <a class="mini-action" href="{{ site.cv_path }}">
-              <span class="mini-action__icon">{{ ui_icons["file-text"] }}</span>
-              <span>CV</span>
+            <a class="mini-action mini-action--cta" href="{{ hero.primary_cta.href }}">
+              <span class="mini-action__icon">{{ ui_icons.send }}</span>
+              <span>Book a call</span>
             </a>
             <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
               <span class="theme-toggle__icon">
@@ -366,7 +366,7 @@
             </div>
           </div>
 
-          <a class="cv-band" href="{{ site.cv_path }}" data-reveal>
+          <a class="cv-band" href="{{ site.cv_url }}" data-reveal>
             <span class="cv-band__copy">
               <span class="cv-band__title">{{ site.cv_label }}</span>
               <span class="cv-band__meta">I also consider full-time roles. The CV, experience timeline, and downloadable resume live here</span>
@@ -386,7 +386,7 @@
             <span class="site-footer__role">AI &amp; Fullstack Engineering</span>
           </div>
           <div class="site-footer__links">
-            <a href="{{ site.cv_path }}">CV</a>
+            <a href="{{ site.cv_url }}">CV</a>
             <a href="{{ identity.github }}" aria-label="GitHub">GitHub</a>
             <a href="{{ identity.telegram }}" aria-label="Telegram">Telegram</a>
             <a href="mailto:{{ identity.email }}" aria-label="Email">Email</a>
