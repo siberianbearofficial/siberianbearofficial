@@ -6,6 +6,7 @@
     <title>{{ page_title }}</title>
     <meta name="description" content="{{ page_description }}" />
     <meta name="theme-color" content="#0d1727" />
+    <link rel="canonical" href="{{ identity.website }}/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
@@ -46,6 +47,7 @@
             <a href="#experience">Experience</a>
             <a href="#case-studies">Case Studies</a>
             <a href="#public-work">Public Work</a>
+            <a href="{{ identity.services_website }}/">Hire Me</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -467,6 +469,14 @@
               <img src="/media/illustrations/web-developer.svg" data-theme-src data-light-src="/media/illustrations/web-developer.svg" data-dark-src="/media/illustrations/dark/web-developer.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </div>
           </div>
+
+          <a class="cv-band" href="{{ identity.services_website }}/" data-reveal>
+            <span class="cv-band__copy">
+              <span class="cv-band__title">Not hiring, but need something built?</span>
+              <span class="cv-band__meta">I take on fixed-price contract work: internal LLM assistants, Angular to React migrations, and AI features that need to stop breaking</span>
+            </span>
+            <span class="cv-band__icon">{{ ui_icons["arrow-right"] }}</span>
+          </a>
         </div>
       </section>
     </main>

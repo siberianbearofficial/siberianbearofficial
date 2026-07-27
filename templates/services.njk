@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}" />
+    <meta name="theme-color" content="#0d1727" />
+    <link rel="canonical" href="{{ site.canonical_url }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme = storedTheme || preferredTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css" />
+  </head>
+  <body data-page="site">
+    <div class="site-backdrop" aria-hidden="true">
+      <div class="site-orb site-orb--cobalt"></div>
+      <div class="site-orb site-orb--signal"></div>
+      <div class="site-grid"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="page-shell">
+        <div class="site-nav" data-reveal>
+          <a class="brand-mark" href="#top" aria-label="{{ identity.name }}">
+            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="{{ identity.name }}" loading="eager" decoding="async" />
+            <span class="brand-mark__copy">
+              <span class="brand-mark__name">{{ identity.name }}</span>
+              <span class="brand-mark__role">AI &amp; Fullstack Engineering</span>
+            </span>
+          </a>
+
+          <nav class="site-nav__links" aria-label="Section navigation">
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="site-nav__actions">
+            <a class="mini-action mini-action--cta" href="{{ hero.primary_cta.href }}">
+              <span class="mini-action__icon">{{ ui_icons.send }}</span>
+              <span>Book a call</span>
+            </a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+              <span class="theme-toggle__icon">
+                <span class="theme-toggle__icon-sun">{{ ui_icons.sun }}</span>
+                <span class="theme-toggle__icon-moon">{{ ui_icons.moon }}</span>
+              </span>
+              <span data-theme-label>Dark mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="site-main">
+      <section class="hero-section">
+        <div class="page-shell">
+          <div class="offer-hero" data-reveal>
+            <div class="hero-kicker-row">
+              <span class="status-pill">
+                <span class="status-pill__dot"></span>
+                {{ hero.kicker }}
+              </span>
+            </div>
+
+            <h1 class="hero-title">{{ hero.title }}</h1>
+            <p class="hero-tagline">{{ hero.lede }}</p>
+
+            <p class="offer-hero__proof">
+              <span class="offer-hero__proof-icon">{{ ui_icons["badge-check"] }}</span>
+              <span>{{ hero.proof }}</span>
+            </p>
+
+            <div class="hero-actions">
+              <a class="site-button site-button--primary" href="{{ hero.primary_cta.href }}">
+                <span class="site-button__icon">{{ ui_icons.send }}</span>
+                <span>{{ hero.primary_cta.label }}</span>
+              </a>
+              <a class="site-button site-button--secondary" href="{{ hero.secondary_cta.href }}">
+                <span class="site-button__icon">{{ ui_icons["arrow-right"] }}</span>
+                <span>{{ hero.secondary_cta.label }}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="proof-bar" data-reveal>
+            {% for point in proof_points -%}
+            <article class="proof-point">
+              <span class="proof-point__icon">{{ ui_icons[point.icon] }}</span>
+              <div class="proof-point__content">
+                <div class="proof-point__value">{{ point.value }}</div>
+                <div class="proof-point__label">{{ point.label }}</div>
+                <div class="proof-point__meta">{{ point.meta }}</div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Services</div>
+            <h2 class="section-heading">Fixed scope, fixed price, and a date</h2>
+            <p class="section-lede">
+              Every engagement below is quoted as an outcome rather than a block of hours. If your problem does not fit one of these, the first call is where we find that out
+            </p>
+          </div>
+
+          <div class="offer-grid">
+            {% for service in services -%}
+            <article class="offer-card{% if service.featured %} offer-card--featured{% endif %}" id="service-{{ service.key }}" data-reveal>
+              {% if service.featured -%}
+              <span class="offer-card__badge">Most requested</span>
+              {% endif -%}
+              <div class="offer-card__head">
+                <span class="offer-card__icon">{{ ui_icons[service.icon] }}</span>
+                <h3 class="offer-card__name">{{ service.name }}</h3>
+              </div>
+
+              <div class="offer-card__pricing">
+                <span class="offer-card__price">{{ service.price }}</span>
+                <span class="offer-card__timeline">
+                  <span class="offer-card__timeline-icon">{{ ui_icons["calendar-clock"] }}</span>
+                  {{ service.timeline }}
+                </span>
+              </div>
+
+              <div class="offer-card__block">
+                <div class="offer-card__block-label">The problem</div>
+                <p class="offer-card__block-copy">{{ service.problem }}</p>
+              </div>
+
+              <div class="offer-card__block offer-card__block--outcome">
+                <div class="offer-card__block-label">What you get</div>
+                <p class="offer-card__block-copy">{{ service.outcome }}</p>
+              </div>
+
+              <ul class="offer-card__includes">
+                {% for item in service.includes -%}
+                <li class="offer-card__include">
+                  <span class="offer-card__include-icon">{{ ui_icons["circle-check"] }}</span>
+                  <span>{{ item }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+
+              {% if service.footnote -%}
+              <p class="offer-card__footnote">{{ service.footnote }}</p>
+              {% endif -%}
+
+              <a class="offer-card__cta" href="#contact">
+                <span>Discuss this engagement</span>
+                <span class="offer-card__cta-icon">{{ ui_icons["arrow-right"] }}</span>
+              </a>
+            </article>
+            {% endfor %}
+          </div>
+
+          <div class="retainer-panel" data-reveal>
+            <div class="retainer-panel__copy">
+              <div class="retainer-panel__head">
+                <span class="retainer-panel__icon">{{ ui_icons[retainer.icon] }}</span>
+                <div>
+                  <div class="section-kicker">Ongoing</div>
+                  <h3 class="retainer-panel__title">{{ retainer.name }}</h3>
+                </div>
+              </div>
+              <p class="retainer-panel__summary">{{ retainer.summary }}</p>
+              <div class="retainer-panel__price">{{ retainer.price }}</div>
+            </div>
+            <ul class="retainer-panel__list">
+              {% for item in retainer.includes -%}
+              <li class="retainer-panel__item">
+                <span class="retainer-panel__item-icon">{{ ui_icons["circle-check"] }}</span>
+                <span>{{ item }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">How I work</div>
+            <h2 class="section-heading">The terms, before you have to ask for them</h2>
+          </div>
+
+          <div class="principle-grid">
+            {% for item in engagement_principles -%}
+            <article class="principle-card" data-reveal>
+              <span class="principle-card__icon">{{ ui_icons[item.icon] }}</span>
+              <h3 class="principle-card__title">{{ item.title }}</h3>
+              <p class="principle-card__copy">{{ item.description }}</p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Selected work</div>
+            <h2 class="section-heading">Problem, what I did, what changed</h2>
+            <p class="section-lede">
+              This work is internal and under NDA, so what follows describes the problem, the architecture, and the scope I owned rather than screenshots
+            </p>
+          </div>
+
+          <div class="story-list">
+            {% for story in case_studies -%}
+            <article class="story-card" id="case-{{ story.key }}" data-reveal>
+              <div class="story-card__header">
+                <div class="story-card__topline">
+                  <span class="story-card__icon">{{ ui_icons[story.icon] }}</span>
+                  <span class="section-kicker">{{ story.kind }}</span>
+                  {% if story.impact -%}
+                  <span class="impact-pill">{{ story.impact.value }} {{ story.impact.label }}</span>
+                  {% endif -%}
+                </div>
+                <h3 class="story-card__title">{{ story.title }}</h3>
+              </div>
+
+              <div class="story-card__beats">
+                <div class="story-beat story-beat--problem">
+                  <div class="story-beat__label">Problem</div>
+                  <p class="story-beat__copy">{{ story.problem }}</p>
+                </div>
+                <div class="story-beat story-beat--action">
+                  <div class="story-beat__label">What I did</div>
+                  <p class="story-beat__copy">{{ story.action }}</p>
+                </div>
+                <div class="story-beat story-beat--result">
+                  <div class="story-beat__label">Result</div>
+                  <p class="story-beat__copy">{{ story.result }}</p>
+                </div>
+              </div>
+
+              <div class="story-card__chips">
+                {% for item in story.stack -%}
+                <span class="site-chip">{{ item }}</span>
+                {% endfor %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Evidence</div>
+            <h2 class="section-heading">Code you can actually read</h2>
+            <p class="section-lede">{{ evidence.intro }}</p>
+          </div>
+
+          <div class="evidence-grid">
+            {% for repo in evidence.repos -%}
+            <article class="evidence-card" data-reveal>
+              <div class="evidence-card__head">
+                <span class="evidence-card__icon">{{ ui_icons[repo.icon] }}</span>
+                <h3 class="evidence-card__title">{{ repo.label }}</h3>
+              </div>
+              <p class="evidence-card__relevance">{{ repo.relevance }}</p>
+              <div class="evidence-card__chips">
+                {% for item in repo.stack -%}
+                <span class="site-chip site-chip--warm">{{ item }}</span>
+                {% endfor %}
+              </div>
+              <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label }} on GitHub">
+                <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
+                <span>View on GitHub</span>
+              </a>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">Process</div>
+            <h2 class="section-heading">From first message to handover</h2>
+          </div>
+
+          <div class="process-grid">
+            {% for step in process -%}
+            <article class="process-step" data-reveal>
+              <div class="process-step__head">
+                <span class="process-step__index">0{{ loop.index }}</span>
+                <span class="process-step__icon">{{ ui_icons[step.icon] }}</span>
+              </div>
+              <h3 class="process-step__title">{{ step.step }}</h3>
+              <div class="process-step__duration">{{ step.duration }}</div>
+              <p class="process-step__copy">{{ step.description }}</p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="site-section">
+        <div class="page-shell">
+          <div class="section-intro" data-reveal>
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-heading">The questions that come up on every first call</h2>
+          </div>
+
+          <div class="faq-grid">
+            {% for item in faq -%}
+            <article class="faq-item" data-reveal>
+              <h3 class="faq-item__question">{{ item.question }}</h3>
+              <p class="faq-item__answer">{{ item.answer }}</p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="site-section site-section--contact">
+        <div class="page-shell">
+          <div class="contact-panel" data-reveal>
+            <div class="contact-panel__copy">
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-heading">{{ contact.heading }}</h2>
+              <p class="section-lede">{{ contact.lede }}</p>
+              <div class="contact-panel__actions">
+                {% for link in contact.links -%}
+                {% set contactIcon = ui_icons.mail -%}
+                {% if link.label == "Telegram" -%}
+                {% set contactIcon = ui_icons.send -%}
+                {% elseif link.label == "GitHub" -%}
+                {% set contactIcon = ui_icons.github -%}
+                {% endif -%}
+                <a class="{% if loop.first %}site-button site-button--primary{% else %}site-button site-button--secondary{% endif %}" href="{{ link.href }}">
+                  <span class="site-button__icon">{{ contactIcon }}</span>
+                  <span>{{ link.label }}</span>
+                  <span class="site-button__meta">{{ link.short }}</span>
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="contact-panel__visual">
+              <img src="/media/illustrations/chat-with-ai.svg" data-theme-src data-light-src="/media/illustrations/chat-with-ai.svg" data-dark-src="/media/illustrations/dark/chat-with-ai.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <a class="cv-band" href="{{ site.cv_url }}" data-reveal>
+            <span class="cv-band__copy">
+              <span class="cv-band__title">{{ site.cv_label }}</span>
+              <span class="cv-band__meta">I also consider full-time roles. The CV, experience timeline, and downloadable resume live here</span>
+            </span>
+            <span class="cv-band__icon">{{ ui_icons["arrow-right"] }}</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="site-footer__inner">
+          <div class="site-footer__copy">
+            <span class="site-footer__name">{{ identity.name }}</span>
+            <span class="site-footer__separator">&middot;</span>
+            <span class="site-footer__role">AI &amp; Fullstack Engineering</span>
+          </div>
+          <div class="site-footer__links">
+            <a href="{{ site.cv_url }}">CV</a>
+            <a href="{{ identity.github }}" aria-label="GitHub">GitHub</a>
+            <a href="{{ identity.telegram }}" aria-label="Telegram">Telegram</a>
+            <a href="mailto:{{ identity.email }}" aria-label="Email">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const toggle = document.querySelector("[data-theme-toggle]");
+        const labelHost = document.querySelector("[data-theme-label]");
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const applyTheme = (theme) => {
+          const isDark = theme === "dark";
+
+          root.dataset.theme = theme;
+          toggle?.setAttribute("aria-pressed", String(isDark));
+
+          document.querySelectorAll("[data-theme-src]").forEach((image) => {
+            const nextSrc = image.dataset[isDark ? "darkSrc" : "lightSrc"];
+
+            if (nextSrc && image.getAttribute("src") !== nextSrc) {
+              image.setAttribute("src", nextSrc);
+            }
+          });
+
+          if (labelHost) {
+            labelHost.textContent = isDark ? "Light mode" : "Dark mode";
+          }
+        };
+
+        const preferredTheme = () => mediaQuery.matches ? "dark" : "light";
+        applyTheme(root.dataset.theme || preferredTheme());
+
+        toggle?.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+
+          window.localStorage.setItem("theme", nextTheme);
+          applyTheme(nextTheme);
+        });
+
+        const handleSystemThemeChange = (event) => {
+          if (window.localStorage.getItem("theme")) {
+            return;
+          }
+
+          applyTheme(event.matches ? "dark" : "light");
+        };
+
+        if (typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", handleSystemThemeChange);
+        } else if (typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(handleSystemThemeChange);
+        }
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealTargets = document.querySelectorAll("[data-reveal]");
+
+        if (reducedMotion) {
+          revealTargets.forEach((element) => element.classList.add("is-visible"));
+          return;
+        }
+
+        document.documentElement.classList.add("reveal-ready");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.18,
+            rootMargin: "0px 0px -7% 0px"
+          }
+        );
+
+        revealTargets.forEach((element, index) => {
+          element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 240)}ms`);
+          observer.observe(element);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import yaml from "js-yaml";
 
 import { profileSchema } from "./profile-schema.mjs";
+import { servicesSchema } from "./services-schema.mjs";
 
 const monthFormatter = new Intl.DateTimeFormat("en", {
   month: "short",
@@ -63,6 +64,25 @@ export async function loadProfile(rootDir) {
   const parsed = yaml.load(raw);
 
   return profileSchema.parse(trimStringsDeep(parsed));
+}
+
+export async function loadServices(rootDir) {
+  const sourcePath = resolve(rootDir, "content/services.yml");
+  const raw = await readFile(sourcePath, "utf8");
+  const parsed = yaml.load(raw);
+
+  return servicesSchema.parse(trimStringsDeep(parsed));
+}
+
+export function createServicesViewModel(services, profile) {
+  return {
+    ...services,
+    identity: profile.identity,
+    featured_service: services.services.find((service) => service.featured),
+    page_title: services.seo.title,
+    page_description: services.seo.description,
+    year: new Date().getUTCFullYear()
+  };
 }
 
 export function createViewModel(profile) {

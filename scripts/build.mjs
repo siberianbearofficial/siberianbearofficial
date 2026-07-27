@@ -6,16 +6,26 @@ import { promisify } from "node:util";
 
 import { chromium } from "playwright";
 
-import { loadProfile, createViewModel } from "./lib/profile-data.mjs";
+import {
+  loadProfile,
+  loadServices,
+  createViewModel,
+  createServicesViewModel
+} from "./lib/profile-data.mjs";
 import { createRenderer } from "./lib/render.mjs";
 import { startStaticServer } from "./lib/static-server.mjs";
-import { loadLucideIcons } from "./lib/ui-assets.mjs";
+import {
+  collectServicesIconNames,
+  collectSiteIconNames,
+  loadLucideIcons
+} from "./lib/ui-assets.mjs";
 
 const execFileAsync = promisify(execFile);
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(rootDir, "dist");
 const assetsDir = resolve(distDir, "assets");
 const resumeDir = resolve(distDir, "resume");
+const servicesDir = resolve(distDir, "services");
 const isWindows = process.platform === "win32";
 const tailwindBinary = resolve(
   rootDir,
@@ -27,6 +37,7 @@ const tailwindBinary = resolve(
 async function ensureDirectories() {
   await mkdir(assetsDir, { recursive: true });
   await mkdir(resumeDir, { recursive: true });
+  await mkdir(servicesDir, { recursive: true });
 }
 
 async function copyPublicAssets() {
@@ -44,27 +55,6 @@ async function copyPublicAssets() {
   }
 }
 
-function collectSiteIconNames(profile) {
-  return [
-    "book-open",
-    "download",
-    "file-image",
-    "github",
-    "globe",
-    "mail",
-    "monitor",
-    "moon",
-    "rocket",
-    "send",
-    "sparkles",
-    "sun",
-    "tool-case",
-    ...profile.value_props.map((item) => item.icon),
-    ...profile.case_studies.map((item) => item.icon),
-    ...profile.selected_public_repos.map((item) => item.icon)
-  ];
-}
-
 async function renderOutputs({ resumeOnly = false } = {}) {
   const profile = await loadProfile(rootDir);
   const viewModel = createViewModel(profile);
@@ -76,8 +66,18 @@ async function renderOutputs({ resumeOnly = false } = {}) {
   };
 
   if (!resumeOnly) {
+    const services = await loadServices(rootDir);
+    const servicesModel = {
+      ...createServicesViewModel(services, profile),
+      ui_icons: await loadLucideIcons(rootDir, collectServicesIconNames(services))
+    };
+
     await writeFile(resolve(rootDir, "README.md"), renderer.render("readme.njk", renderModel));
     await writeFile(resolve(distDir, "index.html"), renderer.render("site.njk", renderModel));
+    await writeFile(
+      resolve(servicesDir, "index.html"),
+      renderer.render("services.njk", servicesModel)
+    );
   }
 
   await writeFile(resolve(resumeDir, "index.html"), renderer.render("resume.njk", renderModel));

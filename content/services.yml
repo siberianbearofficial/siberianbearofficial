@@ -1,0 +1,356 @@
+site:
+  # Both domains are served from the same build, so links between the two
+  # sites have to be absolute: a relative "/" would resolve to whichever
+  # domain the visitor is already on.
+  canonical_url: https://aleksei-orlov.dev/
+  cv_url: https://aleksei-orlov.ru/
+  cv_label: Hiring full-time instead?
+
+seo:
+  title: Aleksei Orlov | Internal AI Assistants, Built and Shipped
+  description: >
+    Fixed-price engineering for internal LLM assistants, Angular to React
+    migrations, and AI features that keep breaking in production. Built by an
+    engineer who ships this work inside a major bank
+
+hero:
+  kicker: Available for contract work
+  title: Internal AI assistants that survive real users
+  lede: >
+    Most teams can get a demo working. The hard part is retrieval that returns
+    the right document, tool calls that do not silently fail, and an interface
+    people open on a Monday morning. That is the part I build
+  proof: >
+    I ship product work on an internal LLM assistant used by thousands of
+    employees at a major bank, and I have owned AI tooling end to end across
+    Angular, React, Svelte, and FastAPI
+  primary_cta:
+    label: Book a 30-minute call
+    href: https://t.me/aleksei_orlov_official
+  secondary_cta:
+    label: See services and pricing
+    href: "#services"
+
+proof_points:
+  - value: 1000s
+    label: of employees
+    meta: internal LLM assistant I ship features on
+    icon: messages-square
+  - value: 1k+
+    label: internal users
+    meta: image generation platform I owned end to end
+    icon: image
+  - value: 2+ yrs
+    label: building internal AI
+    meta: production AI products, not side projects
+    icon: bot
+  - value: Angular to React
+    label: migration in production
+    meta: without freezing feature delivery
+    icon: route
+
+services:
+  - key: llm-assistant
+    name: Internal LLM Assistant
+    icon: messages-square
+    price: from $4,000
+    timeline: 3 to 5 weeks
+    featured: true
+    problem: >
+      Leadership decided the company needs AI. Nobody can say what to actually
+      build, and the pilot that someone started in a notebook does not survive
+      contact with real employees
+    outcome: >
+      A working internal assistant your team uses: retrieval over your own
+      documentation, tool calls into your own systems, authentication, and an
+      interface that does not need a workshop to explain
+    includes:
+      - Retrieval pipeline over your documentation, with an evaluation set so quality is measured instead of argued about
+      - Tool and function calling into your internal APIs, with schema validation, timeouts, and sane failure behaviour
+      - Streaming chat interface in React, built to your design system rather than a generic template
+      - SSO integration and access control that matches how your company already handles identity
+      - Deployment into your infrastructure, plus written handover so your team can extend it
+  - key: migration-audit
+    name: Angular to React Migration Audit
+    icon: route
+    price: $1,200
+    timeline: 1 week
+    featured: false
+    problem: >
+      You have an Angular codebase, a React hiring market, and no credible
+      answer to how long a migration takes or what it puts at risk. So the
+      decision keeps getting postponed
+    outcome: >
+      A migration roadmap you can put in front of a budget holder: what moves
+      first, what stays, what it costs, and where the real risk sits
+    includes:
+      - Structured audit of your repository, dependency graph, and framework-specific coupling
+      - Incremental migration plan by product surface, designed so feature delivery never stops
+      - Risk register covering state management, routing, shared components, and test coverage gaps
+      - Effort estimate per surface, in ranges honest enough to plan against
+      - Ninety minute walkthrough call with your engineering leads
+    footnote: >
+      The audit fee is credited toward the migration if you decide to go ahead.
+      Full migrations typically run from $15,000 depending on surface count
+  - key: mvp-rescue
+    name: Vibe-Coded MVP Rescue
+    icon: wrench
+    price: from $3,000
+    timeline: 2 weeks
+    featured: false
+    problem: >
+      The MVP got built fast with AI tooling, found real users, and now breaks
+      in production. Nobody on the team fully understands the code, and every
+      fix creates two new bugs
+    outcome: >
+      A codebase that stops surprising you: the dangerous parts fixed, the rest
+      documented, and a written map of what still needs work
+    includes:
+      - Audit of authentication, data model, and error handling, ranked by how badly each can hurt you
+      - Fixes to the failures that actually reach users, shipped first
+      - Tests and CI on the paths that carry revenue, not blanket coverage theatre
+      - Written map of remaining technical debt with a cost estimate for each item
+  - key: ai-reliability
+    name: AI Reliability Engineering
+    icon: workflow
+    price: from $2,500
+    timeline: 2 to 3 weeks
+    featured: false
+    problem: >
+      You wired an LLM into your product. It works in the demo and fails for
+      users: malformed outputs, hung requests, jobs that vanish, and no way to
+      tell whether a prompt change made things better or worse
+    outcome: >
+      The infrastructure layer that turns an LLM call into a dependable product
+      feature
+    includes:
+      - Structured outputs with schema validation and retry behaviour that degrades gracefully
+      - Tool calling that handles partial failure instead of pretending it cannot happen
+      - Async task orchestration, queues, and status handling for work that outlives a request
+      - Token streaming that survives reconnects and slow clients
+      - Evaluation harness and observability so prompt and model changes are measured, not guessed
+
+retainer:
+  name: Ongoing AI feature support
+  icon: shield-check
+  price: $1,500 to $3,000 per month
+  summary: >
+    For teams that shipped an AI feature and need it to keep working. Model
+    releases, prompt drift, and quality regressions are ongoing problems, not
+    one-time ones
+  includes:
+    - Response quality monitoring against your evaluation set
+    - Prompt and model updates when providers ship changes
+    - Small feature work and fixes within an agreed monthly scope
+    - A named person who already knows your codebase when something breaks
+
+engagement_principles:
+  - title: Fixed price, not hourly
+    icon: receipt
+    description: >
+      You buy a defined outcome with a defined price. My speed is my problem
+      to optimise, not a reason to charge you less for the same result
+  - title: Weekly working software
+    icon: rocket
+    description: >
+      Every week you get something you can click, not a status report. If the
+      direction is wrong, you find out in week one rather than week four
+  - title: Your code from day one
+    icon: git-branch
+    description: >
+      Work happens in your repository under your license. There is no handover
+      cliff and nothing to buy back at the end
+  - title: Honest scope boundaries
+    icon: scale
+    description: >
+      The proposal says what is explicitly out of scope. New scope becomes a
+      new fixed-price increment instead of a quiet schedule slip
+
+case_studies:
+  - key: image-generation-platform
+    title: Image generation platform for a design team
+    kind: Angular and FastAPI, internal product
+    icon: image
+    impact:
+      value: 1k+
+      label: internal users
+    problem: >
+      A company-wide image generation API existed, but the designers who were
+      supposed to use it had only a flat list of tasks. There was no way to
+      organise work, iterate on a result, or track long-running generations
+      without hammering the server with status requests
+    action: >
+      I owned the Angular frontend and crossed into the FastAPI backend
+      whenever a feature needed server-side work. I built a board-based
+      workspace where designers group generations into project spaces, added
+      drag-and-drop between boards, image reactions, and editing flows across
+      several generation modes. For async work I designed a priority-queue
+      polling model that schedules status checks by importance instead of
+      polling everything on a fixed interval
+    result: >
+      More than a thousand internal users work in organised boards rather than
+      a flat queue, and generation status stays current without aggressive
+      polling against the shared API
+    stack:
+      - Angular
+      - TypeScript
+      - NgRx
+      - RxJS
+      - FastAPI
+      - PostgreSQL
+  - key: generation-bff
+    title: Backend that made the platform possible
+    kind: FastAPI backend-for-frontend
+    icon: workflow
+    problem: >
+      The shared generation API had no concept of end users, no task history,
+      and no durable storage. The interface needed all three, and there was no
+      separate backend team waiting to build them
+    action: >
+      I designed and built a FastAPI backend-for-frontend: corporate SSO for
+      end users with service-level routing to the generation API, an event
+      consumer that processes completed tasks off Kafka, and persistence
+      coordinated across PostgreSQL and S3. As the product grew I extended it
+      to support reactions, board operations, and image post-processing
+    result: >
+      User-facing features shipped without a backend handoff in the middle,
+      which is the reason the frontend could keep moving at all
+    stack:
+      - FastAPI
+      - Python
+      - PostgreSQL
+      - SQLAlchemy
+      - Kafka
+      - S3
+  - key: assistant-migration
+    title: Migrating a live AI assistant to React
+    kind: React, Svelte, FastAPI
+    icon: messages-square
+    impact:
+      value: 1000s
+      label: of employees
+    problem: >
+      A company-wide internal LLM assistant ran on a legacy Svelte frontend
+      that needed to become React. Thousands of employees used it daily, so
+      stopping feature delivery for a rewrite was never an option
+    action: >
+      I shipped product features inside the mixed Svelte and React codebase
+      while moving product logic into React-owned areas, and fixed the FastAPI
+      backend where features required it. Alongside that I helped put stricter
+      quality rails around new React code with Vitest, Biome, Oxlint, and
+      Playwright, so the new surface did not inherit the old one's problems
+    result: >
+      Migration and feature delivery ran as a single track instead of two
+      competing ones, on a product thousands of employees depend on
+    stack:
+      - React
+      - TypeScript
+      - Svelte
+      - FastAPI
+      - Playwright
+      - Vitest
+
+evidence:
+  intro: >
+    The client work above is internal and closed-source. These public
+    repositories show the same engineering, in code you can read
+  repos:
+    - label: simple-openai-proxy
+      url: https://github.com/siberianbearofficial/simple-openai-proxy
+      icon: wand
+      relevance: The tool-calling and structured-output layer I build on client projects
+      stack:
+        - Python
+        - AsyncIO
+        - Pydantic
+        - Tool Calling
+    - label: fastapi-mvp
+      url: https://github.com/siberianbearofficial/fastapi-mvp
+      icon: package
+      relevance: The service bootstrap that keeps delivery fast without cutting corners
+      stack:
+        - FastAPI
+        - MongoDB
+        - S3
+        - Prometheus
+    - label: lint-gost-tex
+      url: https://github.com/siberianbearofficial/lint-gost-tex
+      icon: scroll-text
+      relevance: A finished CLI product with real rules, tests, and edge cases
+      stack:
+        - Python
+        - CLI tooling
+        - LaTeX
+
+process:
+  - step: Call
+    icon: phone
+    duration: 30 minutes
+    description: >
+      You describe the problem. I tell you whether I am the right person for
+      it, including when the answer is no. No slide deck, no discovery invoice
+  - step: Proposal
+    icon: file-text
+    duration: 2 working days
+    description: >
+      A fixed scope, a fixed price, a delivery date, and an explicit list of
+      what is not included. If it does not fit your budget, you have lost a
+      phone call
+  - step: Build
+    icon: rocket
+    duration: 2 to 5 weeks
+    description: >
+      Work happens in your repository with something demoable every week. You
+      see progress as software, and course corrections happen early
+  - step: Handover
+    icon: package-check
+    duration: Included
+    description: >
+      Deployment, documentation, and a walkthrough with your team. You are not
+      dependent on me afterwards unless you choose to be
+
+faq:
+  - question: Do you work hourly?
+    answer: >
+      No. Fixed price against a defined outcome. Hourly billing means you pay
+      more when I am slower, which is a strange thing for both of us to want
+  - question: Who owns the code?
+    answer: >
+      You do, from the first commit. Work happens in your repository under your
+      license, and nothing is held back at handover
+  - question: Can you sign an NDA?
+    answer: >
+      Yes. Most of my experience is on internal products under NDA already,
+      which is why the case studies here describe architecture and scope rather
+      than screenshots
+  - question: What happens if the scope changes?
+    answer: >
+      Small things get absorbed. Anything larger becomes a separate fixed-price
+      increment that you approve before it starts, rather than a quiet slip in
+      the delivery date
+  - question: How do you handle payment?
+    answer: >
+      Typically fifty percent up front and fifty on delivery, with longer
+      projects split into milestones. Invoicing details are confirmed in
+      writing before any work begins
+  - question: What timezones do you work with?
+    answer: >
+      I work asynchronously by default and overlap with European and Asian
+      business hours. Weekly demos are scheduled to suit your team, not mine
+
+contact:
+  heading: Tell me what is broken
+  lede: >
+    The most useful first message is one paragraph: what you are trying to
+    build or fix, and what is currently in the way. I reply within a day, and
+    I will tell you directly if I am not the right person for the job
+  links:
+    - label: Telegram
+      href: https://t.me/aleksei_orlov_official
+      short: "@aleksei_orlov_official"
+    - label: Email
+      href: mailto:alexeyorlov65@gmail.com
+      short: alexeyorlov65@gmail.com
+    - label: GitHub
+      href: https://github.com/siberianbearofficial
+      short: siberianbearofficial
