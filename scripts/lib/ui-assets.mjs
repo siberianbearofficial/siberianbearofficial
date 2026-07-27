@@ -18,6 +18,50 @@ function normalizeSvg(svg, iconName) {
   );
 }
 
+export function collectSiteIconNames(profile) {
+  return [
+    "arrow-right",
+    "book-open",
+    "download",
+    "file-image",
+    "github",
+    "globe",
+    "mail",
+    "monitor",
+    "moon",
+    "rocket",
+    "send",
+    "sparkles",
+    "sun",
+    "tool-case",
+    ...profile.value_props.map((item) => item.icon),
+    ...profile.case_studies.map((item) => item.icon),
+    ...profile.selected_public_repos.map((item) => item.icon)
+  ];
+}
+
+export function collectServicesIconNames(services) {
+  return [
+    "arrow-right",
+    "badge-check",
+    "calendar-clock",
+    "circle-check",
+    "file-text",
+    "github",
+    "mail",
+    "moon",
+    "send",
+    "sun",
+    services.retainer.icon,
+    ...services.proof_points.map((item) => item.icon),
+    ...services.services.map((item) => item.icon),
+    ...services.engagement_principles.map((item) => item.icon),
+    ...services.case_studies.map((item) => item.icon),
+    ...services.evidence.repos.map((item) => item.icon),
+    ...services.process.map((item) => item.icon)
+  ];
+}
+
 export async function loadLucideIcons(rootDir, iconNames) {
   const uniqueNames = [...new Set(iconNames)].filter(Boolean).sort();
   const iconDir = resolve(rootDir, "node_modules", "lucide-static", "icons");
