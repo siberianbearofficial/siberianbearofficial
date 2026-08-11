@@ -42,9 +42,9 @@ const caseStudySchema = z.object({
 });
 
 export const servicesSchema = z.object({
+  // Canonical and cross-site URLs live in scripts/lib/routes.mjs now: they are
+  // per-language and have to agree with the nginx route table.
   site: z.object({
-    canonical_url: z.string().url(),
-    cv_url: z.string().url(),
     cv_label: z.string().min(1)
   }),
   seo: z.object({

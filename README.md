@@ -4,7 +4,9 @@
 
 Open to worldwide remote TypeScript fullstack roles
 
-[Email](mailto:alexeyorlov65@gmail.com) · [Telegram](https://t.me/aleksei_orlov_official) · [GitHub](https://github.com/siberianbearofficial) · [Website](https://aleksei-orlov.ru)
+**Languages:** Russian — Native · English — IELTS Academic 7.5 (C1)
+
+[Email](mailto:alexeyorlov65@gmail.com) · [Telegram](https://t.me/aleksei_orlov_dev) · [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev) · [GitHub](https://github.com/siberianbearofficial) · [Website](https://aleksei-orlov.ru)
 
 <table border="0">
 <tr>
@@ -58,4 +60,4 @@ Company-wide internal LLM assistant used by thousands of employees. The product 
 
 ## Contact
 
-If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com) or [Telegram](https://t.me/aleksei_orlov_official).
+If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com), [Telegram](https://t.me/aleksei_orlov_dev), or [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev).

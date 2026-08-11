@@ -71,6 +71,16 @@ const achievementSchema = z.object({
   description: z.string().min(1)
 });
 
+const languageSchema = z.object({
+  name: z.string().min(1),
+  level: z.string().min(1)
+});
+
+const seoEntrySchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1)
+});
+
 export const profileSchema = z.object({
   identity: z.object({
     name: z.string().min(1),
@@ -92,15 +102,15 @@ export const profileSchema = z.object({
     header_avatar_url: z.string().url(),
     telegram: z.string().url(),
     vk: z.string().url(),
-    linkedin: z.string().url().nullable().optional(),
+    linkedin: z.string().url(),
     github_stats: z.object({
       stats_url: z.string().url(),
       langs_url: z.string().url()
     })
   }),
   seo: z.object({
-    title: z.string().min(1),
-    description: z.string().min(1)
+    home: seoEntrySchema,
+    resume: seoEntrySchema
   }),
   cta: z.object({
     primary: z.array(labeledLinkSchema).min(1),
@@ -138,6 +148,7 @@ export const profileSchema = z.object({
     })
   ),
   education: z.array(educationSchema).min(1),
+  languages: z.array(languageSchema).min(1),
   achievements: z.array(achievementSchema).min(1),
   resume: z.object({
     title: z.string().min(1),

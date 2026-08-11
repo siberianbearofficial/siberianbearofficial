@@ -1,196 +1,447 @@
+# Any string here can be a { en, ru } map instead of a plain string. See
+# content/profile.yml for the same convention on the CV surface.
+
 site:
   # Both domains are served from the same build, so links between the two
   # sites have to be absolute: a relative "/" would resolve to whichever
   # domain the visitor is already on.
-  canonical_url: https://aleksei-orlov.dev/
-  cv_url: https://aleksei-orlov.ru/
-  cv_label: Hiring full-time instead?
+  cv_label:
+    en: Hiring full-time instead?
+    ru: Ищете человека в штат?
 
 seo:
-  title: Aleksei Orlov | Internal AI Assistants, Built and Shipped
-  description: >
-    Fixed-price engineering for internal LLM assistants, Angular to React
-    migrations, and AI features that keep breaking in production. Built by an
-    engineer who ships this work inside a major bank
+  title:
+    en: Aleksei Orlov | Internal AI Assistants, Built and Shipped
+    ru: Алексей Орлов | Внутренние AI-ассистенты под ключ
+  description:
+    en: >
+      Fixed-price engineering for internal LLM assistants, Angular to React
+      migrations, and AI features that keep breaking in production. Also React
+      and FastAPI web apps built end to end. By an engineer who ships this work
+      inside a major bank
+    ru: >
+      Разработка с фиксированной ценой: внутренние LLM-ассистенты, миграции с
+      Angular на React и AI-фичи, которые перестают падать в проде. А также
+      веб-приложения на React и FastAPI под ключ. От инженера, который делает
+      это в крупном банке
 
 hero:
-  kicker: Available for contract work
-  title: Internal AI assistants that survive real users
-  lede: >
-    Most teams can get a demo working. The hard part is retrieval that returns
-    the right document, tool calls that do not silently fail, and an interface
-    people open on a Monday morning. That is the part I build
-  proof: >
-    I ship product work on an internal LLM assistant used by thousands of
-    employees at a major bank, and I have owned AI tooling end to end across
-    Angular, React, Svelte, and FastAPI
+  kicker:
+    en: Available for contract work
+    ru: Открыт к проектной работе
+  title:
+    en: Internal AI assistants that survive real users
+    ru: Внутренние AI-ассистенты, которые выдерживают живых пользователей
+  lede:
+    en: >
+      Most teams can get a demo working. The hard part is retrieval that returns
+      the right document, tool calls that do not silently fail, and an interface
+      people open on a Monday morning. That is the part I build
+    ru: >
+      Демо соберёт почти любая команда. Сложное начинается дальше: поиск, который
+      возвращает нужный документ, вызовы инструментов, которые не отваливаются
+      молча, и интерфейс, который открывают в понедельник утром. Я делаю именно
+      эту часть
+  proof:
+    en: >
+      I ship product work on an internal LLM assistant used by thousands of
+      employees at a major bank, and I have owned AI tooling end to end across
+      Angular, React, Svelte, and FastAPI
+    ru: >
+      Я выпускаю продуктовые фичи внутреннего LLM-ассистента, которым пользуются
+      тысячи сотрудников крупного банка, и вёл AI-инструменты целиком на Angular,
+      React, Svelte и FastAPI
   primary_cta:
-    label: Book a 30-minute call
-    href: https://t.me/aleksei_orlov_official
+    label:
+      en: Book a 30-minute call
+      ru: Созвон на 30 минут
+    href: https://t.me/aleksei_orlov_dev
   secondary_cta:
-    label: See services and pricing
+    label:
+      en: See services and pricing
+      ru: Услуги и цены
     href: "#services"
 
 proof_points:
-  - value: 1000s
-    label: of employees
-    meta: internal LLM assistant I ship features on
+  - value:
+      en: 1000s
+      ru: тысячи
+    label:
+      en: of employees
+      ru: сотрудников
+    meta:
+      en: internal LLM assistant I ship features on
+      ru: внутренний LLM-ассистент, в котором я выпускаю фичи
     icon: messages-square
   - value: 1k+
-    label: internal users
-    meta: image generation platform I owned end to end
+    label:
+      en: internal users
+      ru: внутренних пользователей
+    meta:
+      en: image generation platform I owned end to end
+      ru: платформа генерации изображений, которую я вёл целиком
     icon: image
-  - value: 2+ yrs
-    label: building internal AI
-    meta: production AI products, not side projects
+  - value:
+      en: 2+ yrs
+      ru: 2+ года
+    label:
+      en: building internal AI
+      ru: делаю внутренний AI
+    meta:
+      en: production AI products, not side projects
+      ru: продовые AI-продукты, а не пет-проекты
     icon: bot
-  - value: Angular to React
-    label: migration in production
-    meta: without freezing feature delivery
+  - value:
+      en: Angular to React
+      ru: Angular → React
+    label:
+      en: migration in production
+      ru: миграция в проде
+    meta:
+      en: without freezing feature delivery
+      ru: без заморозки разработки фич
     icon: route
 
 services:
   - key: llm-assistant
-    name: Internal LLM Assistant
+    name:
+      en: Internal LLM Assistant
+      ru: Внутренний LLM-ассистент
     icon: messages-square
-    price: from $4,000
-    timeline: 3 to 5 weeks
+    price:
+      en: from $4,000
+      ru: от $4 000
+    timeline:
+      en: 3 to 5 weeks
+      ru: 3–5 недель
     featured: true
-    problem: >
-      Leadership decided the company needs AI. Nobody can say what to actually
-      build, and the pilot that someone started in a notebook does not survive
-      contact with real employees
-    outcome: >
-      A working internal assistant your team uses: retrieval over your own
-      documentation, tool calls into your own systems, authentication, and an
-      interface that does not need a workshop to explain
+    problem:
+      en: >
+        Leadership decided the company needs AI. Nobody can say what to actually
+        build, and the pilot that someone started in a notebook does not survive
+        contact with real employees
+      ru: >
+        Руководство решило, что компании нужен AI. Что именно строить, сказать
+        никто не может, а пилот, который кто-то начал в ноутбуке, не переживает
+        встречи с живыми сотрудниками
+    outcome:
+      en: >
+        A working internal assistant your team uses: retrieval over your own
+        documentation, tool calls into your own systems, authentication, and an
+        interface that does not need a workshop to explain
+      ru: >
+        Рабочий внутренний ассистент, которым пользуются: поиск по вашей
+        документации, вызовы ваших систем, аутентификация и интерфейс, к которому
+        не нужен отдельный воркшоп
     includes:
-      - Retrieval pipeline over your documentation, with an evaluation set so quality is measured instead of argued about
-      - Tool and function calling into your internal APIs, with schema validation, timeouts, and sane failure behaviour
-      - Streaming chat interface in React, built to your design system rather than a generic template
-      - SSO integration and access control that matches how your company already handles identity
-      - Deployment into your infrastructure, plus written handover so your team can extend it
+      - en: Retrieval pipeline over your documentation, with an evaluation set so quality is measured instead of argued about
+        ru: Пайплайн поиска по вашей документации и набор для оценки, чтобы качество измеряли, а не обсуждали
+      - en: Tool and function calling into your internal APIs, with schema validation, timeouts, and sane failure behaviour
+        ru: "Вызовы ваших внутренних API как инструментов: валидация схем, таймауты и вменяемое поведение при ошибках"
+      - en: Streaming chat interface in React, built to your design system rather than a generic template
+        ru: Стриминговый чат-интерфейс на React по вашей дизайн-системе, а не по универсальному шаблону
+      - en: SSO integration and access control that matches how your company already handles identity
+        ru: Интеграция SSO и разграничение доступа так, как это уже устроено у вас
+      - en: Deployment into your infrastructure, plus written handover so your team can extend it
+        ru: Развёртывание в вашей инфраструктуре и письменная передача, чтобы команда могла развивать дальше
   - key: migration-audit
-    name: Angular to React Migration Audit
+    name:
+      en: Angular to React Migration Audit
+      ru: Аудит миграции с Angular на React
     icon: route
-    price: $1,200
-    timeline: 1 week
+    price:
+      en: $1,200
+      ru: $1 200
+    timeline:
+      en: 1 week
+      ru: 1 неделя
     featured: false
-    problem: >
-      You have an Angular codebase, a React hiring market, and no credible
-      answer to how long a migration takes or what it puts at risk. So the
-      decision keeps getting postponed
-    outcome: >
-      A migration roadmap you can put in front of a budget holder: what moves
-      first, what stays, what it costs, and where the real risk sits
+    problem:
+      en: >
+        You have an Angular codebase, a React hiring market, and no credible
+        answer to how long a migration takes or what it puts at risk. So the
+        decision keeps getting postponed
+      ru: >
+        У вас кодовая база на Angular, рынок найма на React и ни одного честного
+        ответа, сколько займёт миграция и чем она рискует. Поэтому решение
+        откладывается снова и снова
+    outcome:
+      en: >
+        A migration roadmap you can put in front of a budget holder: what moves
+        first, what stays, what it costs, and where the real risk sits
+      ru: >
+        План миграции, который можно положить на стол тому, кто держит бюджет:
+        что переезжает первым, что остаётся, сколько это стоит и где реальный риск
     includes:
-      - Structured audit of your repository, dependency graph, and framework-specific coupling
-      - Incremental migration plan by product surface, designed so feature delivery never stops
-      - Risk register covering state management, routing, shared components, and test coverage gaps
-      - Effort estimate per surface, in ranges honest enough to plan against
-      - Ninety minute walkthrough call with your engineering leads
-    footnote: >
-      The audit fee is credited toward the migration if you decide to go ahead.
-      Full migrations typically run from $15,000 depending on surface count
+      - en: Structured audit of your repository, dependency graph, and framework-specific coupling
+        ru: Структурированный аудит репозитория, графа зависимостей и привязок к фреймворку
+      - en: Incremental migration plan by product surface, designed so feature delivery never stops
+        ru: План поэтапной миграции по продуктовым экранам, при котором разработка фич не останавливается
+      - en: Risk register covering state management, routing, shared components, and test coverage gaps
+        ru: Реестр рисков по состоянию, роутингу, общим компонентам и дырам в тестах
+      - en: Effort estimate per surface, in ranges honest enough to plan against
+        ru: Оценка трудоёмкости по каждому экрану — вилками, по которым реально планировать
+      - en: Ninety minute walkthrough call with your engineering leads
+        ru: Полуторачасовой разбор с вашими техлидами
+    footnote:
+      en: >
+        The audit fee is credited toward the migration if you decide to go ahead.
+        Full migrations typically run from $15,000 depending on surface count
+      ru: >
+        Стоимость аудита засчитывается в миграцию, если решите её делать. Полная
+        миграция обычно от $15 000 в зависимости от количества экранов
   - key: mvp-rescue
-    name: Vibe-Coded MVP Rescue
+    name:
+      en: Vibe-Coded MVP Rescue
+      ru: Спасение MVP, собранного на вайбе
     icon: wrench
-    price: from $3,000
-    timeline: 2 weeks
+    price:
+      en: from $3,000
+      ru: от $3 000
+    timeline:
+      en: 2 weeks
+      ru: 2 недели
     featured: false
-    problem: >
-      The MVP got built fast with AI tooling, found real users, and now breaks
-      in production. Nobody on the team fully understands the code, and every
-      fix creates two new bugs
-    outcome: >
-      A codebase that stops surprising you: the dangerous parts fixed, the rest
-      documented, and a written map of what still needs work
+    problem:
+      en: >
+        The MVP got built fast with AI tooling, found real users, and now breaks
+        in production. Nobody on the team fully understands the code, and every
+        fix creates two new bugs
+      ru: >
+        MVP быстро собрали с помощью AI, у него появились живые пользователи, и
+        теперь он падает в проде. Целиком код не понимает никто, и каждая правка
+        рождает два новых бага
+    outcome:
+      en: >
+        A codebase that stops surprising you: the dangerous parts fixed, the rest
+        documented, and a written map of what still needs work
+      ru: >
+        Кодовая база, которая перестаёт удивлять: опасные места починены,
+        остальное описано, и есть письменная карта того, что ещё требует работы
     includes:
-      - Audit of authentication, data model, and error handling, ranked by how badly each can hurt you
-      - Fixes to the failures that actually reach users, shipped first
-      - Tests and CI on the paths that carry revenue, not blanket coverage theatre
-      - Written map of remaining technical debt with a cost estimate for each item
+      - en: Audit of authentication, data model, and error handling, ranked by how badly each can hurt you
+        ru: Аудит аутентификации, модели данных и обработки ошибок с ранжированием по тому, как сильно каждое место может ударить
+      - en: Fixes to the failures that actually reach users, shipped first
+        ru: В первую очередь — починка тех отказов, которые доходят до пользователей
+      - en: Tests and CI on the paths that carry revenue, not blanket coverage theatre
+        ru: Тесты и CI на путях, которые приносят деньги, а не покрытие ради покрытия
+      - en: Written map of remaining technical debt with a cost estimate for each item
+        ru: Письменная карта оставшегося техдолга с оценкой стоимости по каждому пункту
   - key: ai-reliability
-    name: AI Reliability Engineering
+    name:
+      en: AI Reliability Engineering
+      ru: Надёжность AI-фич
     icon: workflow
-    price: from $2,500
-    timeline: 2 to 3 weeks
+    price:
+      en: from $2,500
+      ru: от $2 500
+    timeline:
+      en: 2 to 3 weeks
+      ru: 2–3 недели
     featured: false
-    problem: >
-      You wired an LLM into your product. It works in the demo and fails for
-      users: malformed outputs, hung requests, jobs that vanish, and no way to
-      tell whether a prompt change made things better or worse
-    outcome: >
-      The infrastructure layer that turns an LLM call into a dependable product
-      feature
+    problem:
+      en: >
+        You wired an LLM into your product. It works in the demo and fails for
+        users: malformed outputs, hung requests, jobs that vanish, and no way to
+        tell whether a prompt change made things better or worse
+      ru: >
+        Вы встроили LLM в продукт. В демо работает, у пользователей ломается:
+        битые ответы, зависшие запросы, исчезнувшие задачи и никакой возможности
+        понять, стало ли лучше после правки промпта
+    outcome:
+      en: >
+        The infrastructure layer that turns an LLM call into a dependable product
+        feature
+      ru: >
+        Инфраструктурный слой, который превращает вызов LLM в предсказуемую
+        продуктовую фичу
     includes:
-      - Structured outputs with schema validation and retry behaviour that degrades gracefully
-      - Tool calling that handles partial failure instead of pretending it cannot happen
-      - Async task orchestration, queues, and status handling for work that outlives a request
-      - Token streaming that survives reconnects and slow clients
-      - Evaluation harness and observability so prompt and model changes are measured, not guessed
+      - en: Structured outputs with schema validation and retry behaviour that degrades gracefully
+        ru: Структурированные ответы с валидацией схемы и повторами, которые деградируют аккуратно
+      - en: Tool calling that handles partial failure instead of pretending it cannot happen
+        ru: Вызовы инструментов, которые обрабатывают частичный отказ, а не делают вид, что его не бывает
+      - en: Async task orchestration, queues, and status handling for work that outlives a request
+        ru: Оркестрация асинхронных задач, очереди и статусы для работы, которая живёт дольше запроса
+      - en: Token streaming that survives reconnects and slow clients
+        ru: Стриминг токенов, который переживает переподключения и медленных клиентов
+      - en: Evaluation harness and observability so prompt and model changes are measured, not guessed
+        ru: Стенд для оценки и наблюдаемость, чтобы изменения промптов и моделей измерялись, а не угадывались
+  # The catch-all tier. It exists so a client without an AI problem can still
+  # see themselves on this page; the AI offers above stay the flagship.
+  - key: product-engineering
+    name:
+      en: Fullstack Product Engineering
+      ru: Fullstack-разработка продукта
+    icon: app-window
+    price:
+      en: from $3,000
+      ru: от $3 000
+    timeline:
+      en: 3 to 5 weeks
+      ru: 3–5 недель
+    featured: false
+    problem:
+      en: >
+        Your project has no LLM in it. You need a web product built properly:
+        a real interface, a real API behind it, and someone who will not hand
+        you a frontend and call the backend somebody else's problem
+      ru: >
+        В вашем проекте нет никакого LLM. Нужно нормально сделать веб-продукт:
+        настоящий интерфейс, настоящий API за ним и человек, который не отдаст
+        вам фронтенд со словами «бэкенд — это к другим»
+    outcome:
+      en: >
+        A working web application in production: React on the front, FastAPI
+        behind it, deployed in your infrastructure with the same fixed scope and
+        fixed price as everything else on this page
+      ru: >
+        Работающее веб-приложение в проде: React на фронте, FastAPI за ним,
+        развёрнуто в вашей инфраструктуре — с тем же фиксированным объёмом и
+        фиксированной ценой, что и всё остальное на этой странице
+    includes:
+      - en: Product surface in React and TypeScript, built to your design system or to a clean default if you do not have one
+        ru: Продуктовый интерфейс на React и TypeScript по вашей дизайн-системе или по аккуратному дефолту, если её нет
+      - en: FastAPI backend with a data model, migrations, and API contracts your next developer can read
+        ru: Бэкенд на FastAPI с моделью данных, миграциями и контрактами API, которые прочитает следующий разработчик
+      - en: Authentication, roles, and third-party integrations wired end to end rather than stubbed for the demo
+        ru: Аутентификация, роли и интеграции со сторонними сервисами доведены до конца, а не заглушены ради демо
+      - en: Deployment, Docker packaging, and CI so shipping the next change does not require me
+        ru: Развёртывание, упаковка в Docker и CI, чтобы следующее изменение можно было выпустить без меня
+      - en: Written handover covering the architecture, the trade-offs taken, and what to build next
+        ru: "Письменная передача: архитектура, принятые компромиссы и что делать дальше"
+    footnote:
+      en: >
+        This is the catch-all tier. If your problem is an AI problem, one of the
+        offers above will fit it better and cost you less
+      ru: >
+        Это универсальный вариант. Если ваша задача всё-таки про AI, один из
+        офферов выше подойдёт лучше и обойдётся дешевле
 
 retainer:
-  name: Ongoing AI feature support
+  name:
+    en: Ongoing AI feature support
+    ru: Постоянная поддержка AI-фич
   icon: shield-check
-  price: $1,500 to $3,000 per month
-  summary: >
-    For teams that shipped an AI feature and need it to keep working. Model
-    releases, prompt drift, and quality regressions are ongoing problems, not
-    one-time ones
+  price:
+    en: $1,500 to $3,000 per month
+    ru: $1 500 – $3 000 в месяц
+  summary:
+    en: >
+      For teams that shipped an AI feature and need it to keep working. Model
+      releases, prompt drift, and quality regressions are ongoing problems, not
+      one-time ones
+    ru: >
+      Для команд, которые уже выпустили AI-фичу и которым нужно, чтобы она
+      продолжала работать. Новые версии моделей, дрейф промптов и просадки
+      качества — это постоянные проблемы, а не разовые
   includes:
-    - Response quality monitoring against your evaluation set
-    - Prompt and model updates when providers ship changes
-    - Small feature work and fixes within an agreed monthly scope
-    - A named person who already knows your codebase when something breaks
+    - en: Response quality monitoring against your evaluation set
+      ru: Мониторинг качества ответов по вашему набору для оценки
+    - en: Prompt and model updates when providers ship changes
+      ru: Обновление промптов и моделей, когда провайдеры выкатывают изменения
+    - en: Small feature work and fixes within an agreed monthly scope
+      ru: Небольшие фичи и правки в рамках согласованного месячного объёма
+    - en: A named person who already knows your codebase when something breaks
+      ru: Конкретный человек, который уже знает ваш код, когда что-то сломалось
 
 engagement_principles:
-  - title: Fixed price, not hourly
+  - title:
+      en: Fixed price, not hourly
+      ru: Фиксированная цена, а не часы
     icon: receipt
-    description: >
-      You buy a defined outcome with a defined price. My speed is my problem
-      to optimise, not a reason to charge you less for the same result
-  - title: Weekly working software
+    description:
+      en: >
+        You buy a defined outcome with a defined price. My speed is my problem
+        to optimise, not a reason to charge you less for the same result
+      ru: >
+        Вы покупаете определённый результат за определённую цену. Моя скорость —
+        моя забота, а не повод брать с вас меньше за тот же результат
+  - title:
+      en: Weekly working software
+      ru: Каждую неделю — работающий софт
     icon: rocket
-    description: >
-      Every week you get something you can click, not a status report. If the
-      direction is wrong, you find out in week one rather than week four
-  - title: Your code from day one
+    description:
+      en: >
+        Every week you get something you can click, not a status report. If the
+        direction is wrong, you find out in week one rather than week four
+      ru: >
+        Каждую неделю вы получаете то, что можно потыкать, а не статус-отчёт.
+        Если направление неверное, вы узнаете это на первой неделе, а не на
+        четвёртой
+  - title:
+      en: Your code from day one
+      ru: Код ваш с первого дня
     icon: git-branch
-    description: >
-      Work happens in your repository under your license. There is no handover
-      cliff and nothing to buy back at the end
-  - title: Honest scope boundaries
+    description:
+      en: >
+        Work happens in your repository under your license. There is no handover
+        cliff and nothing to buy back at the end
+      ru: >
+        Работа идёт в вашем репозитории под вашей лицензией. Нет обрыва при
+        передаче и нечего выкупать в конце
+  - title:
+      en: Honest scope boundaries
+      ru: Честные границы объёма
     icon: scale
-    description: >
-      The proposal says what is explicitly out of scope. New scope becomes a
-      new fixed-price increment instead of a quiet schedule slip
+    description:
+      en: >
+        The proposal says what is explicitly out of scope. New scope becomes a
+        new fixed-price increment instead of a quiet schedule slip
+      ru: >
+        В предложении прямо написано, что в объём не входит. Новый объём
+        становится новым этапом с фиксированной ценой, а не тихим сдвигом сроков
 
 case_studies:
   - key: image-generation-platform
-    title: Image generation platform for a design team
-    kind: Angular and FastAPI, internal product
+    title:
+      en: Image generation platform for a design team
+      ru: Платформа генерации изображений для дизайн-команды
+    kind:
+      en: Angular and FastAPI, internal product
+      ru: Angular и FastAPI, внутренний продукт
     icon: image
     impact:
       value: 1k+
-      label: internal users
-    problem: >
-      A company-wide image generation API existed, but the designers who were
-      supposed to use it had only a flat list of tasks. There was no way to
-      organise work, iterate on a result, or track long-running generations
-      without hammering the server with status requests
-    action: >
-      I owned the Angular frontend and crossed into the FastAPI backend
-      whenever a feature needed server-side work. I built a board-based
-      workspace where designers group generations into project spaces, added
-      drag-and-drop between boards, image reactions, and editing flows across
-      several generation modes. For async work I designed a priority-queue
-      polling model that schedules status checks by importance instead of
-      polling everything on a fixed interval
-    result: >
-      More than a thousand internal users work in organised boards rather than
-      a flat queue, and generation status stays current without aggressive
-      polling against the shared API
+      label:
+        en: internal users
+        ru: внутренних пользователей
+    problem:
+      en: >
+        A company-wide image generation API existed, but the designers who were
+        supposed to use it had only a flat list of tasks. There was no way to
+        organise work, iterate on a result, or track long-running generations
+        without hammering the server with status requests
+      ru: >
+        Общий для компании API генерации изображений существовал, но у дизайнеров,
+        которые должны были им пользоваться, был только плоский список задач.
+        Организовать работу, доработать результат или следить за долгими
+        генерациями, не заваливая сервер запросами статуса, было невозможно
+    action:
+      en: >
+        I owned the Angular frontend and crossed into the FastAPI backend
+        whenever a feature needed server-side work. I built a board-based
+        workspace where designers group generations into project spaces, added
+        drag-and-drop between boards, image reactions, and editing flows across
+        several generation modes. For async work I designed a priority-queue
+        polling model that schedules status checks by importance instead of
+        polling everything on a fixed interval
+      ru: >
+        Я вёл фронтенд на Angular и заходил в бэкенд на FastAPI всякий раз, когда
+        фиче требовалась серверная часть. Собрал рабочее пространство на досках,
+        где дизайнеры группируют генерации по проектам, добавил перетаскивание
+        между досками, реакции на изображения и редактирование для нескольких
+        режимов генерации. Для асинхронной части спроектировал модель опроса с
+        очередью приоритетов: статусы проверяются по важности, а не все подряд
+        с фиксированным интервалом
+    result:
+      en: >
+        More than a thousand internal users work in organised boards rather than
+        a flat queue, and generation status stays current without aggressive
+        polling against the shared API
+      ru: >
+        Больше тысячи внутренних пользователей работают на досках вместо плоской
+        очереди, а статусы генераций остаются актуальными без агрессивного
+        поллинга общего API
     stack:
       - Angular
       - TypeScript
@@ -199,22 +450,42 @@ case_studies:
       - FastAPI
       - PostgreSQL
   - key: generation-bff
-    title: Backend that made the platform possible
-    kind: FastAPI backend-for-frontend
+    title:
+      en: Backend that made the platform possible
+      ru: Бэкенд, без которого платформы бы не было
+    kind:
+      en: FastAPI backend-for-frontend
+      ru: Backend-for-frontend на FastAPI
     icon: workflow
-    problem: >
-      The shared generation API had no concept of end users, no task history,
-      and no durable storage. The interface needed all three, and there was no
-      separate backend team waiting to build them
-    action: >
-      I designed and built a FastAPI backend-for-frontend: corporate SSO for
-      end users with service-level routing to the generation API, an event
-      consumer that processes completed tasks off Kafka, and persistence
-      coordinated across PostgreSQL and S3. As the product grew I extended it
-      to support reactions, board operations, and image post-processing
-    result: >
-      User-facing features shipped without a backend handoff in the middle,
-      which is the reason the frontend could keep moving at all
+    problem:
+      en: >
+        The shared generation API had no concept of end users, no task history,
+        and no durable storage. The interface needed all three, and there was no
+        separate backend team waiting to build them
+      ru: >
+        В общем API генерации не было ни понятия конечного пользователя, ни
+        истории задач, ни надёжного хранилища. Интерфейсу нужно было всё три, а
+        отдельной бэкенд-команды, готовой это сделать, не было
+    action:
+      en: >
+        I designed and built a FastAPI backend-for-frontend: corporate SSO for
+        end users with service-level routing to the generation API, an event
+        consumer that processes completed tasks off Kafka, and persistence
+        coordinated across PostgreSQL and S3. As the product grew I extended it
+        to support reactions, board operations, and image post-processing
+      ru: >
+        Я спроектировал и написал backend-for-frontend на FastAPI: корпоративный
+        SSO для конечных пользователей с сервисной маршрутизацией к API генерации,
+        консьюмер событий, который забирает завершённые задачи из Kafka, и
+        согласованное хранение в PostgreSQL и S3. По мере роста продукта расширил
+        его под реакции, операции с досками и постобработку изображений
+    result:
+      en: >
+        User-facing features shipped without a backend handoff in the middle,
+        which is the reason the frontend could keep moving at all
+      ru: >
+        Пользовательские фичи выходили без передачи задачи бэкенд-команде
+        посередине — именно поэтому фронтенд вообще мог двигаться
     stack:
       - FastAPI
       - Python
@@ -223,25 +494,48 @@ case_studies:
       - Kafka
       - S3
   - key: assistant-migration
-    title: Migrating a live AI assistant to React
+    title:
+      en: Migrating a live AI assistant to React
+      ru: Миграция живого AI-ассистента на React
     kind: React, Svelte, FastAPI
     icon: messages-square
     impact:
-      value: 1000s
-      label: of employees
-    problem: >
-      A company-wide internal LLM assistant ran on a legacy Svelte frontend
-      that needed to become React. Thousands of employees used it daily, so
-      stopping feature delivery for a rewrite was never an option
-    action: >
-      I shipped product features inside the mixed Svelte and React codebase
-      while moving product logic into React-owned areas, and fixed the FastAPI
-      backend where features required it. Alongside that I helped put stricter
-      quality rails around new React code with Vitest, Biome, Oxlint, and
-      Playwright, so the new surface did not inherit the old one's problems
-    result: >
-      Migration and feature delivery ran as a single track instead of two
-      competing ones, on a product thousands of employees depend on
+      value:
+        en: 1000s
+        ru: тысячи
+      label:
+        en: of employees
+        ru: сотрудников
+    problem:
+      en: >
+        A company-wide internal LLM assistant ran on a legacy Svelte frontend
+        that needed to become React. Thousands of employees used it daily, so
+        stopping feature delivery for a rewrite was never an option
+      ru: >
+        Внутренний LLM-ассистент на всю компанию работал на легаси-фронтенде на
+        Svelte, который нужно было перевести на React. Им ежедневно пользовались
+        тысячи сотрудников, так что остановить разработку ради переписывания было
+        нельзя
+    action:
+      en: >
+        I shipped product features inside the mixed Svelte and React codebase
+        while moving product logic into React-owned areas, and fixed the FastAPI
+        backend where features required it. Alongside that I helped put stricter
+        quality rails around new React code with Vitest, Biome, Oxlint, and
+        Playwright, so the new surface did not inherit the old one's problems
+      ru: >
+        Я выпускал продуктовые фичи внутри смешанной кодовой базы Svelte и React,
+        одновременно перенося продуктовую логику в зоны React, и правил бэкенд на
+        FastAPI там, где это требовалось фиче. Параллельно помог выстроить более
+        строгие требования к новому React-коду с Vitest, Biome, Oxlint и
+        Playwright, чтобы новая часть не унаследовала проблемы старой
+    result:
+      en: >
+        Migration and feature delivery ran as a single track instead of two
+        competing ones, on a product thousands of employees depend on
+      ru: >
+        Миграция и разработка фич шли одним треком, а не двумя конкурирующими, в
+        продукте, от которого зависят тысячи сотрудников
     stack:
       - React
       - TypeScript
@@ -251,14 +545,20 @@ case_studies:
       - Vitest
 
 evidence:
-  intro: >
-    The client work above is internal and closed-source. These public
-    repositories show the same engineering, in code you can read
+  intro:
+    en: >
+      The client work above is internal and closed-source. These public
+      repositories show the same engineering, in code you can read
+    ru: >
+      Работа выше — внутренняя и с закрытым кодом. Эти публичные репозитории
+      показывают ту же инженерию в коде, который можно прочитать
   repos:
     - label: simple-openai-proxy
       url: https://github.com/siberianbearofficial/simple-openai-proxy
       icon: wand
-      relevance: The tool-calling and structured-output layer I build on client projects
+      relevance:
+        en: The tool-calling and structured-output layer I build on client projects
+        ru: Слой вызова инструментов и структурированного вывода, который я строю на клиентских проектах
       stack:
         - Python
         - AsyncIO
@@ -267,7 +567,9 @@ evidence:
     - label: fastapi-mvp
       url: https://github.com/siberianbearofficial/fastapi-mvp
       icon: package
-      relevance: The service bootstrap that keeps delivery fast without cutting corners
+      relevance:
+        en: The service bootstrap that keeps delivery fast without cutting corners
+        ru: Заготовка сервиса, которая держит скорость разработки без срезания углов
       stack:
         - FastAPI
         - MongoDB
@@ -276,81 +578,179 @@ evidence:
     - label: lint-gost-tex
       url: https://github.com/siberianbearofficial/lint-gost-tex
       icon: scroll-text
-      relevance: A finished CLI product with real rules, tests, and edge cases
+      relevance:
+        en: A finished CLI product with real rules, tests, and edge cases
+        ru: Законченный CLI-продукт с реальными правилами, тестами и краевыми случаями
       stack:
         - Python
         - CLI tooling
         - LaTeX
 
 process:
-  - step: Call
+  - step:
+      en: Call
+      ru: Созвон
     icon: phone
-    duration: 30 minutes
-    description: >
-      You describe the problem. I tell you whether I am the right person for
-      it, including when the answer is no. No slide deck, no discovery invoice
-  - step: Proposal
+    duration:
+      en: 30 minutes
+      ru: 30 минут
+    description:
+      en: >
+        You describe the problem. I tell you whether I am the right person for
+        it, including when the answer is no. No slide deck, no discovery invoice
+      ru: >
+        Вы описываете задачу. Я говорю, тот ли я человек для неё, в том числе
+        когда ответ «нет». Без презентаций и счёта за «исследование»
+  - step:
+      en: Proposal
+      ru: Предложение
     icon: file-text
-    duration: 2 working days
-    description: >
-      A fixed scope, a fixed price, a delivery date, and an explicit list of
-      what is not included. If it does not fit your budget, you have lost a
-      phone call
-  - step: Build
+    duration:
+      en: 2 working days
+      ru: 2 рабочих дня
+    description:
+      en: >
+        A fixed scope, a fixed price, a delivery date, and an explicit list of
+        what is not included. If it does not fit your budget, you have lost a
+        phone call
+      ru: >
+        Фиксированный объём, фиксированная цена, дата сдачи и явный список того,
+        что не входит. Если не подходит по бюджету — вы потеряли один созвон
+  - step:
+      en: Build
+      ru: Разработка
     icon: rocket
-    duration: 2 to 5 weeks
-    description: >
-      Work happens in your repository with something demoable every week. You
-      see progress as software, and course corrections happen early
-  - step: Handover
+    duration:
+      en: 2 to 5 weeks
+      ru: 2–5 недель
+    description:
+      en: >
+        Work happens in your repository with something demoable every week. You
+        see progress as software, and course corrections happen early
+      ru: >
+        Работа идёт в вашем репозитории, каждую неделю есть что показать.
+        Прогресс виден софтом, а корректировки курса случаются рано
+  - step:
+      en: Handover
+      ru: Передача
     icon: package-check
-    duration: Included
-    description: >
-      Deployment, documentation, and a walkthrough with your team. You are not
-      dependent on me afterwards unless you choose to be
+    duration:
+      en: Included
+      ru: Входит в цену
+    description:
+      en: >
+        Deployment, documentation, and a walkthrough with your team. You are not
+        dependent on me afterwards unless you choose to be
+      ru: >
+        Развёртывание, документация и разбор с вашей командой. После этого вы
+        зависите от меня только если сами захотите
 
 faq:
-  - question: Do you work hourly?
-    answer: >
-      No. Fixed price against a defined outcome. Hourly billing means you pay
-      more when I am slower, which is a strange thing for both of us to want
-  - question: Who owns the code?
-    answer: >
-      You do, from the first commit. Work happens in your repository under your
-      license, and nothing is held back at handover
-  - question: Can you sign an NDA?
-    answer: >
-      Yes. Most of my experience is on internal products under NDA already,
-      which is why the case studies here describe architecture and scope rather
-      than screenshots
-  - question: What happens if the scope changes?
-    answer: >
-      Small things get absorbed. Anything larger becomes a separate fixed-price
-      increment that you approve before it starts, rather than a quiet slip in
-      the delivery date
-  - question: How do you handle payment?
-    answer: >
-      Typically fifty percent up front and fifty on delivery, with longer
-      projects split into milestones. Invoicing details are confirmed in
-      writing before any work begins
-  - question: What timezones do you work with?
-    answer: >
-      I work asynchronously by default and overlap with European and Asian
-      business hours. Weekly demos are scheduled to suit your team, not mine
+  - question:
+      en: Do you work hourly?
+      ru: Работаете по часам?
+    answer:
+      en: >
+        No. Fixed price against a defined outcome. Hourly billing means you pay
+        more when I am slower, which is a strange thing for both of us to want
+      ru: >
+        Нет. Фиксированная цена за определённый результат. Почасовая оплата
+        означает, что вы платите больше, когда я работаю медленнее, — странное
+        желание для нас обоих
+  - question:
+      en: Do you only take AI projects?
+      ru: Вы беретесь только за AI-проекты?
+    answer:
+      en: >
+        No. AI is where most of my work is and where I am most useful, but a
+        product with no model in it is still a product. Fullstack Product
+        Engineering above is the tier for that: React on the front, FastAPI
+        behind it, same fixed scope and price
+      ru: >
+        Нет. Большая часть моей работы — про AI, и там я полезнее всего, но
+        продукт без модели внутри остаётся продуктом. Для этого выше есть
+        Fullstack-разработка продукта: React на фронте, FastAPI за ним, тот же
+        фиксированный объём и цена
+  - question:
+      en: Who owns the code?
+      ru: Кому принадлежит код?
+    answer:
+      en: >
+        You do, from the first commit. Work happens in your repository under your
+        license, and nothing is held back at handover
+      ru: >
+        Вам, с первого коммита. Работа идёт в вашем репозитории под вашей
+        лицензией, и при передаче ничего не придерживается
+  - question:
+      en: Can you sign an NDA?
+      ru: Подпишете NDA?
+    answer:
+      en: >
+        Yes. Most of my experience is on internal products under NDA already,
+        which is why the case studies here describe architecture and scope rather
+        than screenshots
+      ru: >
+        Да. Большая часть моего опыта — внутренние продукты, уже закрытые NDA,
+        поэтому кейсы здесь описывают архитектуру и объём работ, а не скриншоты
+  - question:
+      en: What happens if the scope changes?
+      ru: Что будет, если объём изменится?
+    answer:
+      en: >
+        Small things get absorbed. Anything larger becomes a separate fixed-price
+        increment that you approve before it starts, rather than a quiet slip in
+        the delivery date
+      ru: >
+        Мелочи беру на себя. Всё крупнее становится отдельным этапом с
+        фиксированной ценой, который вы согласуете до начала, а не тихим сдвигом
+        даты сдачи
+  - question:
+      en: How do you handle payment?
+      ru: Как устроена оплата?
+    answer:
+      en: >
+        Typically fifty percent up front and fifty on delivery, with longer
+        projects split into milestones. Invoicing details are confirmed in
+        writing before any work begins
+      ru: >
+        Обычно 50% предоплата и 50% по сдаче, длинные проекты разбиваются на
+        этапы. Детали выставления счетов фиксируются письменно до начала работы
+  - question:
+      en: What timezones do you work with?
+      ru: В каких часовых поясах вы работаете?
+    answer:
+      en: >
+        I work asynchronously by default and overlap with European and Asian
+        business hours. Weekly demos are scheduled to suit your team, not mine
+      ru: >
+        По умолчанию работаю асинхронно и пересекаюсь с рабочими часами Европы и
+        Азии. Еженедельные демо ставятся под вашу команду, а не под меня
 
 contact:
-  heading: Tell me what is broken
-  lede: >
-    The most useful first message is one paragraph: what you are trying to
-    build or fix, and what is currently in the way. I reply within a day, and
-    I will tell you directly if I am not the right person for the job
+  heading:
+    en: Tell me what is broken
+    ru: Расскажите, что сломано
+  lede:
+    en: >
+      The most useful first message is one paragraph: what you are trying to
+      build or fix, and what is currently in the way. I reply within a day, and
+      I will tell you directly if I am not the right person for the job
+    ru: >
+      Самое полезное первое сообщение — один абзац: что вы пытаетесь построить
+      или починить и что сейчас мешает. Отвечаю в течение дня и прямо скажу, если
+      я не тот человек для этой задачи
   links:
     - label: Telegram
-      href: https://t.me/aleksei_orlov_official
-      short: "@aleksei_orlov_official"
-    - label: Email
+      href: https://t.me/aleksei_orlov_dev
+      short: "@aleksei_orlov_dev"
+    - label:
+        en: Email
+        ru: Почта
       href: mailto:alexeyorlov65@gmail.com
       short: alexeyorlov65@gmail.com
+    - label: LinkedIn
+      href: https://www.linkedin.com/in/aleksei-orlov-dev
+      short: aleksei-orlov-dev
     - label: GitHub
       href: https://github.com/siberianbearofficial
       short: siberianbearofficial

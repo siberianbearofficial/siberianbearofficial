@@ -1,0 +1,421 @@
+# Copy that used to be hardcoded in the templates. It lives here for the same
+# reason the rest of the content does: a template with English baked into it
+# cannot have a Russian version.
+
+common:
+  # The EN/RU labels and the language autonyms are not translated: see
+  # LOCALE_LABELS in scripts/lib/i18n.mjs.
+  lang_switch:
+    aria:
+      en: Language
+      ru: Язык
+  theme:
+    aria:
+      en: Toggle theme
+      ru: Переключить тему
+    dark:
+      en: Dark mode
+      ru: Тёмная тема
+    light:
+      en: Light mode
+      ru: Светлая тема
+  nav_aria:
+    en: Section navigation
+    ru: Навигация по разделам
+  present:
+    en: Present
+    ru: по наст. время
+  view_on_github:
+    en: View on GitHub
+    ru: Открыть на GitHub
+  github_repo:
+    en: GitHub Repo
+    ru: Репозиторий на GitHub
+  skip_to_content:
+    en: Skip to content
+    ru: Перейти к содержимому
+
+cv:
+  nav:
+    focus:
+      en: Focus
+      ru: Фокус
+    experience:
+      en: Experience
+      ru: Опыт
+    case_studies:
+      en: Case Studies
+      ru: Кейсы
+    public_work:
+      en: Public Work
+      ru: Открытый код
+    hire:
+      en: Hire Me
+      ru: Услуги
+    contact:
+      en: Contact
+      ru: Контакты
+  actions:
+    pdf_short:
+      en: PDF Resume
+      ru: Резюме в PDF
+    pdf_long:
+      en: Download PDF Resume
+      ru: Скачать резюме в PDF
+  hero:
+    kicker:
+      en: worldwide remote
+      ru: удалённо по всему миру
+    portrait_alt:
+      en: Photo of Aleksei Orlov
+      ru: Фотография Алексея Орлова
+  hero_cards:
+    - href: "#case-ai-assistant"
+      modifier: assistant
+      illustration: chat-with-ai
+      value:
+        en: LLM Assistant
+        ru: LLM-ассистент
+      label:
+        en: Internal AI Product
+        ru: Внутренний AI-продукт
+      meta:
+        en: thousands of users, React migration
+        ru: тысячи пользователей, миграция на React
+    - href: "#case-image-generation-ui"
+      modifier: image
+      illustration: digital-artwork
+      value:
+        en: Image Gen UI
+        ru: Генерация изображений
+      label:
+        en: Design Workflow Tool
+        ru: Инструмент для дизайнеров
+      meta:
+        en: Angular frontend ownership
+        ru: ответственность за фронтенд на Angular
+    - modifier: product
+      illustration: developer-activity
+      value:
+        en: 2+ yrs
+        ru: 2+ года
+      label:
+        en: T-Bank AI Product Work
+        ru: AI-продукты в Т-Банке
+      meta:
+        en: intern to middle-level scope
+        ru: от стажёра до мидл-уровня задач
+    - modifier: migration
+      illustration: version-control
+      value:
+        en: Angular to React
+        ru: Angular → React
+      label:
+        en: Migration Profile
+        ru: Профиль миграции
+      meta:
+        en: without feature freeze
+        ru: без заморозки фич
+  focus:
+    kicker:
+      en: Focus
+      ru: Фокус
+    heading:
+      en: Positioned for product teams that need range, not narrow specialization
+      ru: Для продуктовых команд, которым нужен широкий профиль, а не узкая специализация
+    lede:
+      en: >
+        The strongest signal in this profile is hands-on TypeScript fullstack
+        range across React, Angular, Svelte, and FastAPI: AI-heavy internal
+        tooling, backend support, and Angular-to-React migration work delivered
+        without losing product speed
+      ru: >
+        Самый сильный сигнал в этом профиле — реальная fullstack-широта на
+        TypeScript: React, Angular, Svelte и FastAPI. Внутренние инструменты
+        вокруг AI, поддержка бэкенда и миграция с Angular на React — без потери
+        скорости продукта
+    narrative_label:
+      en: Current Narrative
+      ru: Чем занят сейчас
+  experience:
+    kicker:
+      en: Experience
+      ru: Опыт
+    heading:
+      en: Recent roles and progression
+      ru: Последние роли и рост
+    lede:
+      en: >
+        Official dates come from current employment records. Public copy keeps
+        the focus on shipped work, ownership, and NDA-safe scope
+      ru: >
+        Официальные даты соответствуют трудовым записям. В публичном тексте —
+        только то, что сделано, зона ответственности и формулировки, безопасные
+        с точки зрения NDA
+  case_studies:
+    kicker:
+      en: Case Studies
+      ru: Кейсы
+    heading:
+      en: Internal product work, shown through ownership and systems thinking
+      ru: Внутренние продукты — через зону ответственности и системное мышление
+    lede:
+      en: >
+        The code for these products is not public. What I can show is the
+        product surface, architecture, and execution scope behind them
+      ru: >
+        Код этих продуктов закрыт. Показать я могу продуктовую поверхность,
+        архитектуру и объём работы за ними
+    role_label:
+      en: My role
+      ru: Моя роль
+  public_work:
+    kicker:
+      en: Public Work
+      ru: Открытый код
+    heading:
+      en: Selected repos that show how I build
+      ru: Избранные репозитории, по которым видно, как я делаю
+    lede:
+      en: >
+        Small, finished pieces of tooling and product work that are open enough
+        to read end to end
+      ru: >
+        Небольшие законченные инструменты и продуктовые куски, которые открыты
+        настолько, что их можно прочитать целиком
+    # The framing that keeps a hiring reader from grading the candidate on the
+    # maturity of side projects. It is the same argument the .dev surface makes.
+    note_title:
+      en: How to read these repositories
+      ru: Как читать эти репозитории
+    note_body:
+      en: >
+        Public repos are not a mirror of my current internal stack. They are the
+        evidence layer for how I structure projects, ship tooling, and think
+        about APIs and product surfaces. The products I actually work on are
+        internal and closed-source, so their scale is described in the case
+        studies above rather than shown in code
+      ru: >
+        Публичные репозитории не отражают мой текущий рабочий стек. Это слой
+        доказательств того, как я структурирую проекты, довожу инструменты до
+        конца и думаю об API и продуктовых поверхностях. Продукты, над которыми
+        я работаю на самом деле, внутренние и с закрытым кодом, поэтому их
+        масштаб описан в кейсах выше, а не показан кодом
+    supporting_kicker:
+      en: Supporting Project
+      ru: Дополнительный проект
+  stack:
+    kicker:
+      en: Stack
+      ru: Стек
+    heading:
+      en: Comfortable across product, platform, and delivery
+      ru: Уверенно себя чувствую в продукте, платформе и доставке
+  education:
+    kicker:
+      en: Education
+      ru: Образование
+    heading:
+      en: Formal education and long-term signals
+      ru: Образование и долгосрочные сигналы
+  languages:
+    kicker:
+      en: Languages
+      ru: Языки
+    heading:
+      en: Working languages
+      ru: Рабочие языки
+  achievements:
+    kicker:
+      en: Highlights
+      ru: Достижения
+    heading:
+      en: Signals beyond the day job
+      ru: Что за пределами основной работы
+  contact:
+    kicker:
+      en: Contact
+      ru: Контакты
+    heading:
+      en: If you are hiring, start here
+      ru: Если вы нанимаете — начните отсюда
+    lede:
+      en: >
+        I’m most useful in TypeScript product teams that need someone who can
+        move across React, Angular, migration work, and FastAPI-backed delivery
+        without losing momentum
+      ru: >
+        Я полезнее всего в продуктовых командах на TypeScript, которым нужен
+        человек, свободно двигающийся между React, Angular, миграциями и
+        задачами с бэкендом на FastAPI, не теряя темпа
+  cv_band:
+    title:
+      en: Not hiring, but need something built?
+      ru: Не нанимаете, но нужно что-то сделать?
+    meta:
+      en: >
+        I take on fixed-price contract work: internal LLM assistants, Angular to
+        React migrations, and AI features that need to stop breaking
+      ru: >
+        Беру проектную работу с фиксированной ценой: внутренние LLM-ассистенты,
+        миграции с Angular на React и AI-фичи, которым пора перестать падать
+
+services:
+  brand_role:
+    en: AI & Fullstack Engineering
+    ru: AI и fullstack-разработка
+  nav:
+    services:
+      en: Services
+      ru: Услуги
+    work:
+      en: Work
+      ru: Работы
+    process:
+      en: Process
+      ru: Процесс
+    faq:
+      en: FAQ
+      ru: Вопросы
+    contact:
+      en: Contact
+      ru: Контакты
+  actions:
+    book_call:
+      en: Book a call
+      ru: Записаться на созвон
+    discuss:
+      en: Discuss this engagement
+      ru: Обсудить эту работу
+  offers:
+    kicker:
+      en: Services
+      ru: Услуги
+    heading:
+      en: Fixed scope, fixed price, and a date
+      ru: Фиксированный объём, фиксированная цена и дата
+    lede:
+      en: >
+        Every engagement below is quoted as an outcome rather than a block of
+        hours. If your problem does not fit one of these, the first call is
+        where we find that out
+      ru: >
+        Каждая работа ниже оценена как результат, а не как блок часов. Если ваша
+        задача не попадает ни в одну из них, это выяснится на первом созвоне
+    featured_badge:
+      en: Most requested
+      ru: Чаще всего заказывают
+    problem_label:
+      en: The problem
+      ru: Проблема
+    outcome_label:
+      en: What you get
+      ru: Что вы получаете
+    retainer_kicker:
+      en: Ongoing
+      ru: На постоянной основе
+  principles:
+    kicker:
+      en: How I work
+      ru: Как я работаю
+    heading:
+      en: The terms, before you have to ask for them
+      ru: Условия — до того, как вы о них спросите
+  work:
+    kicker:
+      en: Selected work
+      ru: Избранные работы
+    heading:
+      en: Problem, what I did, what changed
+      ru: Проблема, что я сделал, что изменилось
+    lede:
+      en: >
+        This work is internal and under NDA, so what follows describes the
+        problem, the architecture, and the scope I owned rather than screenshots
+      ru: >
+        Эта работа внутренняя и под NDA, поэтому ниже — проблема, архитектура и
+        мой объём ответственности, а не скриншоты
+    problem_label:
+      en: Problem
+      ru: Проблема
+    action_label:
+      en: What I did
+      ru: Что я сделал
+    result_label:
+      en: Result
+      ru: Результат
+  evidence:
+    kicker:
+      en: Evidence
+      ru: Доказательства
+    heading:
+      en: Code you can actually read
+      ru: Код, который можно прочитать
+  process:
+    kicker:
+      en: Process
+      ru: Процесс
+    heading:
+      en: From first message to handover
+      ru: От первого сообщения до передачи
+  faq:
+    kicker:
+      en: FAQ
+      ru: Вопросы
+    heading:
+      en: The questions that come up on every first call
+      ru: Вопросы, которые возникают на каждом первом созвоне
+  contact:
+    kicker:
+      en: Contact
+      ru: Контакты
+  cv_band:
+    meta:
+      en: >
+        I also consider full-time roles. The CV, experience timeline, and
+        downloadable resume live here
+      ru: >
+        Я также рассматриваю работу в штате. CV, таймлайн опыта и резюме для
+        скачивания — здесь
+  footer_cv:
+    en: CV
+    ru: Резюме
+
+resume:
+  experience:
+    en: Experience
+    ru: Опыт работы
+  internal_work:
+    en: Selected Internal Product Work
+    ru: Избранные внутренние продукты
+  strengths:
+    en: Core Strengths
+    ru: Ключевые навыки
+  public_work:
+    en: Selected Public Work
+    ru: Открытый код
+  education:
+    en: Education
+    ru: Образование
+  languages:
+    en: Languages
+    ru: Языки
+  achievements:
+    en: Highlights
+    ru: Достижения
+
+og:
+  cv:
+    kicker:
+      en: Fullstack engineer · Moscow · remote worldwide
+      ru: Fullstack-разработчик · Москва · удалённо
+    footer:
+      en: React · Angular · Svelte · FastAPI · Internal AI products
+      ru: React · Angular · Svelte · FastAPI · внутренние AI-продукты
+  services:
+    kicker:
+      en: Contract engineering · fixed price
+      ru: Проектная разработка · фиксированная цена
+    footer:
+      en: Internal LLM assistants · Angular to React · React + FastAPI products
+      ru: Внутренние LLM-ассистенты · Angular → React · продукты на React и FastAPI

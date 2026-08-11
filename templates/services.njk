@@ -1,28 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page_title }}</title>
-    <meta name="description" content="{{ page_description }}" />
-    <meta name="theme-color" content="#0d1727" />
-    <link rel="canonical" href="{{ site.canonical_url }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script>
-      (() => {
-        try {
-          const storedTheme = window.localStorage.getItem("theme");
-          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-          document.documentElement.dataset.theme = storedTheme || preferredTheme;
-        } catch {
-          document.documentElement.dataset.theme = "light";
-        }
-      })();
-    </script>
+    {% include "partials/head.njk" %}
+    {% include "partials/boot-scripts.njk" %}
     <link rel="stylesheet" href="/assets/site.css" />
+    <script type="application/ld+json">{{ structured_data | json }}</script>
   </head>
   <body data-page="site">
     <div class="site-backdrop" aria-hidden="true">
@@ -31,36 +13,39 @@
       <div class="site-grid"></div>
     </div>
 
+    <a class="skip-link" href="#top">{{ t.common.skip_to_content }}</a>
+
     <header class="site-header">
       <div class="page-shell">
         <div class="site-nav" data-reveal>
-          <a class="brand-mark" href="#top" aria-label="{{ identity.name }}">
-            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="{{ identity.name }}" loading="eager" decoding="async" />
+          <a class="brand-mark" href="#top" aria-label="{{ identity.name | attr }}">
+            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="" aria-hidden="true" loading="eager" decoding="async" />
             <span class="brand-mark__copy">
               <span class="brand-mark__name">{{ identity.name }}</span>
-              <span class="brand-mark__role">AI &amp; Fullstack Engineering</span>
+              <span class="brand-mark__role">{{ t.services.brand_role }}</span>
             </span>
           </a>
 
-          <nav class="site-nav__links" aria-label="Section navigation">
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+          <nav class="site-nav__links" aria-label="{{ t.common.nav_aria | attr }}">
+            <a href="#services">{{ t.services.nav.services }}</a>
+            <a href="#work">{{ t.services.nav.work }}</a>
+            <a href="#process">{{ t.services.nav.process }}</a>
+            <a href="#faq">{{ t.services.nav.faq }}</a>
+            <a href="#contact">{{ t.services.nav.contact }}</a>
           </nav>
 
           <div class="site-nav__actions">
+{% include "partials/lang-switch.njk" %}
             <a class="mini-action mini-action--cta" href="{{ hero.primary_cta.href }}">
               <span class="mini-action__icon">{{ ui_icons.send }}</span>
-              <span>Book a call</span>
+              <span>{{ t.services.actions.book_call }}</span>
             </a>
-            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ t.common.theme.aria | attr }}" aria-pressed="false">
               <span class="theme-toggle__icon">
                 <span class="theme-toggle__icon-sun">{{ ui_icons.sun }}</span>
                 <span class="theme-toggle__icon-moon">{{ ui_icons.moon }}</span>
               </span>
-              <span data-theme-label>Dark mode</span>
+              <span data-theme-label>{{ t.common.theme.dark }}</span>
             </button>
           </div>
         </div>
@@ -116,10 +101,10 @@
       <section id="services" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Services</div>
-            <h2 class="section-heading">Fixed scope, fixed price, and a date</h2>
+            <div class="section-kicker">{{ t.services.offers.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.offers.heading }}</h2>
             <p class="section-lede">
-              Every engagement below is quoted as an outcome rather than a block of hours. If your problem does not fit one of these, the first call is where we find that out
+              {{ t.services.offers.lede }}
             </p>
           </div>
 
@@ -127,7 +112,7 @@
             {% for service in services -%}
             <article class="offer-card{% if service.featured %} offer-card--featured{% endif %}" id="service-{{ service.key }}" data-reveal>
               {% if service.featured -%}
-              <span class="offer-card__badge">Most requested</span>
+              <span class="offer-card__badge">{{ t.services.offers.featured_badge }}</span>
               {% endif -%}
               <div class="offer-card__head">
                 <span class="offer-card__icon">{{ ui_icons[service.icon] }}</span>
@@ -143,12 +128,12 @@
               </div>
 
               <div class="offer-card__block">
-                <div class="offer-card__block-label">The problem</div>
+                <div class="offer-card__block-label">{{ t.services.offers.problem_label }}</div>
                 <p class="offer-card__block-copy">{{ service.problem }}</p>
               </div>
 
               <div class="offer-card__block offer-card__block--outcome">
-                <div class="offer-card__block-label">What you get</div>
+                <div class="offer-card__block-label">{{ t.services.offers.outcome_label }}</div>
                 <p class="offer-card__block-copy">{{ service.outcome }}</p>
               </div>
 
@@ -166,7 +151,7 @@
               {% endif -%}
 
               <a class="offer-card__cta" href="#contact">
-                <span>Discuss this engagement</span>
+                <span>{{ t.services.actions.discuss }}</span>
                 <span class="offer-card__cta-icon">{{ ui_icons["arrow-right"] }}</span>
               </a>
             </article>
@@ -178,7 +163,7 @@
               <div class="retainer-panel__head">
                 <span class="retainer-panel__icon">{{ ui_icons[retainer.icon] }}</span>
                 <div>
-                  <div class="section-kicker">Ongoing</div>
+                  <div class="section-kicker">{{ t.services.offers.retainer_kicker }}</div>
                   <h3 class="retainer-panel__title">{{ retainer.name }}</h3>
                 </div>
               </div>
@@ -200,8 +185,8 @@
       <section class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">How I work</div>
-            <h2 class="section-heading">The terms, before you have to ask for them</h2>
+            <div class="section-kicker">{{ t.services.principles.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.principles.heading }}</h2>
           </div>
 
           <div class="principle-grid">
@@ -219,10 +204,10 @@
       <section id="work" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Selected work</div>
-            <h2 class="section-heading">Problem, what I did, what changed</h2>
+            <div class="section-kicker">{{ t.services.work.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.work.heading }}</h2>
             <p class="section-lede">
-              This work is internal and under NDA, so what follows describes the problem, the architecture, and the scope I owned rather than screenshots
+              {{ t.services.work.lede }}
             </p>
           </div>
 
@@ -242,15 +227,15 @@
 
               <div class="story-card__beats">
                 <div class="story-beat story-beat--problem">
-                  <div class="story-beat__label">Problem</div>
+                  <div class="story-beat__label">{{ t.services.work.problem_label }}</div>
                   <p class="story-beat__copy">{{ story.problem }}</p>
                 </div>
                 <div class="story-beat story-beat--action">
-                  <div class="story-beat__label">What I did</div>
+                  <div class="story-beat__label">{{ t.services.work.action_label }}</div>
                   <p class="story-beat__copy">{{ story.action }}</p>
                 </div>
                 <div class="story-beat story-beat--result">
-                  <div class="story-beat__label">Result</div>
+                  <div class="story-beat__label">{{ t.services.work.result_label }}</div>
                   <p class="story-beat__copy">{{ story.result }}</p>
                 </div>
               </div>
@@ -269,8 +254,8 @@
       <section class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Evidence</div>
-            <h2 class="section-heading">Code you can actually read</h2>
+            <div class="section-kicker">{{ t.services.evidence.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.evidence.heading }}</h2>
             <p class="section-lede">{{ evidence.intro }}</p>
           </div>
 
@@ -287,9 +272,9 @@
                 <span class="site-chip site-chip--warm">{{ item }}</span>
                 {% endfor %}
               </div>
-              <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label }} on GitHub">
+              <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label | attr }} — {{ t.common.view_on_github | attr }}">
                 <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
-                <span>View on GitHub</span>
+                <span>{{ t.common.view_on_github }}</span>
               </a>
             </article>
             {% endfor %}
@@ -300,8 +285,8 @@
       <section id="process" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Process</div>
-            <h2 class="section-heading">From first message to handover</h2>
+            <div class="section-kicker">{{ t.services.process.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.process.heading }}</h2>
           </div>
 
           <div class="process-grid">
@@ -323,8 +308,8 @@
       <section id="faq" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">FAQ</div>
-            <h2 class="section-heading">The questions that come up on every first call</h2>
+            <div class="section-kicker">{{ t.services.faq.kicker }}</div>
+            <h2 class="section-heading">{{ t.services.faq.heading }}</h2>
           </div>
 
           <div class="faq-grid">
@@ -342,7 +327,7 @@
         <div class="page-shell">
           <div class="contact-panel" data-reveal>
             <div class="contact-panel__copy">
-              <div class="section-kicker">Contact</div>
+              <div class="section-kicker">{{ t.services.contact.kicker }}</div>
               <h2 class="section-heading">{{ contact.heading }}</h2>
               <p class="section-lede">{{ contact.lede }}</p>
               <div class="contact-panel__actions">
@@ -352,6 +337,8 @@
                 {% set contactIcon = ui_icons.send -%}
                 {% elseif link.label == "GitHub" -%}
                 {% set contactIcon = ui_icons.github -%}
+                {% elseif link.label == "LinkedIn" -%}
+                {% set contactIcon = ui_icons.linkedin -%}
                 {% endif -%}
                 <a class="{% if loop.first %}site-button site-button--primary{% else %}site-button site-button--secondary{% endif %}" href="{{ link.href }}">
                   <span class="site-button__icon">{{ contactIcon }}</span>
@@ -366,10 +353,10 @@
             </div>
           </div>
 
-          <a class="cv-band" href="{{ site.cv_url }}" data-reveal>
+          <a class="cv-band" href="{{ links.cv }}" data-reveal>
             <span class="cv-band__copy">
               <span class="cv-band__title">{{ site.cv_label }}</span>
-              <span class="cv-band__meta">I also consider full-time roles. The CV, experience timeline, and downloadable resume live here</span>
+              <span class="cv-band__meta">{{ t.services.cv_band.meta }}</span>
             </span>
             <span class="cv-band__icon">{{ ui_icons["arrow-right"] }}</span>
           </a>
@@ -383,100 +370,20 @@
           <div class="site-footer__copy">
             <span class="site-footer__name">{{ identity.name }}</span>
             <span class="site-footer__separator">&middot;</span>
-            <span class="site-footer__role">AI &amp; Fullstack Engineering</span>
+            <span class="site-footer__role">{{ t.services.brand_role }}</span>
           </div>
           <div class="site-footer__links">
-            <a href="{{ site.cv_url }}">CV</a>
-            <a href="{{ identity.github }}" aria-label="GitHub">GitHub</a>
-            <a href="{{ identity.telegram }}" aria-label="Telegram">Telegram</a>
-            <a href="mailto:{{ identity.email }}" aria-label="Email">Email</a>
+            <a href="{{ links.cv }}">{{ t.services.footer_cv }}</a>
+            <a href="{{ identity.github }}">GitHub</a>
+            <a href="{{ identity.telegram }}">Telegram</a>
+            <a href="{{ identity.linkedin }}">LinkedIn</a>
+            <a href="mailto:{{ identity.email }}">Email</a>
           </div>
+{% include "partials/lang-switch.njk" %}
         </div>
       </div>
     </footer>
 
-    <script>
-      (() => {
-        const root = document.documentElement;
-        const toggle = document.querySelector("[data-theme-toggle]");
-        const labelHost = document.querySelector("[data-theme-label]");
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-        const applyTheme = (theme) => {
-          const isDark = theme === "dark";
-
-          root.dataset.theme = theme;
-          toggle?.setAttribute("aria-pressed", String(isDark));
-
-          document.querySelectorAll("[data-theme-src]").forEach((image) => {
-            const nextSrc = image.dataset[isDark ? "darkSrc" : "lightSrc"];
-
-            if (nextSrc && image.getAttribute("src") !== nextSrc) {
-              image.setAttribute("src", nextSrc);
-            }
-          });
-
-          if (labelHost) {
-            labelHost.textContent = isDark ? "Light mode" : "Dark mode";
-          }
-        };
-
-        const preferredTheme = () => mediaQuery.matches ? "dark" : "light";
-        applyTheme(root.dataset.theme || preferredTheme());
-
-        toggle?.addEventListener("click", () => {
-          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-
-          window.localStorage.setItem("theme", nextTheme);
-          applyTheme(nextTheme);
-        });
-
-        const handleSystemThemeChange = (event) => {
-          if (window.localStorage.getItem("theme")) {
-            return;
-          }
-
-          applyTheme(event.matches ? "dark" : "light");
-        };
-
-        if (typeof mediaQuery.addEventListener === "function") {
-          mediaQuery.addEventListener("change", handleSystemThemeChange);
-        } else if (typeof mediaQuery.addListener === "function") {
-          mediaQuery.addListener(handleSystemThemeChange);
-        }
-
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const revealTargets = document.querySelectorAll("[data-reveal]");
-
-        if (reducedMotion) {
-          revealTargets.forEach((element) => element.classList.add("is-visible"));
-          return;
-        }
-
-        document.documentElement.classList.add("reveal-ready");
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) {
-                return;
-              }
-
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            });
-          },
-          {
-            threshold: 0.18,
-            rootMargin: "0px 0px -7% 0px"
-          }
-        );
-
-        revealTargets.forEach((element, index) => {
-          element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 240)}ms`);
-          observer.observe(element);
-        });
-      })();
-    </script>
+{% include "partials/behaviour.njk" %}
   </body>
 </html>

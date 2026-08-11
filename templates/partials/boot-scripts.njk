@@ -1,0 +1,56 @@
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.dataset.theme = storedTheme || preferredTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <script>
+      // Language resolution, in priority order: an explicit ?lang= in the URL,
+      // then a choice the visitor made earlier, then the language this domain
+      // serves from its root. Accept-Language is deliberately not consulted:
+      // the domain default outranks it, so reading it could only produce a
+      // redirect that contradicts the rule.
+      (() => {
+        try {
+          const paths = {{ page.switch_paths | json }};
+          const current = {{ lang | json }};
+          const params = new URLSearchParams(window.location.search);
+          const requested = params.get("lang");
+          let wanted = null;
+
+          if (requested && paths[requested]) {
+            window.localStorage.setItem("lang", requested);
+            wanted = requested;
+          } else {
+            const stored = window.localStorage.getItem("lang");
+
+            if (stored && paths[stored]) {
+              wanted = stored;
+            }
+          }
+
+          if (wanted && wanted !== current) {
+            window.location.replace(paths[wanted] + window.location.hash);
+            return;
+          }
+
+          if (requested) {
+            params.delete("lang");
+            const query = params.toString();
+
+            window.history.replaceState(
+              null,
+              "",
+              window.location.pathname + (query ? `?${query}` : "") + window.location.hash
+            );
+          }
+        } catch {}
+      })();
+    </script>

@@ -1,0 +1,13 @@
+          <div class="lang-switch" role="group" aria-label="{{ t.common.lang_switch.aria | attr }}">
+            {% for option in page.switch_options -%}
+            <a
+              class="lang-switch__option{% if option.code == lang %} is-active{% endif %}"
+              href="{{ option.path }}"
+              hreflang="{{ option.code }}"
+              lang="{{ option.code }}"
+              data-lang-link="{{ option.code }}"
+              title="{{ option.title | attr }}"
+              {% if option.code == lang %}aria-current="true"{% endif %}
+            >{{ option.label }}</a>
+            {% endfor -%}
+          </div>
