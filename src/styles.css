@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+/* Bricolage Grotesque ships no Cyrillic subset, so the Russian pages need a
+   second display face. Golos Text is only referenced under html[lang="ru"],
+   so the English pages never download it. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Golos+Text:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +10,7 @@
 @layer base {
   :root {
     color-scheme: light;
+    --site-display-font: "Bricolage Grotesque", sans-serif;
     --site-bg: #F7F8FC;
     --site-bg-elevated: #FFFFFF;
     --site-surface: #FFFFFF;
@@ -57,6 +61,13 @@
     --site-hard-shadow: 6px 6px 0 var(--site-hard-shadow-color);
   }
 
+  /* Without this every Russian heading falls back to whatever sans the
+     visitor's OS defaults to, and a heading like "Миграция с Angular на React"
+     renders in two typefaces at once. */
+  html[lang="ru"] {
+    --site-display-font: "Golos Text", "IBM Plex Sans", sans-serif;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -86,7 +97,7 @@
   h5,
   h6,
   .display-font {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
   }
 
   a {
@@ -934,7 +945,7 @@
   }
 
   .hero-stat-card__value {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.12rem;
     font-weight: 800;
     letter-spacing: 0;
@@ -1070,7 +1081,7 @@
   }
 
   .value-card__number {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: -0.06em;
@@ -1665,7 +1676,7 @@
   }
 
   .proof-point__value {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -1787,7 +1798,7 @@
   }
 
   .offer-card__price {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -1938,7 +1949,7 @@
 
   .retainer-panel__price {
     margin-top: 1rem;
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -2211,7 +2222,7 @@
   }
 
   .process-step__index {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -2311,7 +2322,7 @@
   }
 
   .cv-band__title {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--site-display-font);
     font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: -0.02em;

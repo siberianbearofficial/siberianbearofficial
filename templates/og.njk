@@ -7,13 +7,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Golos+Text:wght@700;800&family=IBM+Plex+Sans:wght@400;600&display=swap"
     />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+
+      /* Same reason as the site stylesheet: Bricolage Grotesque has no
+         Cyrillic, so the Russian cards need their own display face. */
+      html {
+        --og-display-font: "Bricolage Grotesque", system-ui, sans-serif;
+      }
+
+      html[lang="ru"] {
+        --og-display-font: "Golos Text", system-ui, sans-serif;
       }
 
       body {
@@ -53,7 +63,7 @@
       }
 
       .title {
-        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-family: var(--og-display-font);
         font-weight: 800;
         font-size: {{ title_size }}px;
         line-height: 1.04;
