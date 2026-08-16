@@ -76,11 +76,21 @@
                 <span class="site-button__icon">{{ ui_icons.send }}</span>
                 <span>{{ hero.primary_cta.label }}</span>
               </a>
+              <a class="site-button site-button--secondary" href="{{ hero.email_cta.href }}">
+                <span class="site-button__icon">{{ ui_icons.mail }}</span>
+                <span>{{ hero.email_cta.label }}</span>
+              </a>
               <a class="site-button site-button--secondary" href="{{ hero.secondary_cta.href }}">
                 <span class="site-button__icon">{{ ui_icons["arrow-right"] }}</span>
                 <span>{{ hero.secondary_cta.label }}</span>
               </a>
             </div>
+
+            <a class="hero-retainer-link" href="{{ hero.retainer_cta.href }}">
+              <span class="hero-retainer-link__icon">{{ ui_icons[retainer.icon] }}</span>
+              <span>{{ hero.retainer_cta.label }}</span>
+              <span class="hero-retainer-link__arrow">{{ ui_icons["arrow-right"] }}</span>
+            </a>
           </div>
 
           <div class="proof-bar" data-reveal>
@@ -146,6 +156,10 @@
                 {% endfor %}
               </ul>
 
+              {% if service.note -%}
+              <p class="offer-card__note">{{ service.note }}</p>
+              {% endif -%}
+
               {% if service.footnote -%}
               <p class="offer-card__footnote">{{ service.footnote }}</p>
               {% endif -%}
@@ -158,7 +172,7 @@
             {% endfor %}
           </div>
 
-          <div class="retainer-panel" data-reveal>
+          <div class="retainer-panel" id="retainer" data-reveal>
             <div class="retainer-panel__copy">
               <div class="retainer-panel__head">
                 <span class="retainer-panel__icon">{{ ui_icons[retainer.icon] }}</span>
@@ -169,6 +183,10 @@
               </div>
               <p class="retainer-panel__summary">{{ retainer.summary }}</p>
               <div class="retainer-panel__price">{{ retainer.price }}</div>
+              <a class="offer-card__cta retainer-panel__cta" href="#contact">
+                <span>{{ t.services.actions.discuss }}</span>
+                <span class="offer-card__cta-icon">{{ ui_icons["arrow-right"] }}</span>
+              </a>
             </div>
             <ul class="retainer-panel__list">
               {% for item in retainer.includes -%}

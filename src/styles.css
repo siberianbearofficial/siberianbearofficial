@@ -690,6 +690,50 @@
     padding: 0.6rem 1rem;
   }
 
+  /* The lowest-commitment offer, given a door in the hero. Deliberately not a
+     third filled button: it should read as an alternative, not compete with
+     the call. */
+  .hero-retainer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 0.9rem;
+    border-bottom: 1px solid var(--site-border);
+    padding-bottom: 0.3rem;
+    font-weight: 600;
+    color: var(--site-ink-muted);
+    transition:
+      color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .hero-retainer-link:hover {
+    border-color: var(--site-cobalt);
+    color: var(--site-ink-strong);
+  }
+
+  .hero-retainer-link__icon,
+  .hero-retainer-link__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--site-cobalt);
+  }
+
+  .hero-retainer-link__icon .lucide-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .hero-retainer-link__arrow .lucide-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .retainer-panel__cta {
+    margin-top: 1.1rem;
+  }
+
   .hero-links {
     display: flex;
     flex-wrap: wrap;
@@ -1866,6 +1910,19 @@
   .offer-card__include-icon .lucide-icon {
     width: 1.05rem;
     height: 1.05rem;
+  }
+
+  /* Names the wedge out loud: a team that already deployed Open WebUI should
+     recognise itself here, so it is solid rather than the dashed footnote. */
+  .offer-card__note {
+    border-radius: 0.85rem;
+    border: 1px solid var(--site-cobalt);
+    border-left-width: 3px;
+    padding: 0.8rem 0.95rem;
+    background: color-mix(in srgb, var(--site-cobalt) 7%, transparent);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--site-ink);
   }
 
   .offer-card__footnote {

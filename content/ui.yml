@@ -80,8 +80,8 @@ cv:
         en: Internal AI Product
         ru: Внутренний AI-продукт
       meta:
-        en: thousands of users, React migration
-        ru: тысячи пользователей, миграция на React
+        en: retrieval, tool calls, React migration
+        ru: retrieval, tool calls, миграция на React
     - href: "#case-image-generation-ui"
       modifier: image
       illustration: digital-artwork
@@ -94,17 +94,19 @@ cv:
       meta:
         en: Angular frontend ownership
         ru: ответственность за фронтенд на Angular
+    # Users, not years. Years are the weakest number on the page and the grade
+    # ladder they used to carry meant nothing outside the company.
     - modifier: product
       illustration: developer-activity
       value:
-        en: 2+ yrs
-        ru: 2+ года
+        en: 38,000+
+        ru: 38 000+
       label:
-        en: T-Bank AI Product Work
-        ru: AI-продукты в Т-Банке
+        en: employees
+        ru: сотрудников
       meta:
-        en: intern to middle-level scope
-        ru: от стажёра до мидл-уровня задач
+        en: internal LLM assistant I ship features on
+        ru: внутренний LLM-ассистент, в котором я выпускаю фичи
     - modifier: migration
       illustration: version-control
       value:
@@ -121,19 +123,17 @@ cv:
       en: Focus
       ru: Фокус
     heading:
-      en: Positioned for product teams that need range, not narrow specialization
-      ru: Для продуктовых команд, которым нужен широкий профиль, а не узкая специализация
+      en: Specialised in the part of AI products that breaks
+      ru: Специализация — та часть AI-продуктов, которая ломается
     lede:
       en: >
-        The strongest signal in this profile is hands-on TypeScript fullstack
-        range across React, Angular, Svelte, and FastAPI: AI-heavy internal
-        tooling, backend support, and Angular-to-React migration work delivered
-        without losing product speed
+        Most teams can get an LLM demo working. I build the layer underneath:
+        retrieval that returns the right document, tool calls that fail safely,
+        and an interface people open on a Monday morning.
       ru: >
-        Самый сильный сигнал в этом профиле — реальная fullstack-широта на
-        TypeScript: React, Angular, Svelte и FastAPI. Внутренние инструменты
-        вокруг AI, поддержка бэкенда и миграция с Angular на React — без потери
-        скорости продукта
+        Демо с LLM соберёт почти любая команда. Я делаю слой под ним: поиск,
+        который возвращает нужный документ, вызовы инструментов, которые падают
+        безопасно, и интерфейс, который открывают в понедельник утром.
     narrative_label:
       en: Current Narrative
       ru: Чем занят сейчас
@@ -248,17 +248,15 @@ cv:
         Я полезнее всего в продуктовых командах на TypeScript, которым нужен
         человек, свободно двигающийся между React, Angular, миграциями и
         задачами с бэкендом на FastAPI, не теряя темпа
+  # Contract work is the main track, not the consolation prize, so this band
+  # does not open by ruling out the hiring reader.
   cv_band:
     title:
-      en: Not hiring, but need something built?
-      ru: Не нанимаете, но нужно что-то сделать?
+      en: Have something specific that needs building or fixing?
+      ru: Есть что-то конкретное, что нужно сделать или починить?
     meta:
-      en: >
-        I take on fixed-price contract work: internal LLM assistants, Angular to
-        React migrations, and AI features that need to stop breaking
-      ru: >
-        Беру проектную работу с фиксированной ценой: внутренние LLM-ассистенты,
-        миграции с Angular на React и AI-фичи, которым пора перестать падать
+      en: Scope, prices, and delivery dates are on aleksei-orlov.dev
+      ru: Объём работ, цены и сроки — на aleksei-orlov.dev
 
 services:
   brand_role:

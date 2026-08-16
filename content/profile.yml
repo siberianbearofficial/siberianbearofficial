@@ -1,30 +1,28 @@
-# Any string here can be a { en, ru } map instead of a plain string. Plain
-# strings are used as-is in both languages, which is what keeps technology
-# names, URLs, dates, and icon names from drifting between the two versions.
-
 identity:
   name:
     en: Aleksei Orlov
     ru: Алексей Орлов
   handle: siberianbearofficial
   role:
-    en: TypeScript Fullstack Engineer
-    ru: TypeScript fullstack-разработчик
-  hero_title: TypeScript Fullstack
+    en: AI Product Engineer
+    ru: Инженер AI-продуктов
+  hero_title:
+    en: AI Product Engineer
+    ru: Инженер AI-продуктов
   headline:
-    en: TypeScript Fullstack Engineer | React, Angular, FastAPI | AI Product & Migration Experience
-    ru: TypeScript fullstack-разработчик | React, Angular, FastAPI | AI-продукты и миграции
+    en: LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI
+    ru: Фичи с LLM, которые надежно работают в продакшене — retrieval, tool calling, structured outputs — закрываю end to end на React и FastAPI
   summary:
     en: >
-      TypeScript fullstack engineer with hands-on ownership across Angular, React,
-      Svelte, and FastAPI. I build internal AI products end to end, move between
-      UI and backend without handoff friction, and can help teams migrate from
-      Angular to React without stopping product delivery
+      AI product engineer working across React and FastAPI. I build the layer
+      that makes LLM features dependable in production — retrieval, tool
+      calling, structured outputs, async orchestration — and ship the interface
+      on top of it instead of handing the backend to someone else
     ru: >
-      Fullstack-разработчик на TypeScript с реальной ответственностью за Angular,
-      React, Svelte и FastAPI. Делаю внутренние AI-продукты целиком, свободно
-      перехожу между интерфейсом и бэкендом без передачи задач между командами
-      и помогаю переезжать с Angular на React, не останавливая разработку продукта
+      Инженер AI-продуктов на React и FastAPI. Строю слой, который делает
+      LLM-фичи надёжными в продакшене — retrieval, tool calling, structured
+      outputs, оркестрация асинхронных задач — и делаю интерфейс поверх него,
+      а не передаю бэкенд кому-то другому
   location:
     en: Moscow, Russia
     ru: Москва, Россия
@@ -34,16 +32,19 @@ identity:
     ru: Открыт к удалённым fullstack-позициям на TypeScript по всему миру
   current_focus:
     en: >
-      Over the last 2+ years at T-Bank I progressed from intern to junior,
-      junior+, and middle-level responsibilities while shipping AI-facing product
-      work in Angular, React, Svelte, and FastAPI
+      At T-Bank I ship product work on an internal LLM assistant used by 38,000+
+      employees, moving product logic into React while feature delivery keeps
+      running, and I own the FastAPI services behind the interfaces I build
     ru: >
-      За 2+ года в Т-Банке я прошёл путь от стажёра до junior, junior+ и
-      мидл-уровня задач, всё это время выпуская продуктовые AI-фичи на Angular,
-      React, Svelte и FastAPI
+      В Т-Банке я выпускаю продуктовые фичи внутреннего LLM-ассистента, которым
+      пользуются 38 000+ сотрудников: переношу продуктовую логику в React, не
+      останавливая разработку, и отвечаю за сервисы на FastAPI за интерфейсами,
+      которые делаю
+  # The site hero subheading. identity.headline is the same sentence, but it is
+  # the line the GitHub profile README renders.
   hero_tagline:
-    en: React, Angular, FastAPI, AI Product Delivery, Migration Work
-    ru: React, Angular, FastAPI, разработка AI-продуктов, миграции
+    en: LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI
+    ru: Фичи с LLM, которые надежно работают в продакшене — retrieval, tool calling, structured outputs — закрываю end to end на React и FastAPI
   website: https://aleksei-orlov.ru
   services_website: https://aleksei-orlov.dev
   email: alexeyorlov65@gmail.com
@@ -60,17 +61,19 @@ identity:
 seo:
   home:
     title:
-      en: Aleksei Orlov | TypeScript Fullstack Engineer
-      ru: Алексей Орлов | TypeScript fullstack-разработчик
+      en: Aleksei Orlov | AI Product Engineer
+      ru: Алексей Орлов | Инженер AI-продуктов
     description:
       en: >
-        TypeScript fullstack engineer with React, Angular, Svelte, and FastAPI
-        experience. Building AI products, internal platforms, and migration paths
-        from Angular to React.
+        AI product engineer. I build the layer that makes LLM features
+        dependable in production — retrieval, tool calling, structured outputs —
+        across React and FastAPI. Currently shipping on an internal assistant
+        used by 38,000+ employees at a major bank.
       ru: >
-        Fullstack-разработчик на TypeScript с опытом в React, Angular, Svelte и
-        FastAPI. Делаю AI-продукты, внутренние платформы и миграции с Angular
-        на React.
+        Инженер AI-продуктов. Строю слой, который делает LLM-фичи надёжными в
+        продакшене — retrieval, tool calling, structured outputs — на React и
+        FastAPI. Сейчас выпускаю фичи внутреннего ассистента, которым
+        пользуются 38 000+ сотрудников крупного банка.
   resume:
     title:
       en: Aleksei Orlov — Resume
@@ -115,42 +118,44 @@ cta:
       href: https://vk.com/aleksei_orlov_official
       short: aleksei_orlov_official
 
+# Order is the argument: the specialisation first, the range second. Reversing
+# these two reads as "I do a bit of everything", which is the opposite of what
+# this page is for.
 value_props:
   - title:
-      en: End-to-End Delivery
-      ru: Фича целиком, а не её половина
+      en: AI Reliability
+      ru: Надёжность AI
     icon: workflow
     description:
       en: >
-        I regularly ship frontend features together with the FastAPI backend,
-        integrations, task orchestration, and delivery plumbing they depend on
+        Structured outputs with schema validation, tool calling that handles
+        partial failure, async orchestration and streaming that survives
+        reconnects
       ru: >
-        Регулярно выпускаю фронтенд-фичи вместе с бэкендом на FastAPI,
-        интеграциями, оркестрацией задач и всей обвязкой, без которой они
-        не работают
+        Структурированные ответы с валидацией схемы, вызовы инструментов,
+        которые переживают частичный отказ, оркестрация асинхронных задач и
+        стриминг, выдерживающий переподключения
   - title:
-      en: Angular to React Migration
-      ru: Миграция с Angular на React
+      en: Full Product Surface
+      ru: Продукт целиком
+    icon: app-window
+    description:
+      en: >
+        I ship the React interface and the FastAPI service behind it, so AI
+        features do not stall on a backend handoff
+      ru: >
+        Я делаю и интерфейс на React, и сервис на FastAPI за ним, поэтому
+        AI-фичи не встают в ожидании чужого бэкенда
+  - title:
+      en: Legacy Frontend Migration
+      ru: Миграция легаси-фронтенда
     icon: route
     description:
       en: >
-        I have strong Angular depth and real React migration experience, including
-        moving product logic out of legacy host layers without freezing feature work
+        Angular and Svelte to React in production, without freezing feature
+        delivery
       ru: >
-        У меня глубокий Angular и реальный опыт переезда на React, включая вынос
-        продуктовой логики из легаси-слоёв без заморозки разработки фич
-  - title:
-      en: AI Product Engineering
-      ru: Разработка AI-продуктов
-    icon: bot
-    description:
-      en: >
-        My recent work centers on AI interfaces, image-generation workflows,
-        internal copilots, and the product infrastructure around them
-      ru: >
-        Последние годы работаю с AI-интерфейсами, сценариями генерации
-        изображений, внутренними ассистентами и продуктовой инфраструктурой
-        вокруг них
+        Angular и Svelte на React в проде, без заморозки разработки фич
 
 experience:
   - company: T-Bank
@@ -166,14 +171,14 @@ experience:
     summary:
       en: >
         Working across frontend and backend for internal AI products with React,
-        Svelte, Angular, and FastAPI, including products used by thousands of
-        internal users, while taking ownership of delivery beyond narrow
-        framework boundaries
+        Svelte, Angular, and FastAPI, including an LLM assistant used by 38,000+
+        employees, while taking ownership of delivery beyond narrow framework
+        boundaries
       ru: >
         Работаю и на фронтенде, и на бэкенде внутренних AI-продуктов на React,
-        Svelte, Angular и FastAPI, в том числе в продуктах с тысячами внутренних
-        пользователей, беря ответственность за результат шире границ одного
-        фреймворка
+        Svelte, Angular и FastAPI, в том числе в LLM-ассистенте, которым
+        пользуются 38 000+ сотрудников, беря ответственность за результат шире
+        границ одного фреймворка
     highlights:
       - en: Shipped product work in a mixed Svelte and React codebase for a widely adopted internal AI assistant, helping move new product logic toward React-owned areas
         ru: Выпускал продуктовые фичи в смешанной кодовой базе Svelte и React для внутреннего AI-ассистента с широкой аудиторией, перенося новую продуктовую логику в зоны React
@@ -187,8 +192,8 @@ experience:
   - company: T-Bank
     logo: /media/logos/tbank.svg
     role:
-      en: JavaScript Developer
-      ru: JavaScript-разработчик
+      en: Frontend Engineer, AI Image Generation
+      ru: Frontend-разработчик, AI-генерация изображений
     start: "2024-06"
     end: "2025-10"
     location:
@@ -297,7 +302,7 @@ case_studies:
         Основная ответственность за фронтенд на Angular плюс сквозная разработка
         на бэкенде FastAPI там, где фиче требовалась серверная часть
     impact:
-      value: 1k+
+      value: 1,000+
       label:
         en: internal users
         ru: внутренних пользователей
@@ -383,12 +388,12 @@ case_studies:
     icon: messages-square
     summary:
       en: >
-        Company-wide internal LLM assistant used by thousands of employees.
+        Company-wide internal LLM assistant used by 38,000+ employees.
         The product is built on a mixed Svelte and React frontend with a
         FastAPI backend and is progressively moving toward a React-first
         architecture without pausing feature delivery
       ru: >
-        Внутренний LLM-ассистент на всю компанию, которым пользуются тысячи
+        Внутренний LLM-ассистент на всю компанию, которым пользуются 38 000+
         сотрудников. Продукт построен на смешанном фронтенде из Svelte и React
         с бэкендом на FastAPI и постепенно переезжает на React-first архитектуру,
         не останавливая выпуск фич
@@ -401,11 +406,11 @@ case_studies:
         выпуске фич, пока продукт переезжал с легаси-фронтенда на React
     impact:
       value:
-        en: 1000s
-        ru: тысячи
+        en: 38,000+
+        ru: 38 000+
       label:
-        en: of internal users
-        ru: внутренних пользователей
+        en: employees
+        ru: сотрудников
     stack:
       - React
       - TypeScript
@@ -426,11 +431,11 @@ case_studies:
       en: >
         Contributed to an internal AI assistant with Svelte, React, and FastAPI,
         helping drive frontend migration and feature delivery in parallel for a
-        widely adopted internal product
+        product used by 38,000+ employees
       ru: >
         Участвовал в разработке внутреннего AI-ассистента на Svelte, React и
         FastAPI, ведя миграцию фронтенда параллельно с выпуском фич в продукте
-        с широкой внутренней аудиторией
+        с 38 000+ пользователей
 
 selected_public_repos:
   - name: studhack
@@ -657,12 +662,12 @@ resume:
       TypeScript fullstack engineer building AI product interfaces, supporting
       FastAPI backends, and migration paths from Angular to React. Comfortable
       owning features from UI to API, async workflows, integrations, and
-      delivery for internal products used by thousands of users
+      delivery for internal products used by 38,000+ employees
     ru: >
       Fullstack-разработчик на TypeScript: интерфейсы AI-продуктов, бэкенды на
       FastAPI рядом с ними и миграции с Angular на React. Веду фичу от интерфейса
       до API, включая асинхронные сценарии и интеграции, во внутренних продуктах
-      с тысячами пользователей
+      с 38 000+ пользователей
   strengths:
     - en: React and Angular product engineering
       ru: Продуктовая разработка на React и Angular
