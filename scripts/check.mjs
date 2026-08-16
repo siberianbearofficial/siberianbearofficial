@@ -2,18 +2,9 @@ import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { stat } from "node:fs/promises";
 
-import {
-  loadProfile,
-  loadServices,
-  createViewModel,
-  createServicesViewModel
-} from "./lib/profile-data.mjs";
-import { createRenderer, readExistingFileIfAny } from "./lib/render.mjs";
-import {
-  collectServicesIconNames,
-  collectSiteIconNames,
-  loadLucideIcons
-} from "./lib/ui-assets.mjs";
+import { readExistingFileIfAny } from "./lib/render.mjs";
+import { OG_IMAGES, RESUME_PDFS } from "./lib/routes.mjs";
+import { renderSiteFiles } from "./lib/site-build.mjs";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(rootDir, "dist");
@@ -26,47 +17,36 @@ async function assertUpToDate(filePath, expected) {
   }
 }
 
-async function assertPdfExists(filePath) {
+async function assertNonEmptyFile(filePath) {
   const details = await stat(filePath);
+
   if (details.size === 0) {
-    throw new Error(`Generated PDF is empty: ${filePath}`);
+    throw new Error(`Generated file is empty: ${filePath}`);
   }
 }
 
 async function main() {
-  const profile = await loadProfile(rootDir);
-  const services = await loadServices(rootDir);
-  const viewModel = createViewModel(profile);
-  const uiIcons = await loadLucideIcons(rootDir, collectSiteIconNames(profile));
-  const renderer = createRenderer(rootDir);
-  const renderModel = {
-    ...viewModel,
-    ui_icons: uiIcons
-  };
-  const servicesModel = {
-    ...createServicesViewModel(services, profile),
-    ui_icons: await loadLucideIcons(rootDir, collectServicesIconNames(services))
-  };
+  const { files, readme } = await renderSiteFiles(rootDir);
 
-  await assertUpToDate(
-    resolve(rootDir, "README.md"),
-    renderer.render("readme.njk", renderModel)
-  );
-  await assertUpToDate(
-    resolve(distDir, "index.html"),
-    renderer.render("site.njk", renderModel)
-  );
-  await assertUpToDate(
-    resolve(distDir, "resume/index.html"),
-    renderer.render("resume.njk", renderModel)
-  );
-  await assertUpToDate(
-    resolve(distDir, "services/index.html"),
-    renderer.render("services.njk", servicesModel)
-  );
-  await assertPdfExists(resolve(distDir, "Aleksei-Orlov-Resume.pdf"));
+  await assertUpToDate(resolve(rootDir, "README.md"), readme);
 
-  console.log("Profile and services content is valid and generated files are fresh.");
+  for (const [relativePath, contents] of files) {
+    await assertUpToDate(resolve(distDir, relativePath), contents);
+  }
+
+  for (const pdf of Object.values(RESUME_PDFS)) {
+    await assertNonEmptyFile(resolve(distDir, pdf.replace(/^\//, "")));
+  }
+
+  for (const variants of Object.values(OG_IMAGES)) {
+    for (const image of Object.values(variants)) {
+      await assertNonEmptyFile(resolve(distDir, image.replace(/^\//, "")));
+    }
+  }
+
+  console.log(
+    `Content is valid and ${files.size + 1} generated files are fresh in both languages.`
+  );
 }
 
 await main();

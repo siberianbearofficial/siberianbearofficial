@@ -1,48 +1,100 @@
 identity:
-  name: Aleksei Orlov
+  name:
+    en: Aleksei Orlov
+    ru: Алексей Орлов
   handle: siberianbearofficial
-  role: TypeScript Fullstack Engineer
-  hero_title: TypeScript Fullstack
-  headline: TypeScript Fullstack Engineer | React, Angular, FastAPI | AI Product & Migration Experience
-  summary: >
-    TypeScript fullstack engineer with hands-on ownership across Angular, React,
-    Svelte, and FastAPI. I build internal AI products end to end, move between
-    UI and backend without handoff friction, and can help teams migrate from
-    Angular to React without stopping product delivery
-  location: Moscow, Russia
+  role:
+    en: AI Product Engineer
+    ru: Инженер AI-продуктов
+  hero_title:
+    en: AI Product Engineer
+    ru: Инженер AI-продуктов
+  headline:
+    en: LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI
+    ru: Фичи с LLM, которые надежно работают в продакшене — retrieval, tool calling, structured outputs — закрываю end to end на React и FastAPI
+  summary:
+    en: >
+      AI product engineer working across React and FastAPI. I build the layer
+      that makes LLM features dependable in production — retrieval, tool
+      calling, structured outputs, async orchestration — and ship the interface
+      on top of it instead of handing the backend to someone else
+    ru: >
+      Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+      LLM-фичей в продакшене — retrieval, tool calling, structured
+      outputs, оркестрация асинхронных задач — и создаю Web UI для него
+  location:
+    en: Moscow, Russia
+    ru: Москва, Россия
   timezone: Europe/Moscow
-  availability: Open to worldwide remote TypeScript fullstack roles
-  current_focus: >
-    Over the last 2+ years at T-Bank I progressed from intern to junior,
-    junior+, and middle-level responsibilities while shipping AI-facing product
-    work in Angular, React, Svelte, and FastAPI
-  hero_tagline: React, Angular, FastAPI, AI Product Delivery, Migration Work
+  availability:
+    en: Open to worldwide remote AI product engineering roles
+    ru: Удаленный формат работы, разработка AI-продуктов по всему миру
+  current_focus:
+    en: >
+      At T-Bank I ship product work on an internal LLM assistant used by 38,000+
+      employees, moving already built logic from Svelte to React while feature delivery keeps
+      running, and I own the FastAPI services behind the interfaces I build
+    ru: >
+      В Т-Банке я разрабатываю продуктовые фичи для внутреннего LLM-ассистента, которым
+      пользуются 38 000+ сотрудников, параллельно с миграцией существующей логики
+      со Svelte на React, и пишу бэкенд на FastAPI для некоторых фичей
+  # The site hero subheading. identity.headline is the same sentence, but it is
+  # the line the GitHub profile README renders.
+  hero_tagline:
+    en: LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI
+    ru: Фичи с LLM, которые надежно работают в продакшене — retrieval, tool calling, structured outputs — закрываю end to end на React и FastAPI
   website: https://aleksei-orlov.ru
   services_website: https://aleksei-orlov.dev
   email: alexeyorlov65@gmail.com
   github: https://github.com/siberianbearofficial
   avatar_url: /media/photos/main.png
   header_avatar_url: https://avatars.githubusercontent.com/u/61984103
-  telegram: https://t.me/aleksei_orlov_official
-  vk: https://vk.com/aleksei_orlov_official
-  linkedin:
+  telegram: https://t.me/aleksei_orlov_dev
+  vk: https://vk.com/aleksei_orlov_dev
+  linkedin: https://www.linkedin.com/in/aleksei-orlov-dev
   github_stats:
     stats_url: https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default
     langs_url: https://github-stats-extended.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff
 
 seo:
-  title: Aleksei Orlov | TypeScript Fullstack Engineer
-  description: >
-    TypeScript fullstack engineer with React, Angular, Svelte, and FastAPI
-    experience. Building AI products, internal platforms, and migration paths
-    from Angular to React.
+  home:
+    title:
+      en: Aleksei Orlov | AI Product Engineer
+      ru: Алексей Орлов | Инженер AI-продуктов
+    description:
+      en: >
+        AI product engineer. I build the layer that makes LLM features
+        dependable in production — retrieval, tool calling, structured outputs —
+        across React and FastAPI. Currently shipping on an internal assistant
+        used by 38,000+ employees at a major bank.
+      ru: >
+        Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+        LLM-фичей в продакшене — retrieval, tool calling, structured
+        outputs, оркестрация асинхронных задач — и создаю Web UI для него.
+        Сейчас делаю фичи внутреннего LLM-ассистента, которым
+        пользуются 38 000+ сотрудников крупного банка.
+  resume:
+    title:
+      en: Aleksei Orlov — CV
+      ru: Алексей Орлов — резюме
+    description:
+      en: >
+        One-page CV of Aleksei Orlov, AI product engineer building
+        dependable LLM features — retrieval, tool calling, structured outputs —
+        on React and FastAPI
+      ru: >
+        Одностраничное резюме Алексея Орлова, инженера AI-продуктов: надежные
+        LLM-фичи — retrieval, tool calling, structured outputs — на React
+        и FastAPI
 
 cta:
   primary:
     - label: Telegram
-      href: https://t.me/aleksei_orlov_official
-      short: "@aleksei_orlov_official"
-    - label: Email
+      href: https://t.me/aleksei_orlov_dev
+      short: "@aleksei_orlov_dev"
+    - label:
+        en: Email
+        ru: Почта
       href: mailto:alexeyorlov65@gmail.com
       short: alexeyorlov65@gmail.com
     - label: GitHub
@@ -50,117 +102,210 @@ cta:
       short: siberianbearofficial
   footer:
     - label: Telegram
-      href: https://t.me/aleksei_orlov_official
-      short: "@aleksei_orlov_official"
-    - label: Email
+      href: https://t.me/aleksei_orlov_dev
+      short: "@aleksei_orlov_dev"
+    - label:
+        en: Email
+        ru: Почта
       href: mailto:alexeyorlov65@gmail.com
       short: alexeyorlov65@gmail.com
     - label: GitHub
       href: https://github.com/siberianbearofficial
       short: siberianbearofficial
+    - label: LinkedIn
+      href: https://www.linkedin.com/in/aleksei-orlov-dev
+      short: aleksei-orlov-dev
     - label: VK
-      href: https://vk.com/aleksei_orlov_official
-      short: aleksei_orlov_official
+      href: https://vk.com/aleksei_orlov_dev
+      short: aleksei_orlov_dev
 
+# Order is the argument: the specialisation first, the range second. Reversing
+# these two reads as "I do a bit of everything", which is the opposite of what
+# this page is for.
 value_props:
-  - title: End-to-End Delivery
+  - title:
+      en: AI Reliability
+      ru: Надежность AI в продакшене
     icon: workflow
-    description: >
-      I regularly ship frontend features together with the FastAPI backend,
-      integrations, task orchestration, and delivery plumbing they depend on
-  - title: Angular to React Migration
+    description:
+      en: >
+        Structured outputs with schema validation, tool calling that handles
+        partial failure, async orchestration and streaming that survives
+        reconnects
+      ru: >
+        Structured output со строгой валидацией всех схем, tool calling,
+        выживающий при ошибках или отказах внешних систем, оркестрация асинхронных 
+        задач и стриминг ответов, выдерживающий переподключения
+  - title:
+      en: Full Product Surface
+      ru: Продукт целиком
+    icon: app-window
+    description:
+      en: >
+        I ship the React interface and the FastAPI service behind it, so AI
+        features do not stall on a backend handoff
+      ru: >
+        Я делаю и интерфейс на React, и бэкенд на FastAPI для него, так что
+        AI-фичи не зависят от чужого бэкенда, а сразу едут в продакшн
+  - title:
+      en: Legacy Frontend Migration
+      ru: Миграция легаси-фронтенда
     icon: route
-    description: >
-      I have strong Angular depth and real React migration experience, including
-      moving product logic out of legacy host layers without freezing feature work
-  - title: AI Product Engineering
-    icon: bot
-    description: >
-      My recent work centers on AI interfaces, image-generation workflows,
-      internal copilots, and the product infrastructure around them
+    description:
+      en: >
+        Angular and Svelte to React in production, without freezing feature
+        delivery
+      ru: >
+        Переписываю Angular или Svelte на React без остановки поставки продуктовых фич
 
 experience:
   - company: T-Bank
     logo: /media/logos/tbank.svg
-    role: TypeScript Fullstack Engineer
+    role:
+      en: Frontend Engineer, Copilots
+      ru: Фронтенд-инженер, Копилоты
     start: "2025-11"
     end: Present
-    location: Moscow, Russia
-    summary: >
-      Working across frontend and backend for internal AI products with React,
-      Svelte, Angular, and FastAPI, including products used by thousands of
-      internal users, while taking ownership of delivery beyond narrow
-      framework boundaries
+    location:
+      en: Moscow, Russia
+      ru: Москва, Россия
+    summary:
+      en: >
+        Shipping features on an internal LLM assistant used by 38,000+
+        employees, across a mixed React and Svelte frontend and the FastAPI
+        services behind it, owning delivery from the interface through to the
+        backend rather than stopping at a handoff
+      ru: >
+        Делаю фичи для внутреннего LLM-ассистента, которым пользуются 38 000+
+        сотрудников: смешанный фронтенд на React и Svelte и бэкенд на FastAPI
+        для него. Веду продуктовые фичи целиком от UI до бэкенда за ним.
     highlights:
-      - Shipped product work in a mixed Svelte and React codebase for a widely adopted internal AI assistant, helping move new product logic toward React-owned areas
-      - Continued delivering internal AI tooling features end to end, including UI behavior, backend fixes, test coverage, and quality rails
+      - en: Shipped product work in a mixed Svelte and React codebase for a widely adopted internal AI assistant, helping move new product logic toward React-owned areas
+        ru: Выпускал продуктовые фичи в смешанной кодовой базе Svelte и React для внутреннего AI-ассистента с широкой аудиторией, перенося новую продуктовую логику в зоны React
+      - en: Continued delivering internal AI tooling features end to end, including UI behavior, backend fixes, test coverage, and code quality guardrails
+        ru: "Продолжаю делать фичи внутренних AI-инструментов end to end: поведение интерфейса, правки на бэкенде, тесты и требования к качеству кода"
     resume_highlights:
-      - Fullstack delivery across React, Svelte, Angular, and FastAPI for internal AI products
-      - Continued product ownership beyond a narrow frontend-only role
+      - en: Fullstack delivery across React, Svelte, Angular, and FastAPI on an LLM assistant used by 38,000+ employees
+        ru: Fullstack-разработка на React, Svelte, Angular и FastAPI в LLM-ассистенте с 38 000+ пользователей
+      - en: Product ownership from the interface through to the FastAPI services behind it
+        ru: Ответственность за продукт от интерфейса до сервисов на FastAPI за ним
   - company: T-Bank
     logo: /media/logos/tbank.svg
-    role: JavaScript Developer
+    role:
+      en: Frontend Engineer, AI Image Generation
+      ru: Frontend-инженер, AI-генерация изображений
     start: "2024-06"
     end: "2025-10"
-    location: Moscow, Russia
-    summary: >
-      Grew from junior ownership into broader product responsibility in internal
-      AI and experimentation teams, with Angular as the main frontend surface
-      and FastAPI as the usual backend support layer
+    location:
+      en: Moscow, Russia
+      ru: Москва, Россия
+    summary:
+      en: >
+        Grew from junior ownership into broader product responsibility in internal
+        AI and experimentation teams, with Angular as the main frontend surface
+        and FastAPI as the usual backend support layer
+      ru: >
+        Вырос от junior-задач до более широкой продуктовой ответственности в
+        командах внутреннего AI и экспериментов: Angular как основная
+        фронтенд-поверхность и FastAPI как привычный бэкенд рядом
     highlights:
-      - Owned substantial parts of an internal image-generation UI for designers and its adjacent backend workflows, including generation flows, boards, reactions, and async status handling
-      - Regularly crossed the frontend/backend boundary when features required FastAPI APIs, background consumers, persistence, or service integrations
+      - en: Owned substantial parts of an internal image-generation UI for designers and its adjacent backend workflows, including generation flows, boards, reactions, and async status handling
+        ru: "Отвечал за значительную часть внутреннего интерфейса генерации изображений для дизайнеров и за смежные бэкенд-сценарии: генерации, доски, реакции и обработку статусов асинхронных задач"
+      - en: Regularly crossed the frontend/backend boundary when features required FastAPI APIs, background consumers, persistence, or service integrations
+        ru: Регулярно переходил границу фронтенда и бэкенда, когда фиче требовались API на FastAPI, фоновые консьюмеры, хранение данных или интеграции сервисов
     resume_highlights:
-      - Owned major Angular product surfaces for internal AI tooling
-      - Delivered FastAPI-backed features without separate backend handoff
+      - en: Owned major Angular product surfaces for internal AI tooling
+        ru: Отвечал за крупные продуктовые экраны на Angular во внутренних AI-инструментах
+      - en: Delivered FastAPI-backed features without separate backend handoff
+        ru: Делал фичи вместе с бэкендом на FastAPI, без передачи задачи другой команде
   - company: T-Bank
     logo: /media/logos/tbank.svg
-    role: Software Engineering Intern
+    role:
+      en: Software Engineering Intern
+      ru: Стажер-разработчик
     start: "2024-01"
     end: "2024-06"
-    location: Moscow, Russia
-    summary: >
-      Started in an AI-focused internal product environment and quickly moved
-      from internship tasks to production feature ownership
+    location:
+      en: Moscow, Russia
+      ru: Москва, Россия
+    summary:
+      en: >
+        Started in an AI-focused internal product environment and quickly moved
+        from internship tasks to production feature ownership
+      ru: >
+        Начал во внутренней продуктовой среде вокруг AI и быстро перешел от
+        стажерских задач к ответственности за продовые фичи
     highlights:
-      - Joined the internal AI product stream and began shipping production changes in Angular and FastAPI
-      - Built the foundation for later fullstack ownership by working directly with product flows instead of isolated training tasks
+      - en: Joined the internal AI product stream and began shipping production changes in Angular and FastAPI
+        ru: Пришел в поток внутренних AI-продуктов и начал выпускать изменения в прод на Angular и FastAPI
+      - en: Built the foundation for later fullstack ownership by working directly with product flows instead of isolated training tasks
+        ru: Заложил основу для будущей fullstack-ответственности, работая с реальными продуктовыми сценариями, а не с учебными задачами
     resume_highlights:
-      - Entered production AI product development as an intern
-      - Moved quickly from onboarding tasks to real feature work
+      - en: Entered production AI product development as an intern
+        ru: Вошел в разработку продовых AI-продуктов еще стажером
+      - en: Moved quickly from onboarding tasks to real feature work
+        ru: Быстро перешел от онбординга к реальным фичам
   - company: Qoollo
     logo: /media/logos/qoollo.svg
-    role: Frontend Developer Intern
+    role:
+      en: Software Engineering Intern
+      ru: Стажер-разработчик
     start: "2023-09"
     end: "2024-01"
-    location: Moscow, Russia
-    summary: >
-      Worked on a web app that compared packaging imagery to detect counterfeit
-      products and prepared Python learning materials for School 21
+    location:
+      en: Moscow, Russia
+      ru: Москва, Россия
+    summary:
+      en: >
+        Worked on a web app that compared packaging imagery to detect counterfeit
+        products and prepared Python learning materials for School 21
+      ru: >
+        Работал над веб-приложением, которое сравнивало изображения упаковки для
+        поиска контрафакта, и готовил учебные материалы по Python для Школы 21
     highlights:
-      - Continued a university practice project into an internal internship context, refining image-comparison screens, admin flows, and uploaded-image editing
-      - Prepared Python study materials and practical exercises for educational programs alongside product work
+      - en: Continued a university practice project into an internal internship context, refining image-comparison screens, admin flows, and uploaded-image editing
+        ru: "Продолжил университетский практический проект уже как стажер: дорабатывал экраны сравнения изображений, админские сценарии и редактирование загруженных картинок"
+      - en: Prepared Python study materials and practical exercises for educational programs alongside product work
+        ru: Параллельно с продуктовой работой готовил материалы и практические задания по Python для образовательных программ
     resume_highlights:
-      - Worked on a counterfeit-detection web app during internship
-      - Prepared Python educational materials for School 21
+      - en: Worked on a counterfeit-detection web app during internship
+        ru: Делал веб-приложение для поиска контрафакта во время стажировки
+      - en: Prepared Python educational materials for School 21
+        ru: Готовил учебные материалы по Python для Школы 21
 
 case_studies:
   - key: image-generation-ui
-    title: Image Generation Platform UI
+    title:
+      en: Image Generation Platform UI
+      ru: Интерфейс платформы генерации изображений
     readme_featured: true
-    kind: Internal design workflow tool
+    kind:
+      en: Internal design workflow tool
+      ru: Внутренний инструмент для дизайнеров
     icon: image
-    summary: >
-      Internal web application for an AI image-generation platform used by
-      designers who needed a practical interface for day-to-day creative work.
-      The product provided board-based organization, editing workflows, and
-      async task management on top of a company-wide generation API
-    role: >
-      Primary ownership on the Angular frontend, with selected end-to-end
-      delivery across the FastAPI backend when features required server-side work
+    summary:
+      en: >
+        Internal web application for an AI image-generation platform used by
+        designers who needed a practical interface for day-to-day creative work.
+        The product provided board-based organization, editing workflows, and
+        async task management on top of a company-wide generation API
+      ru: >
+        Внутреннее веб-приложение для AI-платформы генерации изображений: им
+        пользуются дизайнеры, которым нужен рабочий инструмент на каждый день.
+        Продукт дал доски для организации работы, сценарии редактирования и
+        управление асинхронными задачами поверх общего для компании API генерации
+    role:
+      en: >
+        Primary ownership on the Angular frontend, with selected end-to-end
+        delivery across the FastAPI backend when features required server-side work
+      ru: >
+        Основная ответственность за фронтенд на Angular плюс сквозная разработка
+        на бэкенде FastAPI там, где фиче требовалась серверная часть
     impact:
-      value: 1k+
-      label: internal users
+      value: 1,000+
+      label:
+        en: internal users
+        ru: внутренних пользователей
     stack:
       - Angular
       - TypeScript
@@ -169,24 +314,44 @@ case_studies:
       - Taiga UI
       - OAuth / SSO
     highlights:
-      - Built and evolved a board-based workspace where designers organized generations into project spaces instead of a flat task list
-      - Implemented drag-and-drop between boards, image reactions, and editing flows for multiple generation modes
-      - Designed a priority-queue polling model on the frontend to schedule status checks for asynchronous generation tasks without aggressive polling
-    resume_highlight: >
-      Owned an Angular UI for internal image-generation workflows, with
-      board-based organization, async task polling, reactions, and editing flows
+      - en: Built and evolved a board-based workspace where designers organized generations into project spaces instead of a flat task list
+        ru: Собрал и развивал рабочее пространство на досках, где дизайнеры раскладывают генерации по проектам вместо плоского списка задач
+      - en: Implemented drag-and-drop between boards, image reactions, and editing flows for multiple generation modes
+        ru: Реализовал перетаскивание между досками, реакции на изображения и сценарии редактирования для нескольких режимов генерации
+      - en: Designed a priority-queue polling model on the frontend to schedule status checks for asynchronous generation tasks without aggressive polling
+        ru: Спроектировал на фронтенде модель опроса с очередью приоритетов, чтобы проверять статусы асинхронных генераций без агрессивного поллинга
+    resume_highlight:
+      en: >
+        Owned an Angular UI for internal image-generation workflows, with
+        board-based organization, async task polling, reactions, and editing flows
+      ru: >
+        Отвечал за интерфейс на Angular для внутренней генерации изображений:
+        доски, опрос статусов асинхронных задач, реакции и редактирование
   - key: image-generation-bff
-    title: Image Generation BFF
+    title:
+      en: Image Generation BFF
+      ru: BFF для генерации изображений
     readme_featured: false
-    kind: FastAPI backend-for-frontend
+    kind:
+      en: FastAPI backend-for-frontend
+      ru: Backend-for-frontend на FastAPI
     icon: workflow
-    summary: >
-      FastAPI service that connected the frontend to the company-wide
-      image-generation API, handling authentication, task lifecycle data,
-      and downstream persistence for the interface
-    role: >
-      Designed and implemented the original BFF surface, then kept extending it
-      as product features moved beyond frontend-only scope
+    summary:
+      en: >
+        FastAPI service that connected the frontend to the company-wide
+        image-generation API, handling authentication, task lifecycle data,
+        and downstream persistence for the interface
+      ru: >
+        Сервис на FastAPI, связавший фронтенд с общим для компании API генерации
+        изображений: аутентификация, данные о жизненном цикле задач и хранение
+        всего, что нужно интерфейсу
+    role:
+      en: >
+        Designed and implemented the original BFF surface, then kept extending it
+        as product features moved beyond frontend-only scope
+      ru: >
+        Спроектировал и написал первую версию BFF, а затем расширял его по мере
+        того, как продуктовые фичи выходили за рамки одного фронтенда
     stack:
       - FastAPI
       - Python
@@ -197,29 +362,55 @@ case_studies:
       - OAuth / SSO
       - Alembic
     highlights:
-      - Integrated corporate SSO for end users while routing generation requests through a service-level backend path
-      - Built an event consumer that processed completed tasks and coordinated persistence across the database and object storage
-      - Added backend support for user-facing features such as reactions, board operations, and image post-processing flows
-    resume_highlight: >
-      Built a FastAPI BFF with SSO integration, event processing,
-      database persistence, object storage, and task orchestration for
-      an internal image-generation UI
+      - en: Integrated corporate SSO for end users while routing generation requests through a service-level backend path
+        ru: Внедрил корпоративный SSO для конечных пользователей, направив запросы генерации через сервисный бэкенд-путь
+      - en: Built an event consumer that processed completed tasks and coordinated persistence across the database and object storage
+        ru: Написал консьюмер событий, который обрабатывал завершенные задачи и согласовывал запись в базу и в объектное хранилище
+      - en: Added backend support for user-facing features such as reactions, board operations, and image post-processing flows
+        ru: "Добавил бэкенд-поддержку пользовательских фич: реакций, операций с досками и постобработки изображений"
+    resume_highlight:
+      en: >
+        Built a FastAPI BFF with SSO integration, event processing,
+        database persistence, object storage, and task orchestration for
+        an internal image-generation UI
+      ru: >
+        Сделал BFF на FastAPI с интеграцией SSO, обработкой событий, хранением
+        в базе и объектном хранилище и оркестрацией задач для внутреннего
+        интерфейса генерации изображений
   - key: ai-assistant
-    title: Internal AI Assistant
+    title:
+      en: Internal AI Assistant
+      ru: Внутренний AI-ассистент
     readme_featured: true
-    kind: Internal LLM assistant platform
+    kind:
+      en: Internal LLM assistant platform
+      ru: Платформа внутреннего LLM-ассистента
     icon: messages-square
-    summary: >
-      Company-wide internal LLM assistant used by thousands of employees.
-      The product is built on a mixed Svelte and React frontend with a
-      FastAPI backend and is progressively moving toward a React-first
-      architecture without pausing feature delivery
-    role: >
-      Contributed across frontend architecture, quality tooling, and feature
-      delivery while the product moved from a legacy frontend toward React
+    summary:
+      en: >
+        Company-wide internal LLM assistant used by 38,000+ employees.
+        The product is built on a mixed Svelte and React frontend with a
+        FastAPI backend and is progressively moving toward a React-first
+        architecture without pausing feature delivery
+      ru: >
+        Внутренний LLM-ассистент на всю компанию, которым пользуются 38 000+
+        сотрудников. Продукт построен на смешанном фронтенде из Svelte и React
+        с бэкендом на FastAPI и постепенно переезжает на React-first архитектуру,
+        не останавливая выпуск фич
+    role:
+      en: >
+        Contributed across frontend architecture, quality tooling, and feature
+        delivery while the product moved from a legacy frontend toward React
+      ru: >
+        Участвовал в архитектуре фронтенда, инструментах контроля качества и
+        выпуске фич, пока продукт переезжал с легаси-фронтенда на React
     impact:
-      value: 1000s
-      label: of internal users
+      value:
+        en: 38,000+
+        ru: 38 000+
+      label:
+        en: employees
+        ru: сотрудников
     stack:
       - React
       - TypeScript
@@ -230,13 +421,21 @@ case_studies:
       - Oxlint
       - Playwright
     highlights:
-      - Worked in a mixed frontend stack, helping move product logic into React-owned areas while maintaining the existing Svelte surface
-      - Shipped product features and supporting backend fixes in parallel with migration work instead of treating them as separate tracks
-      - Helped establish stricter frontend quality rails around new React code while the product still carried legacy surface area
-    resume_highlight: >
-      Contributed to an internal AI assistant with Svelte, React, and FastAPI,
-      helping drive frontend migration and feature delivery in parallel for a
-      widely adopted internal product
+      - en: Worked in a mixed frontend stack, helping move product logic into React-owned areas while maintaining the existing Svelte surface
+        ru: Работал в смешанном фронтенд-стеке, перенося продуктовую логику в зоны React и поддерживая существующую часть на Svelte
+      - en: Shipped product features and supporting backend fixes in parallel with migration work instead of treating them as separate tracks
+        ru: Выпускал продуктовые фичи и правки на бэкенде параллельно с миграцией, а не отдельным треком
+      - en: Helped establish stricter frontend quality rails around new React code while the product still carried legacy surface area
+        ru: Помог выстроить более строгие требования к качеству нового React-кода, пока в продукте оставалась легаси-часть
+    resume_highlight:
+      en: >
+        Contributed to an internal AI assistant with Svelte, React, and FastAPI,
+        helping drive frontend migration and feature delivery in parallel for a
+        product used by 38,000+ employees
+      ru: >
+        Участвовал в разработке внутреннего AI-ассистента на Svelte, React и
+        FastAPI, ведя миграцию фронтенда параллельно с выпуском фич в продукте
+        с 38 000+ пользователей
 
 selected_public_repos:
   - name: studhack
@@ -248,9 +447,13 @@ selected_public_repos:
       - TypeScript
       - ASP.NET Core 8
       - PostgreSQL
-    summary: >
-      Platform for hackathon teams, events, and career communities with user
-      profiles, team workflows, notifications, and Dockerized UI/API delivery
+    summary:
+      en: >
+        Platform for hackathon teams, events, and career communities with user
+        profiles, team workflows, notifications, and Dockerized UI/API delivery
+      ru: >
+        Платформа для хакатонских команд, мероприятий и карьерных сообществ:
+        профили, работа с командами, уведомления и доставка UI и API в Docker
   - name: fastapi-mvp
     label: FastAPI MVP
     url: https://github.com/siberianbearofficial/fastapi-mvp
@@ -261,9 +464,13 @@ selected_public_repos:
       - MongoDB
       - S3
       - Prometheus
-    summary: >
-      A reusable FastAPI bootstrap package with Mongo and S3 helpers, metrics,
-      and stricter environment management for new service setup
+    summary:
+      en: >
+        A reusable FastAPI bootstrap package with Mongo and S3 helpers, metrics,
+        and stricter environment management for new service setup
+      ru: >
+        Переиспользуемая заготовка сервиса на FastAPI: хелперы для Mongo и S3,
+        метрики и более строгая работа с окружением при старте нового сервиса
   - name: simple-openai-proxy
     label: OpenAI Async Functions
     url: https://github.com/siberianbearofficial/simple-openai-proxy
@@ -274,10 +481,15 @@ selected_public_repos:
       - Pydantic
       - Tool Calling
       - OpenAI-compatible APIs
-    summary: >
-      Async Python library for OpenAI-compatible tool calling, with Pydantic
-      request and response models, runtime tool registration, and structured
-      output helpers
+    summary:
+      en: >
+        Async Python library for OpenAI-compatible tool calling, with Pydantic
+        request and response models, runtime tool registration, and structured
+        output helpers
+      ru: >
+        Асинхронная библиотека на Python для tool calling в OpenAI-совместимых
+        API: модели запросов и ответов на Pydantic, регистрация инструментов
+        в рантайме и хелперы для структурированного вывода
   - name: lint-gost-tex
     label: lint-gost-tex
     url: https://github.com/siberianbearofficial/lint-gost-tex
@@ -287,17 +499,26 @@ selected_public_repos:
       - CLI tooling
       - LaTeX
       - Text linting
-    summary: >
-      CLI linter for LaTeX documents against GOST-style formatting rules, with
-      checks for references, lists, captions, forbidden abbreviations, Unicode,
-      and RU/EN spelling
+    summary:
+      en: >
+        CLI linter for LaTeX documents against GOST-style formatting rules, with
+        checks for references, lists, captions, forbidden abbreviations, Unicode,
+        and RU/EN spelling
+      ru: >
+        CLI-линтер документов LaTeX по правилам оформления ГОСТ: проверки ссылок,
+        списков, подписей, запрещенных сокращений, Unicode и орфографии на
+        русском и английском
 
 supporting_repo:
   label: AIDoc
   url: https://github.com/siberianbearofficial/aidoc
-  summary: >
-    Supporting AI documentation-generation project combining a .NET CLI and a
-    FastAPI backend
+  summary:
+    en: >
+      Supporting AI documentation-generation project combining a .NET CLI and a
+      FastAPI backend
+    ru: >
+      Проект по генерации документации с помощью AI: CLI на .NET
+      и бэкенд на FastAPI
 
 stack_groups:
   - label: Frontend
@@ -336,7 +557,9 @@ stack_groups:
         icon: null
       - name: Alembic
         icon: null
-  - label: Product and Platform
+  - label:
+      en: Product and Platform
+      ru: Продукт и платформа
     items:
       - name: OAuth / OIDC
         icon: null
@@ -350,56 +573,114 @@ stack_groups:
         icon: grafana
       - name: Sentry
         icon: sentry
-      - name: CI pipelines
+      - name:
+          en: CI pipelines
+          ru: CI-пайплайны
         icon: null
       - name: Playwright
         icon: playwright
-  - label: Working Modes
+  - label:
+      en: Working Modes
+      ru: Форматы работы
     items:
-      - name: End-to-end feature delivery
+      - name:
+          en: End-to-end feature delivery
+          ru: Сквозная разработка фич
         icon: null
-      - name: Internal AI tools
+      - name:
+          en: Internal AI tools
+          ru: Внутренние AI-инструменты
         icon: null
-      - name: Migration programs
+      - name:
+          en: Migration programs
+          ru: Программы миграции
         icon: null
-      - name: API integrations
+      - name:
+          en: API integrations
+          ru: Интеграции по API
         icon: null
-      - name: Design-system alignment
+      - name:
+          en: Design-system alignment
+          ru: Работа с дизайн-системой
         icon: null
-      - name: Cross-functional collaboration
+      - name:
+          en: Cross-functional collaboration
+          ru: Работа на границе нескольких фичей
         icon: null
 
 education:
-  - school: Bauman Moscow State Technical University
-    degree: Bachelor’s in Software Engineering (IU7)
+  - school:
+      en: Bauman Moscow State Technical University
+      ru: МГТУ им. Н. Э. Баумана
+    degree:
+      en: Bachelor’s in Software Engineering (IU7)
+      ru: Бакалавриат, Программная инженерия (ИУ7)
     start: "2022-09"
     end: Present
     logo: /media/logos/bmstu.svg
-  - school: Samsung IT School
-    degree: Android Development in Java, diploma with honors
+  - school:
+      en: Samsung IT School
+      ru: IT ШКОЛА SAMSUNG
+    degree:
+      en: Android Development in Java, diploma with honors
+      ru: Разработка под Android на Java, диплом с отличием
     start: "2020-09"
     end: "2021-05"
     logo: /media/logos/samsung.svg
 
+languages:
+  - name:
+      en: Russian
+      ru: Русский
+    level:
+      en: Native
+      ru: Родной
+  - name:
+      en: English
+      ru: Английский
+    level: IELTS Academic 7.5 (C1)
+
 achievements:
   - title: Finopolis 365 AI Track
     year: "2023"
-    description: Prize winner in a youth AI-focused hackathon stream
+    description:
+      en: Prize winner in a youth AI-focused hackathon stream
+      ru: Призер молодежного хакатона в треке AI
   - title: AI Talent Hackathon
     year: "2023"
-    description: Built product prototypes in an AI-generated content hackathon environment
+    description:
+      en: Built product prototypes in an AI-generated content hackathon environment
+      ru: Собирал прототипы на хакатоне по инструментам для создания AI-контента
 
 resume:
-  title: TypeScript Fullstack Engineer
-  subtitle: React, Angular, Svelte, FastAPI
-  summary: >
-    TypeScript fullstack engineer building AI product interfaces, supporting
-    FastAPI backends, and migration paths from Angular to React. Comfortable
-    owning features from UI to API, async workflows, integrations, and
-    delivery for internal products used by thousands of users
+  title:
+    en: AI Product Engineer
+    ru: Инженер AI-продуктов
+  subtitle:
+    en: Retrieval, tool calling, structured outputs | React, FastAPI
+    ru: Retrieval, tool calling, structured outputs | React, FastAPI
+  summary:
+    en: >
+      AI product engineer building the layer that makes LLM features dependable
+      in production: retrieval, tool calling, structured outputs, and async
+      orchestration. I ship the React interface and the FastAPI service behind
+      it, for internal products used by 38,000+ employees
+    ru: >
+      Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+      LLM-фичей в продакшене — retrieval, tool calling, structured
+      outputs, оркестрация асинхронных задач — и создаю Web UI для него.
+      Делаю фичи внутреннего LLM-ассистента, которым
+      пользуются 38 000+ сотрудников крупного банка.
+  # Same order as the value props on the site: the specialisation first, the
+  # range under it.
   strengths:
-    - React and Angular product engineering
-    - FastAPI backend support and API design
-    - Angular to React migration strategy
-    - AI tooling and internal platform delivery
-    - Async workflows, Kafka, and status orchestration
+    - en: "LLM reliability: retrieval, tool calling, structured outputs"
+      ru: "Надежность LLM: retrieval, tool calling, structured outputs"
+    - en: Async orchestration, queues, and streaming
+      ru: Оркестрация асинхронных задач, очереди и стриминг
+    - en: React product engineering
+      ru: Продуктовая разработка на React
+    - en: FastAPI services and API design
+      ru: Сервисы на FastAPI и проектирование API
+    - en: Legacy frontend migration to React
+      ru: Миграция легаси-фронтенда на React

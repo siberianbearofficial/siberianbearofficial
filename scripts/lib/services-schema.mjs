@@ -26,6 +26,7 @@ const serviceSchema = z.object({
   problem: z.string().min(1),
   outcome: z.string().min(1),
   includes: z.array(z.string().min(1)).min(1),
+  note: z.string().min(1).optional(),
   footnote: z.string().min(1).optional()
 });
 
@@ -42,9 +43,9 @@ const caseStudySchema = z.object({
 });
 
 export const servicesSchema = z.object({
+  // Canonical and cross-site URLs live in scripts/lib/routes.mjs now: they are
+  // per-language and have to agree with the nginx route table.
   site: z.object({
-    canonical_url: z.string().url(),
-    cv_url: z.string().url(),
     cv_label: z.string().min(1)
   }),
   seo: z.object({
@@ -57,7 +58,9 @@ export const servicesSchema = z.object({
     lede: z.string().min(1),
     proof: z.string().min(1),
     primary_cta: ctaSchema,
-    secondary_cta: ctaSchema
+    email_cta: ctaSchema,
+    secondary_cta: ctaSchema,
+    retainer_cta: ctaSchema
   }),
   proof_points: z
     .array(

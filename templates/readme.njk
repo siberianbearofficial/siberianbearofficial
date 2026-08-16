@@ -4,7 +4,11 @@
 
 {{ identity.availability }}
 
-[Email](mailto:{{ identity.email }}) · [Telegram]({{ identity.telegram }}) · [GitHub]({{ identity.github }}) · [Website]({{ identity.website }})
+{% set languageLine = [] %}
+{% for language in languages %}{% set _ = languageLine.push(language.name + " — " + language.level) %}{% endfor %}
+**Languages:** {{ languageLine | joinList(" · ") }}
+
+[Email](mailto:{{ identity.email }}) · [Telegram]({{ identity.telegram }}) · [LinkedIn]({{ identity.linkedin }}) · [GitHub]({{ identity.github }}) · [Website]({{ identity.website }})
 
 <table border="0">
 <tr>
@@ -52,4 +56,4 @@
 
 ## Contact
 
-If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:{{ identity.email }}) or [Telegram]({{ identity.telegram }}).
+If you are hiring for AI product engineering, LLM reliability work, or React and FastAPI product delivery, the fastest way to reach me is by [email](mailto:{{ identity.email }}), [Telegram]({{ identity.telegram }}), or [LinkedIn]({{ identity.linkedin }}).

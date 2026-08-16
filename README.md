@@ -1,10 +1,12 @@
 # Aleksei Orlov
 
-**TypeScript Fullstack Engineer | React, Angular, FastAPI | AI Product & Migration Experience**
+**LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI**
 
-Open to worldwide remote TypeScript fullstack roles
+Open to worldwide remote AI product engineering roles
 
-[Email](mailto:alexeyorlov65@gmail.com) · [Telegram](https://t.me/aleksei_orlov_official) · [GitHub](https://github.com/siberianbearofficial) · [Website](https://aleksei-orlov.ru)
+**Languages:** Russian — Native · English — IELTS Academic 7.5 (C1)
+
+[Email](mailto:alexeyorlov65@gmail.com) · [Telegram](https://t.me/aleksei_orlov_dev) · [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev) · [GitHub](https://github.com/siberianbearofficial) · [Website](https://aleksei-orlov.ru)
 
 <table border="0">
 <tr>
@@ -19,13 +21,13 @@ Open to worldwide remote TypeScript fullstack roles
 
 ## Why Me
 
-- **End-to-End Delivery**: I regularly ship frontend features together with the FastAPI backend, integrations, task orchestration, and delivery plumbing they depend on
-- **Angular to React Migration**: I have strong Angular depth and real React migration experience, including moving product logic out of legacy host layers without freezing feature work
-- **AI Product Engineering**: My recent work centers on AI interfaces, image-generation workflows, internal copilots, and the product infrastructure around them
+- **AI Reliability**: Structured outputs with schema validation, tool calling that handles partial failure, async orchestration and streaming that survives reconnects
+- **Full Product Surface**: I ship the React interface and the FastAPI service behind it, so AI features do not stall on a backend handoff
+- **Legacy Frontend Migration**: Angular and Svelte to React in production, without freezing feature delivery
 
 ## Current Focus
 
-Over the last 2+ years at T-Bank I progressed from intern to junior, junior+, and middle-level responsibilities while shipping AI-facing product work in Angular, React, Svelte, and FastAPI
+At T-Bank I ship product work on an internal LLM assistant used by 38,000+ employees, moving already built logic from Svelte to React while feature delivery keeps running, and I own the FastAPI services behind the interfaces I build
 
 ## Flagship Internal Work
 
@@ -33,7 +35,7 @@ Over the last 2+ years at T-Bank I progressed from intern to junior, junior+, an
 
 Internal web application for an AI image-generation platform used by designers who needed a practical interface for day-to-day creative work. The product provided board-based organization, editing workflows, and async task management on top of a company-wide generation API
 
-**Reach:** 1k+ internal users.
+**Reach:** 1,000+ internal users.
 
 - Built and evolved a board-based workspace where designers organized generations into project spaces instead of a flat task list
 - Implemented drag-and-drop between boards, image reactions, and editing flows for multiple generation modes
@@ -41,9 +43,9 @@ Internal web application for an AI image-generation platform used by designers w
 
 ### Internal AI Assistant
 
-Company-wide internal LLM assistant used by thousands of employees. The product is built on a mixed Svelte and React frontend with a FastAPI backend and is progressively moving toward a React-first architecture without pausing feature delivery
+Company-wide internal LLM assistant used by 38,000+ employees. The product is built on a mixed Svelte and React frontend with a FastAPI backend and is progressively moving toward a React-first architecture without pausing feature delivery
 
-**Reach:** 1000s of internal users.
+**Reach:** 38,000+ employees.
 
 - Worked in a mixed frontend stack, helping move product logic into React-owned areas while maintaining the existing Svelte surface
 - Shipped product features and supporting backend fixes in parallel with migration work instead of treating them as separate tracks
@@ -58,4 +60,4 @@ Company-wide internal LLM assistant used by thousands of employees. The product 
 
 ## Contact
 
-If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com) or [Telegram](https://t.me/aleksei_orlov_official).
+If you are hiring for AI product engineering, LLM reliability work, or React and FastAPI product delivery, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com), [Telegram](https://t.me/aleksei_orlov_dev), or [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev).

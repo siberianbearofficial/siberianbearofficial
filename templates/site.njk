@@ -1,28 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page_title }}</title>
-    <meta name="description" content="{{ page_description }}" />
-    <meta name="theme-color" content="#0d1727" />
-    <link rel="canonical" href="{{ identity.website }}/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script>
-      (() => {
-        try {
-          const storedTheme = window.localStorage.getItem("theme");
-          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-          document.documentElement.dataset.theme = storedTheme || preferredTheme;
-        } catch {
-          document.documentElement.dataset.theme = "light";
-        }
-      })();
-    </script>
+    {% include "partials/head.njk" %}
+    {% include "partials/boot-scripts.njk" %}
     <link rel="stylesheet" href="/assets/site.css" />
+    <script type="application/ld+json">{{ structured_data | json }}</script>
   </head>
   <body data-page="site">
     <div class="site-backdrop" aria-hidden="true">
@@ -31,37 +13,40 @@
       <div class="site-grid"></div>
     </div>
 
+    <a class="skip-link" href="#top">{{ t.common.skip_to_content }}</a>
+
     <header class="site-header">
       <div class="page-shell">
         <div class="site-nav" data-reveal>
-          <a class="brand-mark" href="#top" aria-label="{{ identity.name }}">
-            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="{{ identity.name }}" loading="eager" decoding="async" />
+          <a class="brand-mark" href="#top" aria-label="{{ identity.name | attr }}">
+            <img class="brand-mark__monogram" src="{{ identity.header_avatar_url }}" alt="" aria-hidden="true" loading="eager" decoding="async" />
             <span class="brand-mark__copy">
               <span class="brand-mark__name">{{ identity.name }}</span>
               <span class="brand-mark__role">{{ identity.role }}</span>
             </span>
           </a>
 
-          <nav class="site-nav__links" aria-label="Section navigation">
-            <a href="#focus">Focus</a>
-            <a href="#experience">Experience</a>
-            <a href="#case-studies">Case Studies</a>
-            <a href="#public-work">Public Work</a>
-            <a href="{{ identity.services_website }}/">Hire Me</a>
-            <a href="#contact">Contact</a>
+          <nav class="site-nav__links" aria-label="{{ t.common.nav_aria | attr }}">
+            <a href="#focus">{{ t.cv.nav.focus }}</a>
+            <a href="#experience">{{ t.cv.nav.experience }}</a>
+            <a href="#case-studies">{{ t.cv.nav.case_studies }}</a>
+            <a href="#public-work">{{ t.cv.nav.public_work }}</a>
+            <a href="{{ links.services }}">{{ t.cv.nav.hire }}</a>
+            <a href="#contact">{{ t.cv.nav.contact }}</a>
           </nav>
 
           <div class="site-nav__actions">
-            <a class="mini-action" href="/Aleksei-Orlov-Resume.pdf">
+{% include "partials/lang-switch.njk" %}
+            <a class="mini-action" href="{{ links.resume_pdf }}">
               <span class="mini-action__icon">{{ ui_icons.download }}</span>
-              <span>PDF Resume</span>
+              <span>{{ t.cv.actions.pdf_short }}</span>
             </a>
-            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ t.common.theme.aria | attr }}" aria-pressed="false">
               <span class="theme-toggle__icon">
                 <span class="theme-toggle__icon-sun">{{ ui_icons.sun }}</span>
                 <span class="theme-toggle__icon-moon">{{ ui_icons.moon }}</span>
               </span>
-              <span data-theme-label>Dark mode</span>
+              <span data-theme-label>{{ t.common.theme.dark }}</span>
             </button>
           </div>
         </div>
@@ -74,7 +59,7 @@
           <div class="hero-grid" data-reveal>
               <div class="hero-intro">
                 <div class="hero-kicker-row">
-                  <span class="section-kicker">worldwide remote</span>
+                  <span class="section-kicker">{{ t.cv.hero.kicker }}</span>
                 </div>
 
                 <h1 class="hero-title">{{ identity.hero_title }}</h1>
@@ -104,7 +89,9 @@
                   <img
                     class="portrait-image"
                     src="{{ identity.avatar_url }}"
-                    alt="Public profile photo of {{ identity.name }}"
+                    alt="{{ t.cv.hero.portrait_alt | attr }}"
+                    width="640"
+                    height="640"
                     loading="eager"
                     decoding="async"
                   />
@@ -125,46 +112,26 @@
             </div>
 
             <div class="hero-stats-grid">
-              <a href="#case-ai-assistant" class="hero-stat-card hero-stat-card--link hero-stat-card--assistant">
+              {% for card in t.cv.hero_cards -%}
+              {% if card.href -%}
+              <a href="{{ card.href }}" class="hero-stat-card hero-stat-card--link hero-stat-card--{{ card.modifier }}">
+              {% else -%}
+              <article class="hero-stat-card hero-stat-card--{{ card.modifier }}">
+              {% endif -%}
                 <div class="hero-stat-card__visual">
-                  <img src="/media/illustrations/chat-with-ai.svg" data-theme-src data-light-src="/media/illustrations/chat-with-ai.svg" data-dark-src="/media/illustrations/dark/chat-with-ai.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                  <img src="/media/illustrations/{{ card.illustration }}.svg" data-theme-src data-light-src="/media/illustrations/{{ card.illustration }}.svg" data-dark-src="/media/illustrations/dark/{{ card.illustration }}.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                 </div>
                 <div class="hero-stat-card__content">
-                  <div class="hero-stat-card__value">LLM Assistant</div>
-                  <div class="hero-stat-card__label">Internal AI Product</div>
-                  <div class="hero-stat-card__meta">thousands of users, React migration</div>
+                  <div class="hero-stat-card__value">{{ card.value }}</div>
+                  <div class="hero-stat-card__label">{{ card.label }}</div>
+                  <div class="hero-stat-card__meta">{{ card.meta }}</div>
                 </div>
+              {% if card.href -%}
               </a>
-              <a href="#case-image-generation-ui" class="hero-stat-card hero-stat-card--link hero-stat-card--image">
-                <div class="hero-stat-card__visual">
-                  <img src="/media/illustrations/digital-artwork.svg" data-theme-src data-light-src="/media/illustrations/digital-artwork.svg" data-dark-src="/media/illustrations/dark/digital-artwork.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                </div>
-                <div class="hero-stat-card__content">
-                  <div class="hero-stat-card__value">Image Gen UI</div>
-                  <div class="hero-stat-card__label">Design Workflow Tool</div>
-                  <div class="hero-stat-card__meta">Angular frontend ownership</div>
-                </div>
-              </a>
-              <article class="hero-stat-card hero-stat-card--product">
-                <div class="hero-stat-card__visual">
-                  <img src="/media/illustrations/developer-activity.svg" data-theme-src data-light-src="/media/illustrations/developer-activity.svg" data-dark-src="/media/illustrations/dark/developer-activity.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                </div>
-                <div class="hero-stat-card__content">
-                  <div class="hero-stat-card__value">2+ yrs</div>
-                  <div class="hero-stat-card__label">T-Bank AI Product Work</div>
-                  <div class="hero-stat-card__meta">intern to middle-level scope</div>
-                </div>
+              {% else -%}
               </article>
-              <article class="hero-stat-card hero-stat-card--migration">
-                <div class="hero-stat-card__visual">
-                  <img src="/media/illustrations/version-control.svg" data-theme-src data-light-src="/media/illustrations/version-control.svg" data-dark-src="/media/illustrations/dark/version-control.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                </div>
-                <div class="hero-stat-card__content">
-                  <div class="hero-stat-card__value">Angular to React</div>
-                  <div class="hero-stat-card__label">Migration Profile</div>
-                  <div class="hero-stat-card__meta">without feature freeze</div>
-                </div>
-              </article>
+              {% endif -%}
+              {% endfor %}
             </div>
         </div>
       </section>
@@ -172,10 +139,10 @@
       <section id="focus" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Focus</div>
-            <h2 class="section-heading">Positioned for product teams that need range, not narrow specialization</h2>
+            <div class="section-kicker">{{ t.cv.focus.kicker }}</div>
+            <h2 class="section-heading">{{ t.cv.focus.heading }}</h2>
             <p class="section-lede">
-              The strongest signal in this profile is hands-on TypeScript fullstack range across React, Angular, Svelte, and FastAPI: AI-heavy internal tooling, backend support, and Angular-to-React migration work delivered without losing product speed
+              {{ t.cv.focus.lede }}
             </p>
           </div>
 
@@ -184,7 +151,7 @@
               <span class="focus-narrative__marker">{{ ui_icons.sparkles }}</span>
             </div>
             <div class="focus-narrative__content">
-              <div class="focus-narrative__label">Current Narrative</div>
+              <div class="focus-narrative__label">{{ t.cv.focus.narrative_label }}</div>
               <p class="focus-narrative__copy">{{ identity.current_focus }}</p>
             </div>
           </aside>
@@ -207,10 +174,10 @@
       <section id="experience" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Experience</div>
-            <h2 class="section-heading">Recent roles and progression</h2>
+            <div class="section-kicker">{{ t.cv.experience.kicker }}</div>
+            <h2 class="section-heading">{{ t.cv.experience.heading }}</h2>
             <p class="section-lede">
-              Official dates come from current employment records. Public copy keeps the focus on shipped work, ownership, and NDA-safe scope
+              {{ t.cv.experience.lede }}
             </p>
           </div>
 
@@ -224,7 +191,7 @@
                 <div class="timeline-entry__header">
                   <div class="timeline-entry__head-left">
                     {% if job.logo -%}
-                    <img class="timeline-entry__logo" src="{{ job.logo }}" alt="{{ job.company }}" loading="lazy" decoding="async" />
+                    <img class="timeline-entry__logo" src="{{ job.logo }}" alt="{{ job.company | attr }}" loading="lazy" decoding="async" />
                     {% endif -%}
                     <div>
                       <div class="timeline-entry__company">{{ job.company }}</div>
@@ -249,10 +216,10 @@
       <section id="case-studies" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Case Studies</div>
-            <h2 class="section-heading">Internal product work, shown through ownership and systems thinking</h2>
+            <div class="section-kicker">{{ t.cv.case_studies.kicker }}</div>
+            <h2 class="section-heading">{{ t.cv.case_studies.heading }}</h2>
             <p class="section-lede">
-              The code for these products is not public. What I can show is the product surface, architecture, and execution scope behind them
+              {{ t.cv.case_studies.lede }}
             </p>
           </div>
 
@@ -270,7 +237,7 @@
               <p class="case-study-card__summary">{{ caseStudy.summary }}</p>
 
               <div class="case-study-card__role-block">
-                <div class="case-study-card__role-label">My role</div>
+                <div class="case-study-card__role-label">{{ t.cv.case_studies.role_label }}</div>
                 <div class="case-study-card__role-copy">{{ caseStudy.role }}</div>
               </div>
 
@@ -294,12 +261,20 @@
       <section id="public-work" class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Public Work</div>
-            <h2 class="section-heading">Selected repos that show how I build</h2>
+            <div class="section-kicker">{{ t.cv.public_work.kicker }}</div>
+            <h2 class="section-heading">{{ t.cv.public_work.heading }}</h2>
             <p class="section-lede">
-              Public repos are not a mirror of my current internal stack. They are the evidence layer for how I structure projects, ship tooling, and think about APIs and product surfaces
+              {{ t.cv.public_work.lede }}
             </p>
           </div>
+
+          <aside class="evidence-note" data-reveal>
+            <span class="evidence-note__icon">{{ ui_icons["book-open"] }}</span>
+            <div class="evidence-note__content">
+              <h3 class="evidence-note__title">{{ t.cv.public_work.note_title }}</h3>
+              <p class="evidence-note__copy">{{ t.cv.public_work.note_body }}</p>
+            </div>
+          </aside>
 
           <div class="repo-grid">
             {% for repo in selected_public_repos -%}
@@ -313,7 +288,7 @@
                   data-light-src="{{ repo.visual.src }}"
                   data-dark-src="{{ repo.visual.src | replace('/media/illustrations/', '/media/illustrations/dark/') }}"
                   {% endif -%}
-                  alt="{{ repo.visual.alt }}"
+                  alt="{{ repo.visual.alt | attr }}"
                   loading="lazy"
                   decoding="async"
                 />
@@ -323,13 +298,13 @@
                 <div class="repo-card__title-wrap">
                   <span class="repo-card__icon">{{ ui_icons[repo.icon] }}</span>
                   <div>
-                    <div class="section-kicker">GitHub Repo</div>
+                    <div class="section-kicker">{{ t.common.github_repo }}</div>
                     <h3 class="repo-card__title">{{ repo.label }}</h3>
                   </div>
                 </div>
-                <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label }} on GitHub">
+                <a class="repo-card__action repo-card__action--github" href="{{ repo.url }}" aria-label="{{ repo.label | attr }} — {{ t.common.view_on_github | attr }}">
                   <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
-                  <span>View on GitHub</span>
+                  <span>{{ t.common.view_on_github }}</span>
                 </a>
               </div>
               <p class="repo-card__summary">{{ repo.summary }}</p>
@@ -347,15 +322,15 @@
               <div class="supporting-project__head">
                 <span class="supporting-project__icon">{{ ui_icons["book-open"] }}</span>
                 <div>
-                  <div class="section-kicker">Supporting Project</div>
+                  <div class="section-kicker">{{ t.cv.public_work.supporting_kicker }}</div>
                   <h3 class="supporting-project__title">{{ supporting_repo.label }}</h3>
                 </div>
               </div>
               <p class="supporting-project__copy">{{ supporting_repo.summary }}</p>
             </div>
-            <a class="repo-card__action repo-card__action--github" href="{{ supporting_repo.url }}" aria-label="{{ supporting_repo.label }} on GitHub">
+            <a class="repo-card__action repo-card__action--github" href="{{ supporting_repo.url }}" aria-label="{{ supporting_repo.label | attr }} — {{ t.common.view_on_github | attr }}">
               <span class="repo-card__action-icon">{{ ui_icons.github }}</span>
-              <span>View on GitHub</span>
+              <span>{{ t.common.view_on_github }}</span>
             </a>
           </div>
         </div>
@@ -364,8 +339,8 @@
       <section class="site-section">
         <div class="page-shell">
           <div class="section-intro" data-reveal>
-            <div class="section-kicker">Stack</div>
-            <h2 class="section-heading">Comfortable across product, platform, and delivery</h2>
+            <div class="section-kicker">{{ t.cv.stack.kicker }}</div>
+            <h2 class="section-heading">{{ t.cv.stack.heading }}</h2>
           </div>
 
           <div class="stack-grid">
@@ -377,7 +352,7 @@
                 {% for item in group.items -%}
                 {% if item.icon -%}
                 <span class="site-chip site-chip--with-logo">
-                  <img class="site-chip__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{{ item.icon }}/{{ item.icon }}-original.svg" alt="{{ item.name }}" loading="lazy" decoding="async" />
+                  <img class="site-chip__logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{{ item.icon }}/{{ item.icon }}-original.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                   {{ item.name }}
                 </span>
                 {% elseif item.name -%}
@@ -398,27 +373,37 @@
           <div class="knowledge-grid">
             <div class="knowledge-column">
               <div class="section-intro" data-reveal>
-                <div class="section-kicker">Education</div>
-                <h2 class="section-heading">Formal education and long-term signals</h2>
+                <div class="section-kicker">{{ t.cv.education.kicker }}</div>
+                <h2 class="section-heading">{{ t.cv.education.heading }}</h2>
               </div>
               <div class="knowledge-list">
                 {% for entry in education -%}
                 <article class="knowledge-card" data-reveal>
                   <div class="knowledge-card__meta">{{ entry.range }}</div>
                   {% if entry.logo -%}
-                  <img class="knowledge-card__logo" src="{{ entry.logo }}" alt="{{ entry.school }}" loading="lazy" decoding="async" />
+                  <img class="knowledge-card__logo" src="{{ entry.logo }}" alt="{{ entry.school | attr }}" loading="lazy" decoding="async" />
                   {% endif -%}
                   <h3 class="knowledge-card__title">{{ entry.school }}</h3>
                   <p class="knowledge-card__copy">{{ entry.degree }}</p>
                 </article>
                 {% endfor %}
+                <article class="knowledge-card knowledge-card--languages" data-reveal>
+                  <div class="knowledge-card__meta">{{ t.cv.languages.kicker }}</div>
+                  <span class="knowledge-card__icon">{{ ui_icons.languages }}</span>
+                  <h3 class="knowledge-card__title">{{ t.cv.languages.heading }}</h3>
+                  <ul class="knowledge-card__list">
+                    {% for language in languages -%}
+                    <li><span class="knowledge-card__list-term">{{ language.name }}</span> — {{ language.level }}</li>
+                    {% endfor %}
+                  </ul>
+                </article>
               </div>
             </div>
 
             <div class="knowledge-column">
               <div class="section-intro" data-reveal>
-                <div class="section-kicker">Highlights</div>
-                <h2 class="section-heading">Signals beyond the day job</h2>
+                <div class="section-kicker">{{ t.cv.achievements.kicker }}</div>
+                <h2 class="section-heading">{{ t.cv.achievements.heading }}</h2>
               </div>
               <div class="knowledge-list">
                 {% for item in achievements -%}
@@ -438,10 +423,10 @@
         <div class="page-shell">
           <div class="contact-panel" data-reveal>
             <div class="contact-panel__copy">
-              <div class="section-kicker">Contact</div>
-              <h2 class="section-heading">If you are hiring, start here</h2>
+              <div class="section-kicker">{{ t.cv.contact.kicker }}</div>
+              <h2 class="section-heading">{{ t.cv.contact.heading }}</h2>
               <p class="section-lede">
-                I’m most useful in TypeScript product teams that need someone who can move across React, Angular, migration work, and FastAPI-backed delivery without losing momentum
+                {{ t.cv.contact.lede }}
               </p>
               <div class="contact-panel__actions">
                 {% for link in cta.footer -%}
@@ -450,6 +435,8 @@
                 {% set footerIcon = ui_icons.send -%}
                 {% elseif link.label == "GitHub" -%}
                 {% set footerIcon = ui_icons.github -%}
+                {% elseif link.label == "LinkedIn" -%}
+                {% set footerIcon = ui_icons.linkedin -%}
                 {% elseif link.label == "VK" -%}
                 {% set footerIcon = ui_icons["messages-square"] -%}
                 {% endif -%}
@@ -459,9 +446,9 @@
                   <span class="site-button__meta">{{ link.short }}</span>
                 </a>
                 {% endfor %}
-                <a class="site-button site-button--secondary" href="/Aleksei-Orlov-Resume.pdf">
+                <a class="site-button site-button--secondary" href="{{ links.resume_pdf }}">
                   <span class="site-button__icon">{{ ui_icons.download }}</span>
-                  <span>Download PDF Resume</span>
+                  <span>{{ t.cv.actions.pdf_long }}</span>
                 </a>
               </div>
             </div>
@@ -470,10 +457,10 @@
             </div>
           </div>
 
-          <a class="cv-band" href="{{ identity.services_website }}/" data-reveal>
+          <a class="cv-band" href="{{ links.services }}" data-reveal>
             <span class="cv-band__copy">
-              <span class="cv-band__title">Not hiring, but need something built?</span>
-              <span class="cv-band__meta">I take on fixed-price contract work: internal LLM assistants, Angular to React migrations, and AI features that need to stop breaking</span>
+              <span class="cv-band__title">{{ t.cv.cv_band.title }}</span>
+              <span class="cv-band__meta">{{ t.cv.cv_band.meta }}</span>
             </span>
             <span class="cv-band__icon">{{ ui_icons["arrow-right"] }}</span>
           </a>
@@ -490,96 +477,16 @@
             <span class="site-footer__role">{{ identity.role }}</span>
           </div>
           <div class="site-footer__links">
-            <a href="{{ identity.github }}" aria-label="GitHub">GitHub</a>
-            <a href="{{ identity.telegram }}" aria-label="Telegram">Telegram</a>
-            <a href="mailto:{{ identity.email }}" aria-label="Email">Email</a>
+            <a href="{{ identity.github }}">GitHub</a>
+            <a href="{{ identity.telegram }}">Telegram</a>
+            <a href="{{ identity.linkedin }}">LinkedIn</a>
+            <a href="mailto:{{ identity.email }}">Email</a>
           </div>
+{% include "partials/lang-switch.njk" %}
         </div>
       </div>
     </footer>
 
-    <script>
-      (() => {
-        const root = document.documentElement;
-        const toggle = document.querySelector("[data-theme-toggle]");
-        const labelHost = document.querySelector("[data-theme-label]");
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-        const applyTheme = (theme) => {
-          const isDark = theme === "dark";
-
-          root.dataset.theme = theme;
-          toggle?.setAttribute("aria-pressed", String(isDark));
-
-          document.querySelectorAll("[data-theme-src]").forEach((image) => {
-            const nextSrc = image.dataset[isDark ? "darkSrc" : "lightSrc"];
-
-            if (nextSrc && image.getAttribute("src") !== nextSrc) {
-              image.setAttribute("src", nextSrc);
-            }
-          });
-
-          if (labelHost) {
-            labelHost.textContent = isDark ? "Light mode" : "Dark mode";
-          }
-        };
-
-        const preferredTheme = () => mediaQuery.matches ? "dark" : "light";
-        applyTheme(root.dataset.theme || preferredTheme());
-
-        toggle?.addEventListener("click", () => {
-          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-
-          window.localStorage.setItem("theme", nextTheme);
-          applyTheme(nextTheme);
-        });
-
-        const handleSystemThemeChange = (event) => {
-          if (window.localStorage.getItem("theme")) {
-            return;
-          }
-
-          applyTheme(event.matches ? "dark" : "light");
-        };
-
-        if (typeof mediaQuery.addEventListener === "function") {
-          mediaQuery.addEventListener("change", handleSystemThemeChange);
-        } else if (typeof mediaQuery.addListener === "function") {
-          mediaQuery.addListener(handleSystemThemeChange);
-        }
-
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const revealTargets = document.querySelectorAll("[data-reveal]");
-
-        if (reducedMotion) {
-          revealTargets.forEach((element) => element.classList.add("is-visible"));
-          return;
-        }
-
-        document.documentElement.classList.add("reveal-ready");
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) {
-                return;
-              }
-
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            });
-          },
-          {
-            threshold: 0.18,
-            rootMargin: "0px 0px -7% 0px"
-          }
-        );
-
-        revealTargets.forEach((element, index) => {
-          element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 240)}ms`);
-          observer.observe(element);
-        });
-      })();
-    </script>
+{% include "partials/behaviour.njk" %}
   </body>
 </html>
