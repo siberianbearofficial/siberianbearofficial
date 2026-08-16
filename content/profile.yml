@@ -19,27 +19,25 @@ identity:
       calling, structured outputs, async orchestration — and ship the interface
       on top of it instead of handing the backend to someone else
     ru: >
-      Инженер AI-продуктов на React и FastAPI. Строю слой, который делает
-      LLM-фичи надёжными в продакшене — retrieval, tool calling, structured
-      outputs, оркестрация асинхронных задач — и делаю интерфейс поверх него,
-      а не передаю бэкенд кому-то другому
+      Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+      LLM-фичей в продакшене — retrieval, tool calling, structured
+      outputs, оркестрация асинхронных задач — и создаю Web UI для него
   location:
     en: Moscow, Russia
     ru: Москва, Россия
   timezone: Europe/Moscow
   availability:
     en: Open to worldwide remote AI product engineering roles
-    ru: Открыт к удалённым позициям в разработке AI-продуктов по всему миру
+    ru: Удаленный формат работы, разработка AI-продуктов по всему миру
   current_focus:
     en: >
       At T-Bank I ship product work on an internal LLM assistant used by 38,000+
-      employees, moving product logic into React while feature delivery keeps
+      employees, moving already built logic from Svelte to React while feature delivery keeps
       running, and I own the FastAPI services behind the interfaces I build
     ru: >
-      В Т-Банке я выпускаю продуктовые фичи внутреннего LLM-ассистента, которым
-      пользуются 38 000+ сотрудников: переношу продуктовую логику в React, не
-      останавливая разработку, и отвечаю за сервисы на FastAPI за интерфейсами,
-      которые делаю
+      В Т-Банке я разрабатываю продуктовые фичи для внутреннего LLM-ассистента, которым
+      пользуются 38 000+ сотрудников, параллельно с миграцией существующей логики
+      со Svelte на React, и пишу бэкенд на FastAPI для некоторых фичей
   # The site hero subheading. identity.headline is the same sentence, but it is
   # the line the GitHub profile README renders.
   hero_tagline:
@@ -52,7 +50,7 @@ identity:
   avatar_url: /media/photos/main.png
   header_avatar_url: https://avatars.githubusercontent.com/u/61984103
   telegram: https://t.me/aleksei_orlov_dev
-  vk: https://vk.com/aleksei_orlov_official
+  vk: https://vk.com/aleksei_orlov_dev
   linkedin: https://www.linkedin.com/in/aleksei-orlov-dev
   github_stats:
     stats_url: https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default
@@ -70,23 +68,24 @@ seo:
         across React and FastAPI. Currently shipping on an internal assistant
         used by 38,000+ employees at a major bank.
       ru: >
-        Инженер AI-продуктов. Строю слой, который делает LLM-фичи надёжными в
-        продакшене — retrieval, tool calling, structured outputs — на React и
-        FastAPI. Сейчас выпускаю фичи внутреннего ассистента, которым
+        Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+        LLM-фичей в продакшене — retrieval, tool calling, structured
+        outputs, оркестрация асинхронных задач — и создаю Web UI для него.
+        Сейчас делаю фичи внутреннего LLM-ассистента, которым
         пользуются 38 000+ сотрудников крупного банка.
   resume:
     title:
-      en: Aleksei Orlov — Resume
+      en: Aleksei Orlov — CV
       ru: Алексей Орлов — резюме
     description:
       en: >
-        One-page resume of Aleksei Orlov, AI product engineer building
+        One-page CV of Aleksei Orlov, AI product engineer building
         dependable LLM features — retrieval, tool calling, structured outputs —
-        on React and FastAPI.
+        on React and FastAPI
       ru: >
-        Одностраничное резюме Алексея Орлова, инженера AI-продуктов: надёжные
+        Одностраничное резюме Алексея Орлова, инженера AI-продуктов: надежные
         LLM-фичи — retrieval, tool calling, structured outputs — на React
-        и FastAPI.
+        и FastAPI
 
 cta:
   primary:
@@ -117,8 +116,8 @@ cta:
       href: https://www.linkedin.com/in/aleksei-orlov-dev
       short: aleksei-orlov-dev
     - label: VK
-      href: https://vk.com/aleksei_orlov_official
-      short: aleksei_orlov_official
+      href: https://vk.com/aleksei_orlov_dev
+      short: aleksei_orlov_dev
 
 # Order is the argument: the specialisation first, the range second. Reversing
 # these two reads as "I do a bit of everything", which is the opposite of what
@@ -126,7 +125,7 @@ cta:
 value_props:
   - title:
       en: AI Reliability
-      ru: Надёжность AI
+      ru: Надежность AI в продакшене
     icon: workflow
     description:
       en: >
@@ -134,9 +133,9 @@ value_props:
         partial failure, async orchestration and streaming that survives
         reconnects
       ru: >
-        Структурированные ответы с валидацией схемы, вызовы инструментов,
-        которые переживают частичный отказ, оркестрация асинхронных задач и
-        стриминг, выдерживающий переподключения
+        Structured output со строгой валидацией всех схем, tool calling,
+        выживающий при ошибках или отказах внешних систем, оркестрация асинхронных 
+        задач и стриминг ответов, выдерживающий переподключения
   - title:
       en: Full Product Surface
       ru: Продукт целиком
@@ -146,8 +145,8 @@ value_props:
         I ship the React interface and the FastAPI service behind it, so AI
         features do not stall on a backend handoff
       ru: >
-        Я делаю и интерфейс на React, и сервис на FastAPI за ним, поэтому
-        AI-фичи не встают в ожидании чужого бэкенда
+        Я делаю и интерфейс на React, и бэкенд на FastAPI для него, так что
+        AI-фичи не зависят от чужого бэкенда, а сразу едут в продакшн
   - title:
       en: Legacy Frontend Migration
       ru: Миграция легаси-фронтенда
@@ -157,14 +156,14 @@ value_props:
         Angular and Svelte to React in production, without freezing feature
         delivery
       ru: >
-        Angular и Svelte на React в проде, без заморозки разработки фич
+        Переписываю Angular или Svelte на React без остановки поставки продуктовых фич
 
 experience:
   - company: T-Bank
     logo: /media/logos/tbank.svg
     role:
-      en: AI Product Engineer, Internal LLM Assistant
-      ru: Инженер AI-продуктов, внутренний LLM-ассистент
+      en: Frontend Engineer, Copilots
+      ru: Фронтенд-инженер, Копилоты
     start: "2025-11"
     end: Present
     location:
@@ -177,14 +176,14 @@ experience:
         services behind it, owning delivery from the interface through to the
         backend rather than stopping at a handoff
       ru: >
-        Выпускаю фичи внутреннего LLM-ассистента, которым пользуются 38 000+
-        сотрудников: смешанный фронтенд на React и Svelte и сервисы на FastAPI
-        за ним. Веду фичу от интерфейса до бэкенда, а не до передачи задачи
+        Делаю фичи для внутреннего LLM-ассистента, которым пользуются 38 000+
+        сотрудников: смешанный фронтенд на React и Svelte и бэкенд на FastAPI
+        для него. Веду продуктовые фичи целиком от UI до бэкенда за ним.
     highlights:
       - en: Shipped product work in a mixed Svelte and React codebase for a widely adopted internal AI assistant, helping move new product logic toward React-owned areas
         ru: Выпускал продуктовые фичи в смешанной кодовой базе Svelte и React для внутреннего AI-ассистента с широкой аудиторией, перенося новую продуктовую логику в зоны React
-      - en: Continued delivering internal AI tooling features end to end, including UI behavior, backend fixes, test coverage, and quality rails
-        ru: "Продолжаю делать фичи внутренних AI-инструментов целиком: поведение интерфейса, правки на бэкенде, тесты и требования к качеству кода"
+      - en: Continued delivering internal AI tooling features end to end, including UI behavior, backend fixes, test coverage, and code quality guardrails
+        ru: "Продолжаю делать фичи внутренних AI-инструментов end to end: поведение интерфейса, правки на бэкенде, тесты и требования к качеству кода"
     resume_highlights:
       - en: Fullstack delivery across React, Svelte, Angular, and FastAPI on an LLM assistant used by 38,000+ employees
         ru: Fullstack-разработка на React, Svelte, Angular и FastAPI в LLM-ассистенте с 38 000+ пользователей
@@ -194,7 +193,7 @@ experience:
     logo: /media/logos/tbank.svg
     role:
       en: Frontend Engineer, AI Image Generation
-      ru: Frontend-разработчик, AI-генерация изображений
+      ru: Frontend-инженер, AI-генерация изображений
     start: "2024-06"
     end: "2025-10"
     location:
@@ -223,7 +222,7 @@ experience:
     logo: /media/logos/tbank.svg
     role:
       en: Software Engineering Intern
-      ru: Стажёр-разработчик
+      ru: Стажер-разработчик
     start: "2024-01"
     end: "2024-06"
     location:
@@ -234,23 +233,23 @@ experience:
         Started in an AI-focused internal product environment and quickly moved
         from internship tasks to production feature ownership
       ru: >
-        Начал во внутренней продуктовой среде вокруг AI и быстро перешёл от
-        стажёрских задач к ответственности за продовые фичи
+        Начал во внутренней продуктовой среде вокруг AI и быстро перешел от
+        стажерских задач к ответственности за продовые фичи
     highlights:
       - en: Joined the internal AI product stream and began shipping production changes in Angular and FastAPI
-        ru: Пришёл в поток внутренних AI-продуктов и начал выпускать изменения в прод на Angular и FastAPI
+        ru: Пришел в поток внутренних AI-продуктов и начал выпускать изменения в прод на Angular и FastAPI
       - en: Built the foundation for later fullstack ownership by working directly with product flows instead of isolated training tasks
         ru: Заложил основу для будущей fullstack-ответственности, работая с реальными продуктовыми сценариями, а не с учебными задачами
     resume_highlights:
       - en: Entered production AI product development as an intern
-        ru: Вошёл в разработку продовых AI-продуктов ещё стажёром
+        ru: Вошел в разработку продовых AI-продуктов еще стажером
       - en: Moved quickly from onboarding tasks to real feature work
-        ru: Быстро перешёл от онбординга к реальным фичам
+        ru: Быстро перешел от онбординга к реальным фичам
   - company: Qoollo
     logo: /media/logos/qoollo.svg
     role:
-      en: Frontend Developer Intern
-      ru: Стажёр-frontend-разработчик
+      en: Software Engineering Intern
+      ru: Стажер-разработчик
     start: "2023-09"
     end: "2024-01"
     location:
@@ -265,7 +264,7 @@ experience:
         поиска контрафакта, и готовил учебные материалы по Python для Школы 21
     highlights:
       - en: Continued a university practice project into an internal internship context, refining image-comparison screens, admin flows, and uploaded-image editing
-        ru: "Продолжил университетский практический проект уже как стажёр: дорабатывал экраны сравнения изображений, админские сценарии и редактирование загруженных картинок"
+        ru: "Продолжил университетский практический проект уже как стажер: дорабатывал экраны сравнения изображений, админские сценарии и редактирование загруженных картинок"
       - en: Prepared Python study materials and practical exercises for educational programs alongside product work
         ru: Параллельно с продуктовой работой готовил материалы и практические задания по Python для образовательных программ
     resume_highlights:
@@ -366,7 +365,7 @@ case_studies:
       - en: Integrated corporate SSO for end users while routing generation requests through a service-level backend path
         ru: Внедрил корпоративный SSO для конечных пользователей, направив запросы генерации через сервисный бэкенд-путь
       - en: Built an event consumer that processed completed tasks and coordinated persistence across the database and object storage
-        ru: Написал консьюмер событий, который обрабатывал завершённые задачи и согласовывал запись в базу и в объектное хранилище
+        ru: Написал консьюмер событий, который обрабатывал завершенные задачи и согласовывал запись в базу и в объектное хранилище
       - en: Added backend support for user-facing features such as reactions, board operations, and image post-processing flows
         ru: "Добавил бэкенд-поддержку пользовательских фич: реакций, операций с досками и постобработки изображений"
     resume_highlight:
@@ -507,7 +506,7 @@ selected_public_repos:
         and RU/EN spelling
       ru: >
         CLI-линтер документов LaTeX по правилам оформления ГОСТ: проверки ссылок,
-        списков, подписей, запрещённых сокращений, Unicode и орфографии на
+        списков, подписей, запрещенных сокращений, Unicode и орфографии на
         русском и английском
 
 supporting_repo:
@@ -518,7 +517,7 @@ supporting_repo:
       Supporting AI documentation-generation project combining a .NET CLI and a
       FastAPI backend
     ru: >
-      Вспомогательный проект по генерации документации с помощью AI: CLI на .NET
+      Проект по генерации документации с помощью AI: CLI на .NET
       и бэкенд на FastAPI
 
 stack_groups:
@@ -602,11 +601,11 @@ stack_groups:
         icon: null
       - name:
           en: Design-system alignment
-          ru: Работа по дизайн-системе
+          ru: Работа с дизайн-системой
         icon: null
       - name:
           en: Cross-functional collaboration
-          ru: Кросс-функциональная работа
+          ru: Работа на границе нескольких фичей
         icon: null
 
 education:
@@ -615,7 +614,7 @@ education:
       ru: МГТУ им. Н. Э. Баумана
     degree:
       en: Bachelor’s in Software Engineering (IU7)
-      ru: Бакалавриат по программной инженерии (ИУ7)
+      ru: Бакалавриат, Программная инженерия (ИУ7)
     start: "2022-09"
     end: Present
     logo: /media/logos/bmstu.svg
@@ -646,20 +645,20 @@ achievements:
     year: "2023"
     description:
       en: Prize winner in a youth AI-focused hackathon stream
-      ru: Призёр молодёжного хакатона в AI-треке
+      ru: Призер молодежного хакатона в треке AI
   - title: AI Talent Hackathon
     year: "2023"
     description:
       en: Built product prototypes in an AI-generated content hackathon environment
-      ru: Собирал продуктовые прототипы на хакатоне по генеративному контенту
+      ru: Собирал прототипы на хакатоне по инструментам для создания AI-контента
 
 resume:
   title:
     en: AI Product Engineer
     ru: Инженер AI-продуктов
   subtitle:
-    en: Retrieval, tool calling, structured outputs · React, FastAPI
-    ru: Retrieval, tool calling, structured outputs · React, FastAPI
+    en: Retrieval, tool calling, structured outputs | React, FastAPI
+    ru: Retrieval, tool calling, structured outputs | React, FastAPI
   summary:
     en: >
       AI product engineer building the layer that makes LLM features dependable
@@ -667,15 +666,16 @@ resume:
       orchestration. I ship the React interface and the FastAPI service behind
       it, for internal products used by 38,000+ employees
     ru: >
-      Инженер AI-продуктов: строю слой, который делает LLM-фичи надёжными в
-      продакшене — retrieval, tool calling, structured outputs и оркестрация
-      асинхронных задач. Делаю и интерфейс на React, и сервис на FastAPI за ним,
-      во внутренних продуктах с 38 000+ пользователей
+      Инженер AI-продуктов на React и FastAPI. Выстраиваю надежный бэкенд для
+      LLM-фичей в продакшене — retrieval, tool calling, structured
+      outputs, оркестрация асинхронных задач — и создаю Web UI для него.
+      Делаю фичи внутреннего LLM-ассистента, которым
+      пользуются 38 000+ сотрудников крупного банка.
   # Same order as the value props on the site: the specialisation first, the
   # range under it.
   strengths:
     - en: "LLM reliability: retrieval, tool calling, structured outputs"
-      ru: "Надёжность LLM: retrieval, tool calling, structured outputs"
+      ru: "Надежность LLM: retrieval, tool calling, structured outputs"
     - en: Async orchestration, queues, and streaming
       ru: Оркестрация асинхронных задач, очереди и стриминг
     - en: React product engineering

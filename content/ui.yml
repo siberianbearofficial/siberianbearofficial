@@ -15,7 +15,7 @@ common:
       ru: Переключить тему
     dark:
       en: Dark mode
-      ru: Тёмная тема
+      ru: Темная тема
     light:
       en: Light mode
       ru: Светлая тема
@@ -65,7 +65,7 @@ cv:
   hero:
     kicker:
       en: worldwide remote
-      ru: удалённо по всему миру
+      ru: удаленно по всему миру
     portrait_alt:
       en: Photo of Aleksei Orlov
       ru: Фотография Алексея Орлова
@@ -131,7 +131,7 @@ cv:
         retrieval that returns the right document, tool calls that fail safely,
         and an interface people open on a Monday morning.
       ru: >
-        Демо с LLM соберёт почти любая команда. Я делаю слой под ним: поиск,
+        Демо с LLM соберет почти любая команда. Я делаю слой под ним: поиск,
         который возвращает нужный документ, вызовы инструментов, которые падают
         безопасно, и интерфейс, который открывают в понедельник утром.
     narrative_label:
@@ -165,7 +165,7 @@ cv:
         product surface, architecture, and execution scope behind them
       ru: >
         Код этих продуктов закрыт. Показать я могу продуктовую поверхность,
-        архитектуру и объём работы за ними
+        архитектуру и объем работы за ними
     role_label:
       en: My role
       ru: Моя роль
@@ -248,7 +248,7 @@ cv:
       ru: >
         Я полезнее всего в командах, которые выпускают AI-фичи для живых
         пользователей: retrieval, tool calling и вся асинхронная обвязка под
-        ними, где интерфейс на React и сервис на FastAPI ведёт один человек
+        ними, где интерфейс на React и сервис на FastAPI ведет один человек
   # Contract work is the main track, not the consolation prize, so this band
   # does not open by ruling out the hiring reader.
   cv_band:
@@ -257,7 +257,7 @@ cv:
       ru: Есть что-то конкретное, что нужно сделать или починить?
     meta:
       en: Scope, prices, and delivery dates are on aleksei-orlov.dev
-      ru: Объём работ, цены и сроки — на aleksei-orlov.dev
+      ru: Объем работ, цены и сроки — на aleksei-orlov.dev
 
 services:
   brand_role:
@@ -292,7 +292,7 @@ services:
       ru: Услуги
     heading:
       en: Fixed scope, fixed price, and a date
-      ru: Фиксированный объём, фиксированная цена и дата
+      ru: Фиксированный объем, фиксированная цена и дата
     lede:
       en: >
         Every engagement below is quoted as an outcome rather than a block of
@@ -333,7 +333,7 @@ services:
         problem, the architecture, and the scope I owned rather than screenshots
       ru: >
         Эта работа внутренняя и под NDA, поэтому ниже — проблема, архитектура и
-        мой объём ответственности, а не скриншоты
+        мой объем ответственности, а не скриншоты
     problem_label:
       en: Problem
       ru: Проблема
@@ -374,8 +374,7 @@ services:
         I also consider full-time roles. The CV, experience timeline, and
         downloadable resume live here
       ru: >
-        Я также рассматриваю работу в штате. CV, таймлайн опыта и резюме для
-        скачивания — здесь
+        Я также рассматриваю фултайм работу. Резюме и опыт работы — здесь
   footer_cv:
     en: CV
     ru: Резюме
@@ -407,7 +406,7 @@ og:
   cv:
     kicker:
       en: AI product engineer · Moscow · remote worldwide
-      ru: Инженер AI-продуктов · Москва · удалённо
+      ru: Инженер AI-продуктов · Москва · удаленно
     footer:
       en: React · Angular · Svelte · FastAPI · Internal AI products
       ru: React · Angular · Svelte · FastAPI · внутренние AI-продукты

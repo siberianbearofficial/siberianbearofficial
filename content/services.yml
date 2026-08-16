@@ -38,7 +38,7 @@ hero:
       the right document, tool calls that do not silently fail, and an interface
       people open on a Monday morning. That is the part I build
     ru: >
-      Демо соберёт почти любая команда. Сложное начинается дальше: поиск, который
+      Демо соберет почти любая команда. Сложное начинается дальше: поиск, который
       возвращает нужный документ, вызовы инструментов, которые не отваливаются
       молча, и интерфейс, который открывают в понедельник утром. Я делаю именно
       эту часть
@@ -49,7 +49,7 @@ hero:
       Angular, React, Svelte, and FastAPI
     ru: >
       Я выпускаю продуктовые фичи внутреннего LLM-ассистента, которым пользуются
-      38 000+ сотрудников крупного банка, и вёл AI-инструменты целиком на Angular,
+      38 000+ сотрудников крупного банка, и вел AI-инструменты целиком на Angular,
       React, Svelte и FastAPI
   primary_cta:
     label:
@@ -93,7 +93,7 @@ proof_points:
       ru: внутренних пользователей
     meta:
       en: image generation platform I owned end to end
-      ru: платформа генерации изображений, которую я вёл целиком
+      ru: платформа генерации изображений, которую я вел целиком
     icon: image
   - value:
       en: 2+ yrs
@@ -157,7 +157,7 @@ services:
       - en: SSO integration and access control that matches how your company already handles identity
         ru: Интеграция SSO и разграничение доступа так, как это уже устроено у вас
       - en: Deployment into your infrastructure, plus written handover so your team can extend it
-        ru: Развёртывание в вашей инфраструктуре и письменная передача, чтобы команда могла развивать дальше
+        ru: Развертывание в вашей инфраструктуре и письменная передача, чтобы команда могла развивать дальше
     note:
       en: >
         Already running Open WebUI or LibreChat internally? Most of this work is
@@ -188,7 +188,7 @@ services:
         decision keeps getting postponed
       ru: >
         У вас кодовая база на Angular, рынок найма на React и ни одного честного
-        ответа, сколько займёт миграция и чем она рискует. Поэтому решение
+        ответа, сколько займет миграция и чем она рискует. Поэтому решение
         откладывается снова и снова
     outcome:
       en: >
@@ -196,7 +196,7 @@ services:
         first, what stays, what it costs, and where the real risk sits
       ru: >
         План миграции, который можно положить на стол тому, кто держит бюджет:
-        что переезжает первым, что остаётся, сколько это стоит и где реальный риск
+        что переезжает первым, что остается, сколько это стоит и где реальный риск
     includes:
       - en: Structured audit of your repository, dependency graph, and framework-specific coupling
         ru: Структурированный аудит репозитория, графа зависимостей и привязок к фреймворку
@@ -205,7 +205,7 @@ services:
       - en: Risk register covering state management, routing, shared components, and test coverage gaps
         ru: Реестр рисков по состоянию, роутингу, общим компонентам и дырам в тестах
       - en: Effort estimate per surface, in ranges honest enough to plan against
-        ru: Оценка трудоёмкости по каждому экрану — вилками, по которым реально планировать
+        ru: Оценка трудоемкости по каждому экрану — вилками, по которым реально планировать
       - en: Ninety minute walkthrough call with your engineering leads
         ru: Полуторачасовой разбор с вашими техлидами
     footnote:
@@ -213,7 +213,7 @@ services:
         The audit fee is credited toward the migration if you decide to go ahead.
         Full migrations typically run from $15,000 depending on surface count
       ru: >
-        Стоимость аудита засчитывается в миграцию, если решите её делать. Полная
+        Стоимость аудита засчитывается в миграцию, если решите ее делать. Полная
         миграция обычно от $15 000 в зависимости от количества экранов
   - key: mvp-rescue
     name:
@@ -241,8 +241,8 @@ services:
         A codebase that stops surprising you: the dangerous parts fixed, the rest
         documented, and a written map of what still needs work
       ru: >
-        Кодовая база, которая перестаёт удивлять: опасные места починены,
-        остальное описано, и есть письменная карта того, что ещё требует работы
+        Кодовая база, которая перестает удивлять: опасные места починены,
+        остальное описано, и есть письменная карта того, что еще требует работы
     includes:
       - en: Audit of authentication, data model, and error handling, ranked by how badly each can hurt you
         ru: Аудит аутентификации, модели данных и обработки ошибок с ранжированием по тому, как сильно каждое место может ударить
@@ -255,7 +255,7 @@ services:
   - key: ai-reliability
     name:
       en: AI Reliability Engineering
-      ru: Надёжность AI-фич
+      ru: Надежность AI-фич
     icon: workflow
     price:
       en: from $2,500
@@ -286,7 +286,7 @@ services:
       - en: Tool calling that handles partial failure instead of pretending it cannot happen
         ru: Вызовы инструментов, которые обрабатывают частичный отказ, а не делают вид, что его не бывает
       - en: Async task orchestration, queues, and status handling for work that outlives a request
-        ru: Оркестрация асинхронных задач, очереди и статусы для работы, которая живёт дольше запроса
+        ru: Оркестрация асинхронных задач, очереди и статусы для работы, которая живет дольше запроса
       - en: Token streaming that survives reconnects and slow clients
         ru: Стриминг токенов, который переживает переподключения и медленных клиентов
       - en: Evaluation harness and observability so prompt and model changes are measured, not guessed
@@ -321,17 +321,17 @@ services:
         fixed price as everything else on this page
       ru: >
         Работающее веб-приложение в проде: React на фронте, FastAPI за ним,
-        развёрнуто в вашей инфраструктуре — с тем же фиксированным объёмом и
-        фиксированной ценой, что и всё остальное на этой странице
+        развернуто в вашей инфраструктуре — с тем же фиксированным объемом и
+        фиксированной ценой, что и все остальное на этой странице
     includes:
       - en: Product surface in React and TypeScript, built to your design system or to a clean default if you do not have one
-        ru: Продуктовый интерфейс на React и TypeScript по вашей дизайн-системе или по аккуратному дефолту, если её нет
+        ru: Продуктовый интерфейс на React и TypeScript по вашей дизайн-системе или по аккуратному дефолту, если ее нет
       - en: FastAPI backend with a data model, migrations, and API contracts your next developer can read
         ru: Бэкенд на FastAPI с моделью данных, миграциями и контрактами API, которые прочитает следующий разработчик
       - en: Authentication, roles, and third-party integrations wired end to end rather than stubbed for the demo
         ru: Аутентификация, роли и интеграции со сторонними сервисами доведены до конца, а не заглушены ради демо
       - en: Deployment, Docker packaging, and CI so shipping the next change does not require me
-        ru: Развёртывание, упаковка в Docker и CI, чтобы следующее изменение можно было выпустить без меня
+        ru: Развертывание, упаковка в Docker и CI, чтобы следующее изменение можно было выпустить без меня
       - en: Written handover covering the architecture, the trade-offs taken, and what to build next
         ru: "Письменная передача: архитектура, принятые компромиссы и что делать дальше"
     footnote:
@@ -339,8 +339,8 @@ services:
         This is the catch-all tier. If your problem is an AI problem, one of the
         offers above will fit it better and cost you less
       ru: >
-        Это универсальный вариант. Если ваша задача всё-таки про AI, один из
-        офферов выше подойдёт лучше и обойдётся дешевле
+        Это универсальный вариант. Если ваша задача все-таки про AI, один из
+        офферов выше подойдет лучше и обойдется дешевле
 
 retainer:
   name:
@@ -365,7 +365,7 @@ retainer:
     - en: Prompt and model updates when providers ship changes
       ru: Обновление промптов и моделей, когда провайдеры выкатывают изменения
     - en: Small feature work and fixes within an agreed monthly scope
-      ru: Небольшие фичи и правки в рамках согласованного месячного объёма
+      ru: Небольшие фичи и правки в рамках согласованного месячного объема
     - en: A named person who already knows your codebase when something breaks
       ru: Конкретный человек, который уже знает ваш код, когда что-то сломалось
 
@@ -379,7 +379,7 @@ engagement_principles:
         You buy a defined outcome with a defined price. My speed is my problem
         to optimise, not a reason to charge you less for the same result
       ru: >
-        Вы покупаете определённый результат за определённую цену. Моя скорость —
+        Вы покупаете определенный результат за определенную цену. Моя скорость —
         моя забота, а не повод брать с вас меньше за тот же результат
   - title:
       en: Weekly working software
@@ -390,9 +390,9 @@ engagement_principles:
         Every week you get something you can click, not a status report. If the
         direction is wrong, you find out in week one rather than week four
       ru: >
-        Каждую неделю вы получаете то, что можно потыкать, а не статус-отчёт.
+        Каждую неделю вы получаете то, что можно потыкать, а не статус-отчет.
         Если направление неверное, вы узнаете это на первой неделе, а не на
-        четвёртой
+        четвертой
   - title:
       en: Your code from day one
       ru: Код ваш с первого дня
@@ -402,18 +402,18 @@ engagement_principles:
         Work happens in your repository under your license. There is no handover
         cliff and nothing to buy back at the end
       ru: >
-        Работа идёт в вашем репозитории под вашей лицензией. Нет обрыва при
+        Работа идет в вашем репозитории под вашей лицензией. Нет обрыва при
         передаче и нечего выкупать в конце
   - title:
       en: Honest scope boundaries
-      ru: Честные границы объёма
+      ru: Честные границы объема
     icon: scale
     description:
       en: >
         The proposal says what is explicitly out of scope. New scope becomes a
         new fixed-price increment instead of a quiet schedule slip
       ru: >
-        В предложении прямо написано, что в объём не входит. Новый объём
+        В предложении прямо написано, что в объем не входит. Новый объем
         становится новым этапом с фиксированной ценой, а не тихим сдвигом сроков
 
 case_studies:
@@ -451,7 +451,7 @@ case_studies:
         polling model that schedules status checks by importance instead of
         polling everything on a fixed interval
       ru: >
-        Я вёл фронтенд на Angular и заходил в бэкенд на FastAPI всякий раз, когда
+        Я вел фронтенд на Angular и заходил в бэкенд на FastAPI всякий раз, когда
         фиче требовалась серверная часть. Собрал рабочее пространство на досках,
         где дизайнеры группируют генерации по проектам, добавил перетаскивание
         между досками, реакции на изображения и редактирование для нескольких
@@ -489,7 +489,7 @@ case_studies:
         separate backend team waiting to build them
       ru: >
         В общем API генерации не было ни понятия конечного пользователя, ни
-        истории задач, ни надёжного хранилища. Интерфейсу нужно было всё три, а
+        истории задач, ни надежного хранилища. Интерфейсу нужно было все три, а
         отдельной бэкенд-команды, готовой это сделать, не было
     action:
       en: >
@@ -501,7 +501,7 @@ case_studies:
       ru: >
         Я спроектировал и написал backend-for-frontend на FastAPI: корпоративный
         SSO для конечных пользователей с сервисной маршрутизацией к API генерации,
-        консьюмер событий, который забирает завершённые задачи из Kafka, и
+        консьюмер событий, который забирает завершенные задачи из Kafka, и
         согласованное хранение в PostgreSQL и S3. По мере роста продукта расширил
         его под реакции, операции с досками и постобработку изображений
     result:
@@ -624,8 +624,8 @@ process:
         You describe the problem. I tell you whether I am the right person for
         it, including when the answer is no. No slide deck, no discovery invoice
       ru: >
-        Вы описываете задачу. Я говорю, тот ли я человек для неё, в том числе
-        когда ответ «нет». Без презентаций и счёта за «исследование»
+        Вы описываете задачу. Я говорю, тот ли я человек для нее, в том числе
+        когда ответ «нет». Без презентаций и счета за «исследование»
   - step:
       en: Proposal
       ru: Предложение
@@ -639,7 +639,7 @@ process:
         what is not included. If it does not fit your budget, you have lost a
         phone call
       ru: >
-        Фиксированный объём, фиксированная цена, дата сдачи и явный список того,
+        Фиксированный объем, фиксированная цена, дата сдачи и явный список того,
         что не входит. Если не подходит по бюджету — вы потеряли один созвон
   - step:
       en: Build
@@ -653,7 +653,7 @@ process:
         Work happens in your repository with something demoable every week. You
         see progress as software, and course corrections happen early
       ru: >
-        Работа идёт в вашем репозитории, каждую неделю есть что показать.
+        Работа идет в вашем репозитории, каждую неделю есть что показать.
         Прогресс виден софтом, а корректировки курса случаются рано
   - step:
       en: Handover
@@ -667,7 +667,7 @@ process:
         Deployment, documentation, and a walkthrough with your team. You are not
         dependent on me afterwards unless you choose to be
       ru: >
-        Развёртывание, документация и разбор с вашей командой. После этого вы
+        Развертывание, документация и разбор с вашей командой. После этого вы
         зависите от меня только если сами захотите
 
 faq:
@@ -679,7 +679,7 @@ faq:
         No. Fixed price against a defined outcome. Hourly billing means you pay
         more when I am slower, which is a strange thing for both of us to want
       ru: >
-        Нет. Фиксированная цена за определённый результат. Почасовая оплата
+        Нет. Фиксированная цена за определенный результат. Почасовая оплата
         означает, что вы платите больше, когда я работаю медленнее, — странное
         желание для нас обоих
   - question:
@@ -693,9 +693,9 @@ faq:
         behind it, same fixed scope and price
       ru: >
         Нет. Большая часть моей работы — про AI, и там я полезнее всего, но
-        продукт без модели внутри остаётся продуктом. Для этого выше есть
+        продукт без модели внутри остается продуктом. Для этого выше есть
         Fullstack-разработка продукта: React на фронте, FastAPI за ним, тот же
-        фиксированный объём и цена
+        фиксированный объем и цена
   - question:
       en: Who owns the code?
       ru: Кому принадлежит код?
@@ -704,7 +704,7 @@ faq:
         You do, from the first commit. Work happens in your repository under your
         license, and nothing is held back at handover
       ru: >
-        Вам, с первого коммита. Работа идёт в вашем репозитории под вашей
+        Вам, с первого коммита. Работа идет в вашем репозитории под вашей
         лицензией, и при передаче ничего не придерживается
   - question:
       en: Can you sign an NDA?
@@ -716,17 +716,17 @@ faq:
         than screenshots
       ru: >
         Да. Большая часть моего опыта — внутренние продукты, уже закрытые NDA,
-        поэтому кейсы здесь описывают архитектуру и объём работ, а не скриншоты
+        поэтому кейсы здесь описывают архитектуру и объем работ, а не скриншоты
   - question:
       en: What happens if the scope changes?
-      ru: Что будет, если объём изменится?
+      ru: Что будет, если объем изменится?
     answer:
       en: >
         Small things get absorbed. Anything larger becomes a separate fixed-price
         increment that you approve before it starts, rather than a quiet slip in
         the delivery date
       ru: >
-        Мелочи беру на себя. Всё крупнее становится отдельным этапом с
+        Мелочи беру на себя. Все крупнее становится отдельным этапом с
         фиксированной ценой, который вы согласуете до начала, а не тихим сдвигом
         даты сдачи
   - question:
