@@ -8,6 +8,7 @@ import {
   LOCK_FILE,
   assertArtifactsFresh,
   computeFingerprint,
+  readLockedFingerprint,
   serializeLock
 } from "./lib/artifacts.mjs";
 import { LOCALES } from "./lib/i18n.mjs";
@@ -130,12 +131,19 @@ async function main() {
   // Used by the image build: renders pages and compiles CSS, and verifies that
   // the committed PDFs and OG images still match instead of regenerating them.
   const skipBrowser = process.argv.includes("--skip-browser");
+  const forceArtifacts = process.argv.includes("--force-artifacts");
   const { files, readme, ogPages } = await renderSiteFiles(rootDir);
   const fingerprint = await computeFingerprint(rootDir, { files, ogPages });
 
   if (skipBrowser) {
     await assertArtifactsFresh(rootDir, fingerprint);
   }
+
+  // Chromium stamps a creation date into every PDF, so regenerating one that
+  // nothing changed would leave two modified files in `git status` after every
+  // build. The fingerprint already says whether they are current.
+  const artifactsCurrent = (await readLockedFingerprint(rootDir)) === fingerprint;
+  const runBrowser = !skipBrowser && (forceArtifacts || !artifactsCurrent);
 
   if (!resumeOnly) {
     await rm(distDir, { recursive: true, force: true });
@@ -158,7 +166,13 @@ async function main() {
 
   await compileTailwind();
 
-  if (skipBrowser) {
+  if (!runBrowser) {
+    if (!skipBrowser) {
+      console.log(
+        "Resume PDFs and Open Graph images are already current; pass --force-artifacts to rebuild them anyway."
+      );
+    }
+
     return;
   }
 
@@ -179,7 +193,12 @@ async function main() {
   // The browser writes into public/, which is where the committed copies live,
   // so the freshly built ones have to be copied across into dist as well.
   await copyPublicAssets();
-  await writeFile(resolve(rootDir, LOCK_FILE), serializeLock(fingerprint));
+
+  // --resume-only leaves the Open Graph cards untouched, so it must not claim
+  // the whole artifact set matches this fingerprint.
+  if (!resumeOnly) {
+    await writeFile(resolve(rootDir, LOCK_FILE), serializeLock(fingerprint));
+  }
 }
 
 await main();
