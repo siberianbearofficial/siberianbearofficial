@@ -53,6 +53,12 @@ identity:
   vk: https://vk.com/aleksei_orlov_dev
   linkedin: https://www.linkedin.com/in/aleksei-orlov-dev
   github_stats:
+    # GitHub serves these through its image proxy, and the upstream answers with
+    # Cache-Control: max-age=255600 no matter what cache_seconds is set to, so a
+    # cached card can sit there for days and miss new repositories. Changing the
+    # URL is the only thing that forces a refetch. Bump this date whenever the
+    # cards look stale.
+    cache_key: "2026-08-16"
     stats_url: https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default
     langs_url: https://github-stats-extended.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff
 

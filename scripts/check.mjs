@@ -2,12 +2,13 @@ import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { stat } from "node:fs/promises";
 
+import { artifactPaths, assertArtifactsFresh, computeFingerprint } from "./lib/artifacts.mjs";
 import { readExistingFileIfAny } from "./lib/render.mjs";
-import { OG_IMAGES, RESUME_PDFS } from "./lib/routes.mjs";
 import { renderSiteFiles } from "./lib/site-build.mjs";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(rootDir, "dist");
+const publicDir = resolve(rootDir, "public");
 
 async function assertUpToDate(filePath, expected) {
   const current = await readExistingFileIfAny(filePath);
@@ -26,7 +27,7 @@ async function assertNonEmptyFile(filePath) {
 }
 
 async function main() {
-  const { files, readme } = await renderSiteFiles(rootDir);
+  const { files, readme, ogPages } = await renderSiteFiles(rootDir);
 
   await assertUpToDate(resolve(rootDir, "README.md"), readme);
 
@@ -34,18 +35,14 @@ async function main() {
     await assertUpToDate(resolve(distDir, relativePath), contents);
   }
 
-  for (const pdf of Object.values(RESUME_PDFS)) {
-    await assertNonEmptyFile(resolve(distDir, pdf.replace(/^\//, "")));
+  for (const artifact of artifactPaths()) {
+    await assertNonEmptyFile(resolve(publicDir, artifact.replace(/^\//, "")));
   }
 
-  for (const variants of Object.values(OG_IMAGES)) {
-    for (const image of Object.values(variants)) {
-      await assertNonEmptyFile(resolve(distDir, image.replace(/^\//, "")));
-    }
-  }
+  await assertArtifactsFresh(rootDir, await computeFingerprint(rootDir, { files, ogPages }));
 
   console.log(
-    `Content is valid and ${files.size + 1} generated files are fresh in both languages.`
+    `Content is valid, ${files.size + 1} generated files are fresh in both languages, and the committed PDFs and OG images match.`
   );
 }
 

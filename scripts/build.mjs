@@ -4,8 +4,12 @@ import { dirname, resolve } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
-import { chromium } from "playwright";
-
+import {
+  LOCK_FILE,
+  assertArtifactsFresh,
+  computeFingerprint,
+  serializeLock
+} from "./lib/artifacts.mjs";
 import { LOCALES } from "./lib/i18n.mjs";
 import { PAGES, RESUME_PDFS } from "./lib/routes.mjs";
 import { renderSiteFiles } from "./lib/site-build.mjs";
@@ -14,6 +18,7 @@ import { startStaticServer } from "./lib/static-server.mjs";
 const execFileAsync = promisify(execFile);
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(rootDir, "dist");
+const publicDir = resolve(rootDir, "public");
 const assetsDir = resolve(distDir, "assets");
 // Spawning the .cmd shim breaks on Windows under Node 22, and quoting it
 // through a shell breaks on paths with spaces. Running the CLI's JS entry
@@ -29,10 +34,7 @@ async function writeDistFile(relativePath, contents) {
 
 async function copyPublicAssets() {
   try {
-    await cp(resolve(rootDir, "public"), distDir, {
-      recursive: true,
-      force: true
-    });
+    await cp(publicDir, distDir, { recursive: true, force: true });
   } catch (error) {
     if (error && error.code === "ENOENT") {
       return;
@@ -54,6 +56,7 @@ async function compileTailwind() {
 }
 
 async function withBrowserOnDist(run) {
+  const { chromium } = await import("playwright");
   const server = await startStaticServer(distDir, 0);
   const browser = await chromium.launch({ headless: true });
 
@@ -86,7 +89,7 @@ async function exportResumePdfs({ browser, origin }) {
       waitUntil: "networkidle"
     });
     await page.pdf({
-      path: resolve(distDir, RESUME_PDFS[locale].replace(/^\//, "")),
+      path: resolve(publicDir, RESUME_PDFS[locale].replace(/^\//, "")),
       format: "A4",
       printBackground: true,
       preferCSSPageSize: true,
@@ -113,7 +116,7 @@ async function exportOgImages({ browser, origin }, ogPages) {
     await page.goto(`${origin}/${sourcePath}`, { waitUntil: "networkidle" });
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({
-      path: resolve(distDir, ogPage.output.replace(/^\//, "")),
+      path: resolve(publicDir, ogPage.output.replace(/^\//, "")),
       type: "png"
     });
     await unlink(resolve(distDir, sourcePath));
@@ -124,7 +127,15 @@ async function exportOgImages({ browser, origin }, ogPages) {
 
 async function main() {
   const resumeOnly = process.argv.includes("--resume-only");
+  // Used by the image build: renders pages and compiles CSS, and verifies that
+  // the committed PDFs and OG images still match instead of regenerating them.
+  const skipBrowser = process.argv.includes("--skip-browser");
   const { files, readme, ogPages } = await renderSiteFiles(rootDir);
+  const fingerprint = await computeFingerprint(rootDir, { files, ogPages });
+
+  if (skipBrowser) {
+    await assertArtifactsFresh(rootDir, fingerprint);
+  }
 
   if (!resumeOnly) {
     await rm(distDir, { recursive: true, force: true });
@@ -143,13 +154,19 @@ async function main() {
 
   if (!resumeOnly) {
     await writeFile(resolve(rootDir, "README.md"), readme);
+  }
 
+  await compileTailwind();
+
+  if (skipBrowser) {
+    return;
+  }
+
+  if (!resumeOnly) {
     for (const ogPage of ogPages) {
       await writeDistFile(`og/${ogPage.name}.html`, ogPage.html);
     }
   }
-
-  await compileTailwind();
 
   await withBrowserOnDist(async (session) => {
     if (!resumeOnly) {
@@ -158,6 +175,11 @@ async function main() {
 
     await exportResumePdfs(session);
   });
+
+  // The browser writes into public/, which is where the committed copies live,
+  // so the freshly built ones have to be copied across into dist as well.
+  await copyPublicAssets();
+  await writeFile(resolve(rootDir, LOCK_FILE), serializeLock(fingerprint));
 }
 
 await main();
