@@ -2,7 +2,7 @@
 
 **LLM features that survive production — retrieval, tool calling, structured outputs — shipped end to end on React and FastAPI**
 
-Open to worldwide remote TypeScript fullstack roles
+Open to worldwide remote AI product engineering roles
 
 **Languages:** Russian — Native · English — IELTS Academic 7.5 (C1)
 
@@ -60,4 +60,4 @@ Company-wide internal LLM assistant used by 38,000+ employees. The product is bu
 
 ## Contact
 
-If you are hiring for React, TypeScript fullstack, internal tooling, or migration-heavy product work, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com), [Telegram](https://t.me/aleksei_orlov_dev), or [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev).
+If you are hiring for AI product engineering, LLM reliability work, or React and FastAPI product delivery, the fastest way to reach me is by [email](mailto:alexeyorlov65@gmail.com), [Telegram](https://t.me/aleksei_orlov_dev), or [LinkedIn](https://www.linkedin.com/in/aleksei-orlov-dev).

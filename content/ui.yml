@@ -241,13 +241,14 @@ cv:
       ru: Если вы нанимаете — начните отсюда
     lede:
       en: >
-        I’m most useful in TypeScript product teams that need someone who can
-        move across React, Angular, migration work, and FastAPI-backed delivery
-        without losing momentum
+        I’m most useful on teams shipping AI features that have to work for real
+        users: retrieval, tool calling, and the async plumbing underneath, with
+        the React interface and the FastAPI service behind it owned by the same
+        person
       ru: >
-        Я полезнее всего в продуктовых командах на TypeScript, которым нужен
-        человек, свободно двигающийся между React, Angular, миграциями и
-        задачами с бэкендом на FastAPI, не теряя темпа
+        Я полезнее всего в командах, которые выпускают AI-фичи для живых
+        пользователей: retrieval, tool calling и вся асинхронная обвязка под
+        ними, где интерфейс на React и сервис на FastAPI ведёт один человек
   # Contract work is the main track, not the consolation prize, so this band
   # does not open by ruling out the hiring reader.
   cv_band:
@@ -405,8 +406,8 @@ resume:
 og:
   cv:
     kicker:
-      en: Fullstack engineer · Moscow · remote worldwide
-      ru: Fullstack-разработчик · Москва · удалённо
+      en: AI product engineer · Moscow · remote worldwide
+      ru: Инженер AI-продуктов · Москва · удалённо
     footer:
       en: React · Angular · Svelte · FastAPI · Internal AI products
       ru: React · Angular · Svelte · FastAPI · внутренние AI-продукты
