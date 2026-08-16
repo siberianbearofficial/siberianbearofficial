@@ -1,0 +1,11 @@
+# The build writes LF and the blobs in this repository are LF, but git checks
+# text files out as CRLF on Windows when core.autocrlf is on. That combination
+# leaves README.md permanently "modified" with an empty diff after every
+# `npm run build`. Pinning the working tree to LF removes the mismatch.
+* text=auto eol=lf
+
+*.png binary
+*.pdf binary
+*.ico binary
+*.woff binary
+*.woff2 binary
