@@ -27,7 +27,7 @@ Open to worldwide remote AI product engineering roles
 
 ## Current Focus
 
-At T-Bank I ship product work on an internal LLM assistant used by 38,000+ employees, moving product logic into React while feature delivery keeps running, and I own the FastAPI services behind the interfaces I build
+At T-Bank I ship product work on an internal LLM assistant used by 38,000+ employees, moving already built logic from Svelte to React while feature delivery keeps running, and I own the FastAPI services behind the interfaces I build
 
 ## Flagship Internal Work
 
