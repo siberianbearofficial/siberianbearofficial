@@ -104,6 +104,7 @@ export const profileSchema = z.object({
     vk: z.string().url(),
     linkedin: z.string().url(),
     github_stats: z.object({
+      cache_key: z.string().min(1),
       stats_url: z.string().url(),
       langs_url: z.string().url()
     })

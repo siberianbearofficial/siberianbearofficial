@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:pages": "node scripts/build.mjs --skip-browser",
     "build:resume": "node scripts/build.mjs --resume-only",
     "dev": "node scripts/dev.mjs",
     "check": "node scripts/check.mjs",

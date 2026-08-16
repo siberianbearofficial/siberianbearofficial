@@ -11,10 +11,10 @@ Open to worldwide remote AI product engineering roles
 <table border="0">
 <tr>
 <td valign="top" width="50%">
-<img src="https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default" alt="GitHub stats" />
+<img src="https://github-stats-extended.vercel.app/api?username=siberianbearofficial&show_icons=true&theme=default&v=2026-08-16" alt="GitHub stats" />
 </td>
 <td valign="top" width="50%">
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff" alt="Top languages" />
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=siberianbearofficial&layout=compact&langs_count=8&hide=HLSL,TeX,ShaderLab,Roff&v=2026-08-16" alt="Top languages" />
 </td>
 </tr>
 </table>
